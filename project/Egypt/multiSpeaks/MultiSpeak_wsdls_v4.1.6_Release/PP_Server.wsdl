@@ -1,0 +1,888 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.multispeak.org/Version_4.1_Release" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://www.multispeak.org/Version_4.1_Release" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.multispeak.org/Version_4.1_Release">
+      <s:element name="PingURL">
+        <s:complexType />
+      </s:element>
+      <s:element name="PingURLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PingURLResult" type="tns:ArrayOfErrorObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfErrorObject">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="errorObject" nillable="true" type="tns:errorObject" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="errorObject">
+        <s:simpleContent>
+          <s:extension base="s:string">
+            <s:attribute name="objectID" type="s:string" />
+            <s:attribute name="errorString" type="s:string" />
+            <s:attribute name="nounType" type="s:string" />
+            <s:attribute name="eventTime" type="s:dateTime" />
+          </s:extension>
+        </s:simpleContent>
+      </s:complexType>
+      <s:element name="MultiSpeakMsgHeader" type="tns:MultiSpeakMsgHeader" />
+      <s:complexType name="MultiSpeakMsgHeader">
+        <s:attribute name="MajorVersion" type="s:integer" />
+        <s:attribute name="MinorVersion" type="s:integer" />
+        <s:attribute name="Build" type="s:integer" />
+        <s:attribute name="Branch" type="s:integer" />
+        <s:attribute name="BuildString" type="tns:BuildDescriptor" use="required" />
+        <s:attribute name="UserID" type="s:string" />
+        <s:attribute name="Pwd" type="s:string" />
+        <s:attribute name="AppName" type="s:string" />
+        <s:attribute name="AppVersion" type="s:string" />
+        <s:attribute name="Company" type="s:string" />
+        <s:attribute name="DefaultCurrencyCode" type="tns:DefaultCurrencyCode" />
+        <s:attribute default="feet" name="CSUnits" type="tns:MessageHeaderCSUnits" />
+        <s:attribute name="CoordinateSystemName" type="s:string" />
+        <s:attribute name="CoordinateSystemAuthority" type="s:string" />
+        <s:attribute name="CoordinateSystemAuthorityCode" type="s:string" />
+        <s:attribute name="Datum" type="s:string" />
+        <s:attribute name="SessionID" type="s:string" />
+        <s:attribute name="PreviousSessionID" type="s:string" />
+        <s:attribute name="ObjectsRemaining" type="s:integer" />
+        <s:attribute name="LastSent" type="s:string" />
+        <s:attribute name="RegistrationID" type="s:string" />
+        <s:attribute name="MessageID" type="s:string" />
+        <s:attribute name="TimeStamp" type="s:dateTime" />
+        <s:attribute name="Context" type="tns:MessageContext" />
+        <s:attribute name="AuditID" type="s:string" />
+        <s:attribute name="AuditPassword" type="s:string" />
+        <s:anyAttribute />
+      </s:complexType>
+      <s:simpleType name="BuildDescriptor">
+        <s:restriction base="s:string">
+          <s:enumeration value="PR" />
+          <s:enumeration value="RC" />
+          <s:enumeration value="Branch" />
+          <s:enumeration value="Release" />
+          <s:enumeration value="Other" />
+          <s:enumeration value="Unknown" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="DefaultCurrencyCode">
+        <s:restriction base="s:string">
+          <s:enumeration value="USD" />
+          <s:enumeration value="EUR" />
+          <s:enumeration value="AED" />
+          <s:enumeration value="AFN" />
+          <s:enumeration value="ALL" />
+          <s:enumeration value="AMD" />
+          <s:enumeration value="ANG" />
+          <s:enumeration value="AOA" />
+          <s:enumeration value="ARS" />
+          <s:enumeration value="AUD" />
+          <s:enumeration value="AWG" />
+          <s:enumeration value="AZN" />
+          <s:enumeration value="BAM" />
+          <s:enumeration value="BBD" />
+          <s:enumeration value="BDT" />
+          <s:enumeration value="BGN" />
+          <s:enumeration value="BHD" />
+          <s:enumeration value="BIF" />
+          <s:enumeration value="BMD" />
+          <s:enumeration value="BND" />
+          <s:enumeration value="BOB" />
+          <s:enumeration value="BOV" />
+          <s:enumeration value="BRL" />
+          <s:enumeration value="BSD" />
+          <s:enumeration value="BTN" />
+          <s:enumeration value="BWP" />
+          <s:enumeration value="BYR" />
+          <s:enumeration value="BZD" />
+          <s:enumeration value="CAD" />
+          <s:enumeration value="CDF" />
+          <s:enumeration value="CHE" />
+          <s:enumeration value="CHF" />
+          <s:enumeration value="CHW" />
+          <s:enumeration value="CLF" />
+          <s:enumeration value="CLP" />
+          <s:enumeration value="CNY" />
+          <s:enumeration value="COP" />
+          <s:enumeration value="COU" />
+          <s:enumeration value="CRC" />
+          <s:enumeration value="CUP" />
+          <s:enumeration value="CVE" />
+          <s:enumeration value="CZK" />
+          <s:enumeration value="DJF" />
+          <s:enumeration value="DKK" />
+          <s:enumeration value="DOP" />
+          <s:enumeration value="DZD" />
+          <s:enumeration value="EEK" />
+          <s:enumeration value="EGP" />
+          <s:enumeration value="ERN" />
+          <s:enumeration value="ETB" />
+          <s:enumeration value="FJD" />
+          <s:enumeration value="FKP" />
+          <s:enumeration value="GBP" />
+          <s:enumeration value="GEL" />
+          <s:enumeration value="GHS" />
+          <s:enumeration value="GIP" />
+          <s:enumeration value="GMD" />
+          <s:enumeration value="GNF" />
+          <s:enumeration value="GTQ" />
+          <s:enumeration value="GYD" />
+          <s:enumeration value="HKD" />
+          <s:enumeration value="HNL" />
+          <s:enumeration value="HRK" />
+          <s:enumeration value="HTG" />
+          <s:enumeration value="HUF" />
+          <s:enumeration value="IDR" />
+          <s:enumeration value="ILS" />
+          <s:enumeration value="INR" />
+          <s:enumeration value="IQD" />
+          <s:enumeration value="IRR" />
+          <s:enumeration value="ISK" />
+          <s:enumeration value="JMD" />
+          <s:enumeration value="JOD" />
+          <s:enumeration value="JPY" />
+          <s:enumeration value="KES" />
+          <s:enumeration value="KGS" />
+          <s:enumeration value="KHR" />
+          <s:enumeration value="KMF" />
+          <s:enumeration value="KPW" />
+          <s:enumeration value="KRW" />
+          <s:enumeration value="KWD" />
+          <s:enumeration value="KYD" />
+          <s:enumeration value="KZT" />
+          <s:enumeration value="LAK" />
+          <s:enumeration value="LBP" />
+          <s:enumeration value="LKR" />
+          <s:enumeration value="LRD" />
+          <s:enumeration value="LSL" />
+          <s:enumeration value="LTL" />
+          <s:enumeration value="LVL" />
+          <s:enumeration value="LYD" />
+          <s:enumeration value="MAD" />
+          <s:enumeration value="MDL" />
+          <s:enumeration value="MGA" />
+          <s:enumeration value="MKD" />
+          <s:enumeration value="MMK" />
+          <s:enumeration value="MNT" />
+          <s:enumeration value="MOP" />
+          <s:enumeration value="MRO" />
+          <s:enumeration value="MUR" />
+          <s:enumeration value="MVR" />
+          <s:enumeration value="MWK" />
+          <s:enumeration value="MXN" />
+          <s:enumeration value="MXV" />
+          <s:enumeration value="MYR" />
+          <s:enumeration value="MZN" />
+          <s:enumeration value="NAD" />
+          <s:enumeration value="NGN" />
+          <s:enumeration value="NIO" />
+          <s:enumeration value="NOK" />
+          <s:enumeration value="NPR" />
+          <s:enumeration value="NZD" />
+          <s:enumeration value="OMR" />
+          <s:enumeration value="PAB" />
+          <s:enumeration value="PEN" />
+          <s:enumeration value="PGK" />
+          <s:enumeration value="PHP" />
+          <s:enumeration value="PKR" />
+          <s:enumeration value="PLN" />
+          <s:enumeration value="PYG" />
+          <s:enumeration value="QAR" />
+          <s:enumeration value="RON" />
+          <s:enumeration value="RSD" />
+          <s:enumeration value="RUB" />
+          <s:enumeration value="RWF" />
+          <s:enumeration value="SAR" />
+          <s:enumeration value="SBD" />
+          <s:enumeration value="SCR" />
+          <s:enumeration value="SDG" />
+          <s:enumeration value="SEK" />
+          <s:enumeration value="SGD" />
+          <s:enumeration value="SHP" />
+          <s:enumeration value="SKK" />
+          <s:enumeration value="SLL" />
+          <s:enumeration value="SOS" />
+          <s:enumeration value="SRD" />
+          <s:enumeration value="STD" />
+          <s:enumeration value="SYP" />
+          <s:enumeration value="SZL" />
+          <s:enumeration value="THB" />
+          <s:enumeration value="TJS" />
+          <s:enumeration value="TMM" />
+          <s:enumeration value="TND" />
+          <s:enumeration value="TOP" />
+          <s:enumeration value="TRY" />
+          <s:enumeration value="TTD" />
+          <s:enumeration value="TWD" />
+          <s:enumeration value="TZS" />
+          <s:enumeration value="UAH" />
+          <s:enumeration value="UGX" />
+          <s:enumeration value="USN" />
+          <s:enumeration value="USS" />
+          <s:enumeration value="UYU" />
+          <s:enumeration value="UZS" />
+          <s:enumeration value="VEF" />
+          <s:enumeration value="VND" />
+          <s:enumeration value="VUV" />
+          <s:enumeration value="WST" />
+          <s:enumeration value="XAF" />
+          <s:enumeration value="XAG" />
+          <s:enumeration value="XAU" />
+          <s:enumeration value="XBA" />
+          <s:enumeration value="XBB" />
+          <s:enumeration value="XBC" />
+          <s:enumeration value="XBD" />
+          <s:enumeration value="XCD" />
+          <s:enumeration value="XDR" />
+          <s:enumeration value="XFU" />
+          <s:enumeration value="XOF" />
+          <s:enumeration value="XPD" />
+          <s:enumeration value="XPF" />
+          <s:enumeration value="XPT" />
+          <s:enumeration value="XTS" />
+          <s:enumeration value="XXX" />
+          <s:enumeration value="YER" />
+          <s:enumeration value="ZAR" />
+          <s:enumeration value="ZMK" />
+          <s:enumeration value="ZWD" />
+          <s:enumeration value="ADF" />
+          <s:enumeration value="ADP" />
+          <s:enumeration value="ATS" />
+          <s:enumeration value="BEF" />
+          <s:enumeration value="CYP" />
+          <s:enumeration value="DEM" />
+          <s:enumeration value="ESP" />
+          <s:enumeration value="FIM" />
+          <s:enumeration value="FRF" />
+          <s:enumeration value="GRD" />
+          <s:enumeration value="IEP" />
+          <s:enumeration value="ITL" />
+          <s:enumeration value="LUF" />
+          <s:enumeration value="MCF" />
+          <s:enumeration value="MTL" />
+          <s:enumeration value="NLG" />
+          <s:enumeration value="PTE" />
+          <s:enumeration value="SIT" />
+          <s:enumeration value="SML" />
+          <s:enumeration value="VAL" />
+          <s:enumeration value="XEU" />
+          <s:enumeration value="Other" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="MessageHeaderCSUnits">
+        <s:restriction base="s:string">
+          <s:enumeration value="feet" />
+          <s:enumeration value="meters" />
+          <s:enumeration value="USSurveyFeet" />
+          <s:enumeration value="other" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="MessageContext">
+        <s:restriction base="s:string">
+          <s:enumeration value="Production" />
+          <s:enumeration value="Testing" />
+          <s:enumeration value="Development" />
+          <s:enumeration value="Study" />
+          <s:enumeration value="Training" />
+          <s:enumeration value="Other" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="GetMethods">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetMethodsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMethodsResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetDomainNames">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetDomainNamesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDomainNamesResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDomainMembers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="domainName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDomainMembersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDomainMembersResult" type="tns:ArrayOfDomainMember" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDomainMember">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="domainMember" nillable="true" type="tns:domainMember" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="domainMember">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="action" type="tns:domainMemberAction" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="domainMemberAction">
+        <s:restriction base="s:string">
+          <s:enumeration value="Add" />
+          <s:enumeration value="Delete" />
+          <s:enumeration value="Modify" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="RequestRegistrationID">
+        <s:complexType />
+      </s:element>
+      <s:element name="RequestRegistrationIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RequestRegistrationIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegisterForService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="registrationDetails" type="tns:registrationInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="registrationInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="registrationID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="responseURL" type="s:anyURI" />
+          <s:element minOccurs="0" maxOccurs="1" name="responseUserID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="responsePwd" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MSFunction" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="methodsList" type="tns:ArrayOfString1" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString1">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="methodName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RegisterForServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegisterForServiceResult" type="tns:ArrayOfErrorObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UnregisterForService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="registrationID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UnregisterForServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UnregisterForServiceResult" type="tns:ArrayOfErrorObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRegistrationInfoByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="registrationID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRegistrationInfoByIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRegistrationInfoByIDResult" type="tns:registrationInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPublishMethods">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetPublishMethodsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPublishMethodsResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DomainMembersChangedNotification">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="changedDomainMembers" type="tns:ArrayOfDomainMember" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DomainMembersChangedNotificationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DomainMembersChangedNotificationResult" type="tns:ArrayOfErrorObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DomainNamesChangedNotification">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="changedDomainNames" type="tns:ArrayOfDomainNameChange" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDomainNameChange">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="domainNameChange" nillable="true" type="tns:domainNameChange" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="domainNameChange">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="domainName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="oldDomainName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="action" type="tns:domainNameAction" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="domainNameAction">
+        <s:restriction base="s:string">
+          <s:enumeration value="Add" />
+          <s:enumeration value="Delete" />
+          <s:enumeration value="Modify" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="DomainNamesChangedNotificationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DomainNamesChangedNotificationResult" type="tns:ArrayOfErrorObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="PingURLSoapIn">
+    <wsdl:part name="parameters" element="tns:PingURL" />
+  </wsdl:message>
+  <wsdl:message name="PingURLSoapOut">
+    <wsdl:part name="parameters" element="tns:PingURLResponse" />
+  </wsdl:message>
+  <wsdl:message name="PingURLMultiSpeakMsgHeader">
+    <wsdl:part name="MultiSpeakMsgHeader" element="tns:MultiSpeakMsgHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetMethodsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMethods" />
+  </wsdl:message>
+  <wsdl:message name="GetMethodsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMethodsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMethodsMultiSpeakMsgHeader">
+    <wsdl:part name="MultiSpeakMsgHeader" element="tns:MultiSpeakMsgHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetDomainNamesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDomainNames" />
+  </wsdl:message>
+  <wsdl:message name="GetDomainNamesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDomainNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDomainNamesMultiSpeakMsgHeader">
+    <wsdl:part name="MultiSpeakMsgHeader" element="tns:MultiSpeakMsgHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetDomainMembersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDomainMembers" />
+  </wsdl:message>
+  <wsdl:message name="GetDomainMembersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDomainMembersResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDomainMembersMultiSpeakMsgHeader">
+    <wsdl:part name="MultiSpeakMsgHeader" element="tns:MultiSpeakMsgHeader" />
+  </wsdl:message>
+  <wsdl:message name="RequestRegistrationIDSoapIn">
+    <wsdl:part name="parameters" element="tns:RequestRegistrationID" />
+  </wsdl:message>
+  <wsdl:message name="RequestRegistrationIDSoapOut">
+    <wsdl:part name="parameters" element="tns:RequestRegistrationIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="RequestRegistrationIDMultiSpeakMsgHeader">
+    <wsdl:part name="MultiSpeakMsgHeader" element="tns:MultiSpeakMsgHeader" />
+  </wsdl:message>
+  <wsdl:message name="RegisterForServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:RegisterForService" />
+  </wsdl:message>
+  <wsdl:message name="RegisterForServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:RegisterForServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegisterForServiceMultiSpeakMsgHeader">
+    <wsdl:part name="MultiSpeakMsgHeader" element="tns:MultiSpeakMsgHeader" />
+  </wsdl:message>
+  <wsdl:message name="UnregisterForServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:UnregisterForService" />
+  </wsdl:message>
+  <wsdl:message name="UnregisterForServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:UnregisterForServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="UnregisterForServiceMultiSpeakMsgHeader">
+    <wsdl:part name="MultiSpeakMsgHeader" element="tns:MultiSpeakMsgHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetRegistrationInfoByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRegistrationInfoByID" />
+  </wsdl:message>
+  <wsdl:message name="GetRegistrationInfoByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRegistrationInfoByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRegistrationInfoByIDMultiSpeakMsgHeader">
+    <wsdl:part name="MultiSpeakMsgHeader" element="tns:MultiSpeakMsgHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetPublishMethodsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPublishMethods" />
+  </wsdl:message>
+  <wsdl:message name="GetPublishMethodsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPublishMethodsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPublishMethodsMultiSpeakMsgHeader">
+    <wsdl:part name="MultiSpeakMsgHeader" element="tns:MultiSpeakMsgHeader" />
+  </wsdl:message>
+  <wsdl:message name="DomainMembersChangedNotificationSoapIn">
+    <wsdl:part name="parameters" element="tns:DomainMembersChangedNotification" />
+  </wsdl:message>
+  <wsdl:message name="DomainMembersChangedNotificationSoapOut">
+    <wsdl:part name="parameters" element="tns:DomainMembersChangedNotificationResponse" />
+  </wsdl:message>
+  <wsdl:message name="DomainMembersChangedNotificationMultiSpeakMsgHeader">
+    <wsdl:part name="MultiSpeakMsgHeader" element="tns:MultiSpeakMsgHeader" />
+  </wsdl:message>
+  <wsdl:message name="DomainNamesChangedNotificationSoapIn">
+    <wsdl:part name="parameters" element="tns:DomainNamesChangedNotification" />
+  </wsdl:message>
+  <wsdl:message name="DomainNamesChangedNotificationSoapOut">
+    <wsdl:part name="parameters" element="tns:DomainNamesChangedNotificationResponse" />
+  </wsdl:message>
+  <wsdl:message name="DomainNamesChangedNotificationMultiSpeakMsgHeader">
+    <wsdl:part name="MultiSpeakMsgHeader" element="tns:MultiSpeakMsgHeader" />
+  </wsdl:message>
+  <wsdl:portType name="PP_ServerSoap">
+    <wsdl:operation name="PingURL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Requester pings URL of PP to see if it is alive. Returns errorObject(s) as necessary to communicate application status.</wsdl:documentation>
+      <wsdl:input message="tns:PingURLSoapIn" />
+      <wsdl:output message="tns:PingURLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMethods">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Requests list of methods supported by PP.</wsdl:documentation>
+      <wsdl:input message="tns:GetMethodsSoapIn" />
+      <wsdl:output message="tns:GetMethodsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDomainNames">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">The client requests from the server a list of names of domains supported by the server.  This method is used, along with the GetDomainMembers method to enable systems to exchange information about application-specific or installation-specific lists of information, such as the lists of counties for this installation or the list of serviceStatusCodes used by the server. It is recommended that domain names be returned in the form of the name of a named object (noun) in the MultiSpeak schema dotted with the field name of interest.  For instance, if the system of record is returning workflow status codes that would be used on work orders, it is suggested that the domain name be called workOrder.workflowStatus, using the same spelling and capitalization used in the MultiSpeak schema.</wsdl:documentation>
+      <wsdl:input message="tns:GetDomainNamesSoapIn" />
+      <wsdl:output message="tns:GetDomainNamesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDomainMembers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">The client requests from the server the members of a specific domain of information, identified by the domainName parameter, which are supported by the server.  This method is used, along with the GetDomainNames method to enable systems to exchange information about application-specific or installation-specific lists of information, such as the lists of counties for this installation or the list of serviceStatusCodes used by the server.</wsdl:documentation>
+      <wsdl:input message="tns:GetDomainMembersSoapIn" />
+      <wsdl:output message="tns:GetDomainMembersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RequestRegistrationID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This service requests of the publisher a unique registration ID that would subsequently be used to refer unambiguously to that specific subscription.  The return parameter is the registrationID, which is a string-type value.  It is recommended that the server not implement registration in such a manner that one client can guess the registrationID of another.  For instance the use of sequential numbers for registrationIDs is discouraged.</wsdl:documentation>
+      <wsdl:input message="tns:RequestRegistrationIDSoapIn" />
+      <wsdl:output message="tns:RequestRegistrationIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterForService">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method establishs a subscription using a previously requested registrationID. The calling parameter registrationInfo is a complex type that includes the following information: registrationID - the previously requested registrationID obtained from the publisher by calling RequestRegistrationID, responseURL – the URL to which information should subsequently be published on this subscription, msFunction – the abbreviated string name of the MultiSpeak method making the subscription request (for instance, if an application that exposes the Meter Reading function has made the request, then the msFunction variable should include “MR”), methodsList – An array of strings that contain the string names of the MultiSpeak methods to which the subscriber would like to subscribe.  Subsequent calls to RegisterForService on an existing subscription replace prior subscription details in their entirety - they do NOT add to an existing subscription.</wsdl:documentation>
+      <wsdl:input message="tns:RegisterForServiceSoapIn" />
+      <wsdl:output message="tns:RegisterForServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UnregisterForService">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method deletes a previously established subscription (registration for service) that carries the registration identifer listed in the input parameter registrationID.</wsdl:documentation>
+      <wsdl:input message="tns:UnregisterForServiceSoapIn" />
+      <wsdl:output message="tns:UnregisterForServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRegistrationInfoByID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method requests the return of existing registration information (that is to say the details of what is subscribed on this subscription) for a specific registrationID.  The server should return a SOAPFault if the registrationID is not valid.</wsdl:documentation>
+      <wsdl:input message="tns:GetRegistrationInfoByIDSoapIn" />
+      <wsdl:output message="tns:GetRegistrationInfoByIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPublishMethods">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Requester requests list of methods to which this server can publish information.</wsdl:documentation>
+      <wsdl:input message="tns:GetPublishMethodsSoapIn" />
+      <wsdl:output message="tns:GetPublishMethodsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DomainMembersChangedNotification">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method permits a client to have changed information on domain members published to it using a previously arranged subscription, set up using the RegisterForServiceMethod. The client should first obtain a registrationID and then register for service, including the DomainMembersChangedNotification as one of the methods in the list of methods to which the client has subscribed.  The server shall include the registrationID for the subscription in the message header so that the client can determine the source of the  domainMember information. </wsdl:documentation>
+      <wsdl:input message="tns:DomainMembersChangedNotificationSoapIn" />
+      <wsdl:output message="tns:DomainMembersChangedNotificationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DomainNamesChangedNotification">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method permits a client to have changed information on domain names published to it using a previously arranged subscription, set up using the RegisterForServiceMethod. The client should first obtain a registrationID and then register for service, including the DomainNamesChangedNotification as one of the methods in the list of methods to which the client has subscribed.  The server shall include the registrationID for the subscription in the message header so that the client can determine the source of the  domainName information. </wsdl:documentation>
+      <wsdl:input message="tns:DomainNamesChangedNotificationSoapIn" />
+      <wsdl:output message="tns:DomainNamesChangedNotificationSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PP_ServerSoap" type="tns:PP_ServerSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="PingURL">
+      <soap:operation soapAction="http://www.multispeak.org/Version_4.1_Release/PingURL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:PingURLMultiSpeakMsgHeader" part="MultiSpeakMsgHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:PingURLMultiSpeakMsgHeader" part="MultiSpeakMsgHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMethods">
+      <soap:operation soapAction="http://www.multispeak.org/Version_4.1_Release/GetMethods" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetMethodsMultiSpeakMsgHeader" part="MultiSpeakMsgHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetMethodsMultiSpeakMsgHeader" part="MultiSpeakMsgHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDomainNames">
+      <soap:operation soapAction="http://www.multispeak.org/Version_4.1_Release/GetDomainNames" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetDomainNamesMultiSpeakMsgHeader" part="MultiSpeakMsgHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetDomainNamesMultiSpeakMsgHeader" part="MultiSpeakMsgHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDomainMembers">
+      <soap:operation soapAction="http://www.multispeak.org/Version_4.1_Release/GetDomainMembers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetDomainMembersMultiSpeakMsgHeader" part="MultiSpeakMsgHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetDomainMembersMultiSpeakMsgHeader" part="MultiSpeakMsgHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestRegistrationID">
+      <soap:operation soapAction="http://www.multispeak.org/Version_4.1_Release/RequestRegistrationID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RequestRegistrationIDMultiSpeakMsgHeader" part="MultiSpeakMsgHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:RequestRegistrationIDMultiSpeakMsgHeader" part="MultiSpeakMsgHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterForService">
+      <soap:operation soapAction="http://www.multispeak.org/Version_4.1_Release/RegisterForService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RegisterForServiceMultiSpeakMsgHeader" part="MultiSpeakMsgHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:RegisterForServiceMultiSpeakMsgHeader" part="MultiSpeakMsgHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnregisterForService">
+      <soap:operation soapAction="http://www.multispeak.org/Version_4.1_Release/UnregisterForService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UnregisterForServiceMultiSpeakMsgHeader" part="MultiSpeakMsgHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:UnregisterForServiceMultiSpeakMsgHeader" part="MultiSpeakMsgHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRegistrationInfoByID">
+      <soap:operation soapAction="http://www.multispeak.org/Version_4.1_Release/GetRegistrationInfoByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetRegistrationInfoByIDMultiSpeakMsgHeader" part="MultiSpeakMsgHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetRegistrationInfoByIDMultiSpeakMsgHeader" part="MultiSpeakMsgHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPublishMethods">
+      <soap:operation soapAction="http://www.multispeak.org/Version_4.1_Release/GetPublishMethods" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetPublishMethodsMultiSpeakMsgHeader" part="MultiSpeakMsgHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetPublishMethodsMultiSpeakMsgHeader" part="MultiSpeakMsgHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DomainMembersChangedNotification">
+      <soap:operation soapAction="http://www.multispeak.org/Version_4.1_Release/DomainMembersChangedNotification" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DomainMembersChangedNotificationMultiSpeakMsgHeader" part="MultiSpeakMsgHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:DomainMembersChangedNotificationMultiSpeakMsgHeader" part="MultiSpeakMsgHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DomainNamesChangedNotification">
+      <soap:operation soapAction="http://www.multispeak.org/Version_4.1_Release/DomainNamesChangedNotification" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DomainNamesChangedNotificationMultiSpeakMsgHeader" part="MultiSpeakMsgHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:DomainNamesChangedNotificationMultiSpeakMsgHeader" part="MultiSpeakMsgHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PP_ServerSoap12" type="tns:PP_ServerSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="PingURL">
+      <soap12:operation soapAction="http://www.multispeak.org/Version_4.1_Release/PingURL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:PingURLMultiSpeakMsgHeader" part="MultiSpeakMsgHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:PingURLMultiSpeakMsgHeader" part="MultiSpeakMsgHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMethods">
+      <soap12:operation soapAction="http://www.multispeak.org/Version_4.1_Release/GetMethods" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetMethodsMultiSpeakMsgHeader" part="MultiSpeakMsgHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetMethodsMultiSpeakMsgHeader" part="MultiSpeakMsgHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDomainNames">
+      <soap12:operation soapAction="http://www.multispeak.org/Version_4.1_Release/GetDomainNames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetDomainNamesMultiSpeakMsgHeader" part="MultiSpeakMsgHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetDomainNamesMultiSpeakMsgHeader" part="MultiSpeakMsgHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDomainMembers">
+      <soap12:operation soapAction="http://www.multispeak.org/Version_4.1_Release/GetDomainMembers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetDomainMembersMultiSpeakMsgHeader" part="MultiSpeakMsgHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetDomainMembersMultiSpeakMsgHeader" part="MultiSpeakMsgHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestRegistrationID">
+      <soap12:operation soapAction="http://www.multispeak.org/Version_4.1_Release/RequestRegistrationID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RequestRegistrationIDMultiSpeakMsgHeader" part="MultiSpeakMsgHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RequestRegistrationIDMultiSpeakMsgHeader" part="MultiSpeakMsgHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterForService">
+      <soap12:operation soapAction="http://www.multispeak.org/Version_4.1_Release/RegisterForService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RegisterForServiceMultiSpeakMsgHeader" part="MultiSpeakMsgHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RegisterForServiceMultiSpeakMsgHeader" part="MultiSpeakMsgHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnregisterForService">
+      <soap12:operation soapAction="http://www.multispeak.org/Version_4.1_Release/UnregisterForService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UnregisterForServiceMultiSpeakMsgHeader" part="MultiSpeakMsgHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UnregisterForServiceMultiSpeakMsgHeader" part="MultiSpeakMsgHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRegistrationInfoByID">
+      <soap12:operation soapAction="http://www.multispeak.org/Version_4.1_Release/GetRegistrationInfoByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetRegistrationInfoByIDMultiSpeakMsgHeader" part="MultiSpeakMsgHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetRegistrationInfoByIDMultiSpeakMsgHeader" part="MultiSpeakMsgHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPublishMethods">
+      <soap12:operation soapAction="http://www.multispeak.org/Version_4.1_Release/GetPublishMethods" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetPublishMethodsMultiSpeakMsgHeader" part="MultiSpeakMsgHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetPublishMethodsMultiSpeakMsgHeader" part="MultiSpeakMsgHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DomainMembersChangedNotification">
+      <soap12:operation soapAction="http://www.multispeak.org/Version_4.1_Release/DomainMembersChangedNotification" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DomainMembersChangedNotificationMultiSpeakMsgHeader" part="MultiSpeakMsgHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DomainMembersChangedNotificationMultiSpeakMsgHeader" part="MultiSpeakMsgHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DomainNamesChangedNotification">
+      <soap12:operation soapAction="http://www.multispeak.org/Version_4.1_Release/DomainNamesChangedNotification" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DomainNamesChangedNotificationMultiSpeakMsgHeader" part="MultiSpeakMsgHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DomainNamesChangedNotificationMultiSpeakMsgHeader" part="MultiSpeakMsgHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PP_Server">
+    <wsdl:port name="PP_ServerSoap" binding="tns:PP_ServerSoap">
+      <soap:address location="http://localhost:52763/PP_Server.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PP_ServerSoap12" binding="tns:PP_ServerSoap12">
+      <soap12:address location="http://localhost:52763/PP_Server.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

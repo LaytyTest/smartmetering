@@ -1,0 +1,3245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="b783e048-e938-442d-9275-6511f521247e" activeEnvironment="Default" name="Provisioning" resourceRoot="${projectDir}" soapui-version="5.2.1" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="24b5bfe3-89e9-4d53-946b-3b8293cd4233" wsaVersion="NONE" name="ProvisioningRequestBinding" type="wsdl" bindingName="{http://www.emeter.com/energyip/amiinterface}ProvisioningRequestBinding" soapVersion="1_1" anonymous="optional" definition="http://139.24.137.223:7070/services/UniversalAMIProvisioningService?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://139.24.137.223:7070/services/UniversalAMIProvisioningService?wsdl"><con:part><con:url>http://139.24.137.223:7070/services/UniversalAMIProvisioningService?wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://www.emeter.com/energyip/amiinterface" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.emeter.com/energyip/amiinterface" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/">
+  <wsdl:types>
+    <xs:schema>
+      <xs:import namespace="http://www.emeter.com/energyip/amiinterface" schemaLocation="http://139.24.137.223:7070/services/UniversalAMIProvisioningService?xsd=UniversalAMIInterface.xsd"/>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="MeterAssetSendTextMessageReply">
+    <wsdl:part element="tns:MeterAssetSendTextReplyMessage" name="parameter"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="MeterAssetDisconnectReply">
+    <wsdl:part element="tns:MeterAssetDisconnectReplyMessage" name="parameter"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="JobCancelReply">
+    <wsdl:part element="tns:JobCancelReplyMessage" name="parameter"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="MeterAssetSetMeterConfigurationRequest">
+    <wsdl:part element="tns:MeterAssetSetMeterConfigurationRequestMessage" name="parameter"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="JobCancelRequest">
+    <wsdl:part element="tns:JobCancelRequestMessage" name="parameter"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="MeterAssetCDCStatusRequest">
+    <wsdl:part element="tns:MeterAssetCDCStatusRequestMessage" name="parameter"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="MeterReadsReply">
+    <wsdl:part element="tns:MeterReadsReplyMessage" name="parameter"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="MeterAssetUpdateRequest">
+    <wsdl:part element="tns:MeterAssetUpdateRequestMessage" name="parameter"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="MeterAssetDisconnectRequest">
+    <wsdl:part element="tns:MeterAssetDisconnectRequestMessage" name="parameter"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="MeterAssetConnectReply">
+    <wsdl:part element="tns:MeterAssetConnectReplyMessage" name="parameter"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="MeterAssetAddRequest">
+    <wsdl:part element="tns:MeterAssetAddRequestMessage" name="parameter"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="MeterAssetCheckLoadLimitReply">
+    <wsdl:part element="tns:MeterAssetCheckLoadLimitReplyMessage" name="parameter"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="MeterAssetCheckLoadLimitRequest">
+    <wsdl:part element="tns:MeterAssetCheckLoadLimitRequestMessage" name="parameter"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="MeterAssetSetLoadLimitRequest">
+    <wsdl:part element="tns:MeterAssetSetLoadLimitRequestMessage" name="parameter"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="MeterAssetConnectArmedReply">
+    <wsdl:part element="tns:MeterAssetConnectArmedReplyMessage" name="parameter"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="MeterAssetCheckMeterConfigurationReply">
+    <wsdl:part element="tns:MeterAssetCheckMeterConfigurationReplyMessage" name="parameter"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="MeterAssetCheckMeterConfigurationRequest">
+    <wsdl:part element="tns:MeterAssetCheckMeterConfigurationRequestMessage" name="parameter"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="MeterAssetDeleteReply">
+    <wsdl:part element="tns:MeterAssetDeleteReplyMessage" name="parameter"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="MeterAssetConnectArmedRequest">
+    <wsdl:part element="tns:MeterAssetConnectArmedRequestMessage" name="parameter"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="MeterAssetDeleteRequest">
+    <wsdl:part element="tns:MeterAssetDeleteRequestMessage" name="parameter"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="MeterAssetSendTextMessageRequest">
+    <wsdl:part element="tns:MeterAssetSendTextRequestMessage" name="parameter"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="MeterAssetPingRequest">
+    <wsdl:part element="tns:MeterAssetPingRequestMessage" name="parameter"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="MeterAssetCDCStatusReply">
+    <wsdl:part element="tns:MeterAssetCDCStatusReplyMessage" name="parameter"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="MeterAssetConnectRequest">
+    <wsdl:part element="tns:MeterAssetConnectRequestMessage" name="parameter"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="Reply">
+    <wsdl:part element="tns:ReplyMessage" name="parameter"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="MeterAssetPingReply">
+    <wsdl:part element="tns:MeterAssetPingReplyMessage" name="parameter"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="MeterAssetUpdateReply">
+    <wsdl:part element="tns:MeterAssetUpdateReplyMessage" name="parameter"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="MeterReadsRequest">
+    <wsdl:part element="tns:MeterReadsRequestMessage" name="parameter"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="MeterAssetSetMeterConfigurationReply">
+    <wsdl:part element="tns:SetMeterConfigurationReplyMessage" name="parameter"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="MeterAssetAddReply">
+    <wsdl:part element="tns:MeterAssetAddReplyMessage" name="parameter"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="MeterAssetSetLoadLimitReply">
+    <wsdl:part element="tns:MeterAssetSetLoadLimitReplyMessage" name="parameter"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="IProvisioningRequest">
+    <wsdl:operation name="updateMeterAsset">
+      <wsdl:input message="tns:MeterAssetUpdateRequest"></wsdl:input>
+      <wsdl:output message="tns:MeterAssetUpdateReply"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteMeterAsset">
+      <wsdl:input message="tns:MeterAssetDeleteRequest"></wsdl:input>
+      <wsdl:output message="tns:MeterAssetDeleteReply"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addMeterAsset">
+      <wsdl:input message="tns:MeterAssetAddRequest"></wsdl:input>
+      <wsdl:output message="tns:MeterAssetAddReply"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ProvisioningRequestBinding" type="tns:IProvisioningRequest">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="updateMeterAsset">
+      <soap:operation soapAction="http://www.emeter.com/energyip/amiinterface/ProvisioningRequest/updateMeterAsset" style="document"/>
+      <wsdl:input>
+        <soap:body parts="parameter" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="parameter" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteMeterAsset">
+      <soap:operation soapAction="http://www.emeter.com/energyip/amiinterface/ProvisioningRequest/deleteMeterAsset" style="document"/>
+      <wsdl:input>
+        <soap:body parts="parameter" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="parameter" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addMeterAsset">
+      <soap:operation soapAction="http://www.emeter.com/energyip/amiinterface/ProvisioningRequest/addMeterAsset" style="document"/>
+      <wsdl:input>
+        <soap:body parts="parameter" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="parameter" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UniversalAMIProvisioningService">
+    <wsdl:port binding="tns:ProvisioningRequestBinding" name="ProvisioningRequest">
+      <soap:address location="http://139.24.137.223:7070/services/UniversalAMIProvisioningService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://139.24.137.223:7070/services/UniversalAMIProvisioningService?xsd=UniversalAMIInterface.xsd</con:url><con:content><![CDATA[<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.emeter.com/energyip/amiinterface" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.emeter.com/energyip/amiinterface">
+  <xs:include schemaLocation="http://139.24.137.223:7070/services/UniversalAMIProvisioningService?xsd=UniversalAMIInterfaceTypes.xsd"/>
+  <xs:complexType name="MessageHeader">
+    <xs:annotation>
+      <xs:documentation>Message header containing descriptive information
+				about the message.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:annotation>
+        <xs:documentation>General information regarding the message payload.
+					These fields are used to provide application context. The fields
+					are not intended to be a complete list of properties used by
+					middleware for message management.</xs:documentation>
+      </xs:annotation>
+      <xs:element minOccurs="0" name="verb">
+        <xs:annotation>
+          <xs:documentation>This enumerated list of verbs that can be used to
+						form message types in compliance with the IEC 61968 standard.
+						get -
+						Meter Data Request
+						reply - Meter Data Response
+						create - Send Meter
+						Data
+						created - Optional confirmation of receipt of Meter Data</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="cancel"/>
+            <xs:enumeration value="canceled"/>
+            <xs:enumeration value="change"/>
+            <xs:enumeration value="changed"/>
+            <xs:enumeration value="create"/>
+            <xs:enumeration value="created"/>
+            <xs:enumeration value="close"/>
+            <xs:enumeration value="closed"/>
+            <xs:enumeration value="delete"/>
+            <xs:enumeration value="deleted"/>
+            <xs:enumeration value="get"/>
+            <xs:enumeration value="show"/>
+            <xs:enumeration value="request"/>
+            <xs:enumeration value="reply"/>
+            <xs:enumeration value="ack"/>
+            <xs:enumeration value="subscribe"/>
+            <xs:enumeration value="unsubscribe"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="noun" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The Noun of the Control Area identifies the main
+						subject of the message type, typically a real world object defined
+						in the CIM.
+						Intended usage - MeterData</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element default="1" minOccurs="0" name="revision" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Revision level of the message type.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="dateTime" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation>Application level relevant time and date for when
+						this instance of the message type was produced. This is not
+						intended to be used by middleware for message management.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="source" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Source system. May be used for invocation context
+						authorization</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="messageID" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Unique message ID to be used for correlating
+						replies and tracking messages</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="asyncReplyTo" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>If reply is expected to be async then the
+						protocol specific address where reply needs to be sent</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="utilityId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="header" type="tns:MessageHeader"/>
+  <xs:complexType name="ReplyHeader">
+    <xs:sequence>
+      <xs:element name="replyCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="replyText" type="xs:string"/>
+      <xs:element minOccurs="0" name="correlationId" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>messageId of the Request message.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MeterAddRequestPayload">
+    <xs:complexContent>
+      <xs:extension base="tns:MeterChangeRequestPayload"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="MeterUpdateRequestPayload">
+    <xs:complexContent>
+      <xs:extension base="tns:MeterChangeRequestPayload"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="MeterDeleteRequestPayload">
+    <xs:complexContent>
+      <xs:extension base="tns:MeterChangeRequestPayload"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="MeterChangeRequestPayload">
+    <xs:sequence>
+      <xs:element name="meterAsset" type="tns:MeterAsset"/>
+      <xs:element name="comFunction" type="tns:ComFunction"/>
+      <xs:element name="serviceDeliveryPoint" type="tns:ServiceDeliveryPoint"/>
+      <xs:element name="serviceLocation" type="tns:ServiceLocation"/>
+      <xs:element name="customerAccount" type="tns:CustomerAccount"/>
+      <xs:element minOccurs="0" name="provisioningGroup" type="tns:ProvisioningGroup"/>
+      <xs:element minOccurs="0" name="collectionGroup" type="tns:CollectionGroup"/>
+      <xs:element minOccurs="0" name="broadcastGroup" type="tns:BroadcastGroup"/>
+      <xs:element minOccurs="0" name="executeStartTime" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="executeExpireTime" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PingRequest">
+    <xs:sequence>
+      <xs:element name="meterAsset" type="tns:MeterAsset"/>
+      <xs:element minOccurs="0" name="executeStartTime" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="executeExpireTime" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="JobCancelRequest">
+    <xs:sequence>
+      <xs:element name="correlationId" type="xs:string"/>
+      <xs:element minOccurs="0" name="executeStartTime" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="executeExpireTime" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MeterConnectRequestPayload">
+    <xs:sequence>
+      <xs:element name="meterAsset" type="tns:MeterAsset"/>
+      <xs:element minOccurs="0" name="executeStartTime" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="executeExpireTime" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MeterDisconnectRequestPayload">
+    <xs:sequence>
+      <xs:element name="meterAsset" type="tns:MeterAsset"/>
+      <xs:element minOccurs="0" name="executeStartTime" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="executeExpireTime" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MeterConnectArmedRequestPayload">
+    <xs:sequence>
+      <xs:element name="meterAsset" type="tns:MeterAsset"/>
+      <xs:element minOccurs="0" name="executeStartTime" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="executeExpireTime" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RequestMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="header" type="tns:MessageHeader"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReplyMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="header" type="tns:MessageHeader"/>
+        <xs:element minOccurs="0" name="reply" type="tns:ReplyHeader"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="MeterDataRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="startTime" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="endTime" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="versionTime" type="xs:dateTime"/>
+      <xs:element name="Meter" type="tns:MeterAsset"/>
+      <xs:element minOccurs="0" name="measurementProfile" type="xs:string"/>
+      <xs:element minOccurs="0" name="readingTypeList" type="tns:ReadingTypeList"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="eventCategory" type="xs:string"/>
+      <xs:element minOccurs="0" name="retrieveRegisterReads" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="retrieveIntervalReads" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="demandReset" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="retrieveEvents" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="executeStartTime" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="executeExpireTime" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ProvisioningGroup">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="fuseSize" type="xs:double"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="readingType" type="tns:ReadingType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CollectionGroup">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="readfrequency" type="xs:string"/>
+      <xs:element name="readwindowstarttime" type="xs:time"/>
+      <xs:element name="readwindowendtime" type="xs:time"/>
+      <xs:element name="deliveryfrequency" type="xs:string"/>
+      <xs:element name="deliverywindowstarttime" type="xs:time"/>
+      <xs:element name="deliverywindowendtime" type="xs:time"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BroadcastGroup">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MeterAssetAddRequestMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="header" type="tns:MessageHeader"/>
+        <xs:element minOccurs="0" name="payload" type="tns:MeterAddRequestPayload"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MeterAssetAddReplyMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="header" type="tns:MessageHeader"/>
+        <xs:element minOccurs="0" name="reply" type="tns:ReplyHeader"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MeterAssetUpdateRequestMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="header" type="tns:MessageHeader"/>
+        <xs:element minOccurs="0" name="payload" type="tns:MeterUpdateRequestPayload"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MeterAssetUpdateReplyMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="header" type="tns:MessageHeader"/>
+        <xs:element minOccurs="0" name="reply" type="tns:ReplyHeader"/>
+        <xs:element minOccurs="0" name="meterReads" type="tns:MeterReadings"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MeterAssetDeleteRequestMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="header" type="tns:MessageHeader"/>
+        <xs:element minOccurs="0" name="payload" type="tns:MeterDeleteRequestPayload"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MeterAssetDeleteReplyMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="header" type="tns:MessageHeader"/>
+        <xs:element minOccurs="0" name="reply" type="tns:ReplyHeader"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MeterAssetConnectRequestMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="header" type="tns:MessageHeader"/>
+        <xs:element minOccurs="0" name="payload" type="tns:MeterConnectRequestPayload"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MeterAssetConnectReplyMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="header" type="tns:MessageHeader"/>
+        <xs:element minOccurs="0" name="reply" type="tns:ReplyHeader"/>
+        <xs:element minOccurs="0" name="meterReads" type="tns:MeterReadings"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MeterAssetDisconnectRequestMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="header" type="tns:MessageHeader"/>
+        <xs:element minOccurs="0" name="payload" type="tns:MeterDisconnectRequestPayload"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MeterAssetDisconnectReplyMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="header" type="tns:MessageHeader"/>
+        <xs:element minOccurs="0" name="reply" type="tns:ReplyHeader"/>
+        <xs:element minOccurs="0" name="meterReads" type="tns:MeterReadings"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MeterAssetConnectArmedRequestMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="header" type="tns:MessageHeader"/>
+        <xs:element minOccurs="0" name="payload" type="tns:MeterConnectArmedRequestPayload"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MeterAssetConnectArmedReplyMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="header" type="tns:MessageHeader"/>
+        <xs:element minOccurs="0" name="reply" type="tns:ReplyHeader"/>
+        <xs:element minOccurs="0" name="meterReads" type="tns:MeterReadings"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MeterAssetPingRequestMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="header" type="tns:MessageHeader"/>
+        <xs:element minOccurs="0" name="payload" type="tns:PingRequest"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MeterAssetPingReplyMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="header" type="tns:MessageHeader"/>
+        <xs:element minOccurs="0" name="reply" type="tns:ExtReplyHeader"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="JobCancelRequestMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="header" type="tns:MessageHeader"/>
+        <xs:element minOccurs="0" name="payload" type="tns:JobCancelRequest"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="JobCancelReplyMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="header" type="tns:MessageHeader"/>
+        <xs:element minOccurs="0" name="reply" type="tns:ReplyHeader"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MeterReadsRequestMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="header" type="tns:MessageHeader"/>
+        <xs:element minOccurs="0" name="payload" type="tns:MeterDataRequest"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MeterReadsReplyMessage" type="tns:MeterReadsReply"/>
+  <xs:element name="MeterDataMessage" type="tns:MeterReadsMessageType"/>
+  <xs:complexType name="MeterReadsReply">
+    <xs:complexContent>
+      <xs:extension base="tns:MeterReadsMessageType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="reply" type="tns:ReplyHeader"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="MeterReadsMessageType">
+    <xs:sequence>
+      <xs:element name="header" type="tns:MessageHeader"/>
+      <xs:element minOccurs="0" name="payload" type="tns:MeterReadings"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MeterCDCStatusRequestPayload">
+    <xs:sequence>
+      <xs:element name="meterAsset" type="tns:MeterAsset"/>
+      <xs:element name="executeStartTime" type="xs:dateTime"/>
+      <xs:element name="executeExpireTime" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MeterAssetCDCStatusRequestMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="header" type="tns:MessageHeader"/>
+        <xs:element minOccurs="0" name="payload" type="tns:MeterCDCStatusRequestPayload"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MeterAssetCDCStatusReplyMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="header" type="tns:MessageHeader"/>
+        <xs:element minOccurs="0" name="reply" type="tns:ExtReplyHeader"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="MeterSendTextMessageRequestPayload">
+    <xs:sequence>
+      <xs:element name="meterAsset" type="tns:MeterAsset"/>
+      <xs:element name="startDateTime" type="xs:dateTime"/>
+      <xs:element name="duration" type="xs:integer"/>
+      <xs:element name="textMessage" type="xs:string"/>
+      <xs:element name="priority" type="xs:string"/>
+      <xs:element name="confirmationRequired" type="xs:boolean"/>
+      <xs:element name="issuerId" type="xs:string"/>
+      <xs:element name="issuerTrackingId" type="xs:string"/>
+      <xs:element name="transmissionMode" type="xs:string"/>
+      <xs:element name="reason" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MeterAssetSendTextRequestMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="header" type="tns:MessageHeader"/>
+        <xs:element minOccurs="0" name="payload" type="tns:MeterSendTextMessageRequestPayload"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MeterAssetSendTextReplyMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="header" type="tns:MessageHeader"/>
+        <xs:element minOccurs="0" name="reply" type="tns:ReplyHeader"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!--Set Load Limit-->
+  <xs:complexType name="MeterSetLoadLimitRequestPayload">
+    <xs:sequence>
+      <xs:element name="meterAsset" type="tns:MeterAsset"/>
+      <xs:element name="startDateTime" type="xs:dateTime"/>
+      <xs:element name="emergencyProfileStartTime" type="xs:dateTime"/>
+      <xs:element name="emergencyProfileDuration" type="xs:integer"/>
+      <xs:element name="loadLimitProfile" type="xs:string"/>
+      <xs:element name="clearLoadLimitProfile" type="xs:boolean"/>
+      <xs:element name="issuerId" type="xs:string"/>
+      <xs:element name="issuerTrackingId" type="xs:string"/>
+      <xs:element name="reason" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MeterAssetSetLoadLimitRequestMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="header" type="tns:MessageHeader"/>
+        <xs:element minOccurs="0" name="payload" type="tns:MeterSetLoadLimitRequestPayload"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MeterAssetSetLoadLimitReplyMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="header" type="tns:MessageHeader"/>
+        <xs:element minOccurs="0" name="reply" type="tns:SetLoadLimitReplyHeader"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!--Set Load Limit Ends-->
+  <!--Check Load Limit-->
+  <xs:complexType name="MeterCheckLoadLimitRequestPayload">
+    <xs:sequence>
+      <xs:element name="meterAsset" type="tns:MeterAsset"/>
+      <xs:element name="loadLimitProfile" type="xs:string"/>
+      <xs:element name="hasLoadLimitProfile" type="xs:boolean"/>
+      <xs:element name="issuerId" type="xs:string"/>
+      <xs:element name="issuerTrackingId" type="xs:string"/>
+      <xs:element name="reason" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MeterAssetCheckLoadLimitRequestMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="header" type="tns:MessageHeader"/>
+        <xs:element minOccurs="0" name="payload" type="tns:MeterCheckLoadLimitRequestPayload"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MeterAssetCheckLoadLimitReplyMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="header" type="tns:MessageHeader"/>
+        <xs:element minOccurs="0" name="reply" type="tns:CheckLoadLimitReplyHeader"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!--Check Load Limit Ends-->
+  <!--Check Meter Configuration-->
+  <xs:complexType name="CheckMeterConfigurationRequestPayload">
+    <xs:sequence>
+      <xs:element name="meterAsset" type="tns:MeterAsset"/>
+      <xs:element minOccurs="0" name="measurementProfile" type="xs:string"/>
+      <xs:element minOccurs="0" name="touProfile" type="tns:ConfigurationProfile"/>
+      <xs:element minOccurs="0" name="holdayProfile" type="tns:ConfigurationProfile"/>
+      <xs:element minOccurs="0" name="loadLimitProfile" type="tns:ConfigurationProfile"/>
+      <xs:element minOccurs="0" name="loadControlTimeSwitchProfile" type="tns:ConfigurationProfile"/>
+      <xs:element minOccurs="0" name="issuerId" type="xs:string"/>
+      <xs:element minOccurs="0" name="issuerTrackingId" type="xs:string"/>
+      <xs:element minOccurs="0" name="reason" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MeterAssetCheckMeterConfigurationRequestMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="header" type="tns:MessageHeader"/>
+        <xs:element minOccurs="0" name="payload" type="tns:CheckMeterConfigurationRequestPayload"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MeterAssetCheckMeterConfigurationReplyMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="header" type="tns:MessageHeader"/>
+        <xs:element minOccurs="0" name="reply" type="tns:CheckMeterConfigurationReplyHeader"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ConfigurationProfileStatus">
+    <xs:attribute name="expectedValues" type="xs:string"/>
+    <xs:attribute name="isSet" type="xs:boolean"/>
+    <xs:attribute name="isValid" type="xs:boolean"/>
+    <xs:attribute name="remarks" type="xs:string"/>
+  </xs:complexType>
+  <!--Check Meter Configuration Ends-->
+  <!--SetMeter Configuration Entries-->
+  <xs:element name="MeterAssetSetMeterConfigurationRequestMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="header" type="tns:MessageHeader"/>
+        <xs:element minOccurs="0" name="payload" type="tns:SetMeterConfigurationRequestPayload"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="SetMeterConfigurationRequestPayload">
+    <xs:sequence>
+      <xs:element name="meterAsset" type="tns:MeterAsset"/>
+      <xs:element name="comFunction" type="tns:ComFunction"/>
+      <xs:element name="serviceDeliveryPoint" type="tns:ServiceDeliveryPoint"/>
+      <xs:element name="serviceLocation" type="tns:ServiceLocation"/>
+      <xs:element name="customerAccount" type="tns:CustomerAccount"/>
+      <xs:element minOccurs="0" name="executeStartTime" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="executeExpireTime" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="measurementProfile" type="xs:string"/>
+      <xs:element minOccurs="0" name="touProfile" type="tns:ConfigurationProfile"/>
+      <xs:element minOccurs="0" name="holdayProfile" type="tns:ConfigurationProfile"/>
+      <xs:element minOccurs="0" name="loadLimitProfile" type="tns:ConfigurationProfile"/>
+      <xs:element minOccurs="0" name="loadControlTimeSwitchProfile" type="tns:ConfigurationProfile"/>
+      <xs:element minOccurs="0" name="issuerId" type="xs:string"/>
+      <xs:element minOccurs="0" name="issuerTrackingId" type="xs:string"/>
+      <xs:element minOccurs="0" name="reason" type="xs:string"/>
+      <xs:element minOccurs="0" name="activationDateTime " type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ConfigurationProfile">
+    <xs:attribute name="name" type="xs:string"/>
+    <xs:attribute name="isSet" type="xs:boolean"/>
+  </xs:complexType>
+  <xs:element name="SetMeterConfigurationReplyMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="header" type="tns:MessageHeader"/>
+        <xs:element minOccurs="0" name="reply" type="tns:ReplyHeader"/>
+        <xs:element name="activationDateTime " type="xs:dateTime"/>
+        <xs:element minOccurs="0" name="expectInitialReads" type="xs:boolean"/>
+        <xs:element minOccurs="0" name="expectFinalReads" type="xs:boolean"/>
+        <xs:element minOccurs="0" name="initialMeterReads" type="tns:MeterReading"/>
+        <xs:element minOccurs="0" name="finalMeterReads" type="tns:MeterReading"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!--SetMeterConfiguration Entries End-->
+  <xs:complexType name="ExtReplyHeader">
+    <xs:complexContent>
+      <xs:extension base="tns:ReplyHeader">
+        <xs:sequence>
+          <xs:element name="status" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SetLoadLimitReplyHeader">
+    <xs:complexContent>
+      <xs:extension base="tns:ReplyHeader">
+        <xs:sequence>
+          <xs:element name="activationDateTime" type="xs:dateTime"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CheckLoadLimitReplyHeader">
+    <xs:complexContent>
+      <xs:extension base="tns:ReplyHeader">
+        <xs:sequence>
+          <xs:element name="verificationDateTime" type="xs:dateTime"/>
+          <xs:element name="isVerified" type="xs:boolean"/>
+          <xs:element name="hasloadLimitProfile" type="xs:boolean"/>
+          <xs:element name="loadLimitProfile" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CheckMeterConfigurationReplyHeader">
+    <xs:complexContent>
+      <xs:extension base="tns:ReplyHeader">
+        <xs:sequence>
+          <xs:element name="verificationDateTime" type="xs:dateTime"/>
+          <xs:element name="isVerified" type="xs:boolean"/>
+          <xs:element name="additionalInfo" type="xs:string"/>
+          <xs:element minOccurs="0" name="measurementProfile" type="tns:ConfigurationProfileStatus"/>
+          <xs:element minOccurs="0" name="touProfile" type="tns:ConfigurationProfileStatus"/>
+          <xs:element minOccurs="0" name="holdayProfile" type="tns:ConfigurationProfileStatus"/>
+          <xs:element minOccurs="0" name="loadLimitProfile" type="tns:ConfigurationProfileStatus"/>
+          <xs:element minOccurs="0" name="loadControlTimeSwitchProfile" type="tns:ConfigurationProfileStatus"/>
+          <xs:element minOccurs="0" name="issuerId" type="xs:string"/>
+          <xs:element minOccurs="0" name="issuerTrackingId" type="xs:string"/>
+          <xs:element minOccurs="0" name="reason" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://139.24.137.223:7070/services/UniversalAMIProvisioningService?xsd=UniversalAMIInterfaceTypes.xsd</con:url><con:content><![CDATA[<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.emeter.com/energyip/amiinterface" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.emeter.com/energyip/amiinterface">
+  <xs:complexType name="IdentifiedObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="mRID" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Object instance identifier</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="idType" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Type of identifier. For e.g. for a Meter this
+						can be METER_BADGE_ID or METER_UDC_ASSET_ID. For
+						a meter communicaiton module this can be
+						METER_COMMUNICATION_MODULE_NETWORK_ID</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="pathName" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The namespace within which the id is defined.
+						Multiple tokens in the namespace can be
+						separated by the forward slash character. The
+						interpretation of namespace tokens is dependent
+						on the type of identifier. For e.g. for
+						METER_UDC_ASSET_ID namespace will be populated
+						with the organisationCode (utility id)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="parameter" type="tns:Parameter">
+        <xs:annotation>
+          <xs:documentation>The list of parameters for an asset.
+								Note: Some core parameter are part of the respective Asset Element.
+								For e.g.  form ,base and voltage rating are part of Electric Meter.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CustomerAccount">
+    <xs:complexContent>
+      <xs:extension base="tns:IdentifiedObject">
+        <xs:sequence>
+          <xs:element name="billingCycle" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Billing cycle identifies cycle day on
+								which the related Customer Account will
+								normally be billed. It is used in
+								determining when to produce the billing
+								statement for the Customer Account.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <!--EIP-14428-->
+  <xs:complexType name="DistributionNode">
+    <xs:complexContent>
+      <xs:extension base="tns:IdentifiedObject"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Channel">
+    <xs:complexContent>
+      <xs:extension base="tns:IdentifiedObject"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <!--EIP-14428 Ends-->
+  <xs:complexType name="Asset">
+    <xs:annotation>
+      <xs:documentation>A tangible resource of the utility, like equipment like
+				Meter, ComFunction etc. This is the parent class for
+				asset sub classes.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="tns:IdentifiedObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="manufacturer" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Manufacturer name</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="modelNumber" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Manufacturer's model number.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="manufacturedDate" type="xs:dateTime">
+            <xs:annotation>
+              <xs:documentation>Data asset was manufactured.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="serialNumber" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Serial number of asset.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="lotNumber" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Even for the same model and version
+								number, many assets are manufactured in
+								lots. The lotNumber identifies the
+								specific lot for this asset.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="testDate" type="xs:dateTime">
+            <xs:annotation>
+              <xs:documentation>The date and time this asset was last
+								tested .</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Parameter">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="value" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MeterAsset">
+    <xs:complexContent>
+      <xs:extension base="tns:Asset">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="serviceType" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Gas, Water or Electric</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:choice minOccurs="0">
+            <xs:element minOccurs="0" name="electricMeter" type="tns:ElectricMeter"/>
+            <xs:element minOccurs="0" name="waterMeter" type="tns:WaterMeter"/>
+            <xs:element minOccurs="0" name="gasMeter" type="tns:GasMeter"/>
+          </xs:choice>
+          <xs:element minOccurs="0" name="numDigits" type="xs:integer">
+            <xs:annotation>
+              <xs:documentation>The number of dials on the meter
+								register for an electromechanical meter;
+								for an electronic meter, the number of
+								digits on the meter display.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="typeMeter" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>diaphram, rotary or pulse</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element maxOccurs="1" minOccurs="0" name="ProgramId" type="xs:string"></xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ElectricMeter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="aepCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="form" type="xs:string"/>
+      <xs:element minOccurs="0" name="base" type="xs:string"/>
+      <xs:element minOccurs="0" name="voltageRating" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The service voltage at which the meter is
+						designed to operate. Typical voltage ratings in
+						North America are 120, 240, 277 or 480V.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="currentRating" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The current class of the meter. Typical current
+						classes in North America are 10, 20, 100, 200,
+						or 320 Amps.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="frequencyRating" type="xs:string"/>
+      <xs:element minOccurs="0" name="numPhases" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>The number of phases for this service point.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="numWires" type="xs:string"/>
+      <xs:element minOccurs="0" name="kh" type="xs:string"/>
+      <xs:element minOccurs="0" name="registerRatio" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WaterMeter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="inletDiameter" type="xs:string"/>
+      <xs:element minOccurs="0" name="outletDiameter" type="xs:string"/>
+      <xs:element minOccurs="0" name="operatingPressure" type="xs:string"/>
+      <xs:element minOccurs="0" name="flowRange" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="GasMeter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="operatingPressure" type="xs:string"/>
+      <xs:element minOccurs="0" name="flowRange" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ComFunction">
+    <xs:complexContent>
+      <xs:extension base="tns:Asset">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="amrAddress" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The communication ID number (e.g. serial
+								number, IP address, telephone number,
+								etc.) of the AMR module which serves
+								this meter.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="amrSystem" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The metering system responsible for
+								communications to the meter.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ServiceLocation">
+    <xs:complexContent>
+      <xs:extension base="tns:ErpAddress">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="nearestIntersection" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The names of streets at the nearest
+								intersection to work area.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="subdivision" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Name, identifier, or description of the
+								subdivision, if applicable, in which
+								work is to occur.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="lot" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Name, identifier, or description of the
+								lot, if applicable, in which work is to
+								occur.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="block" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Name, identifier, or description of the
+								block, if applicable, in which work is
+								to occur.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="locationType" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The type of location: geographical,
+								functional accounting, other.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="locationCode" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>A codified representation of the
+								location.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="latitude" type="xs:string"/>
+          <xs:element minOccurs="0" name="longitude" type="xs:string"/>
+          <xs:element minOccurs="0" name="locationAccuracy" type="xs:string"/>
+          <xs:element minOccurs="0" name="locationAccuracyUnits" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ErpAddress">
+    <xs:complexContent>
+      <xs:extension base="tns:IdentifiedObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="streetNumber" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The designator of the specific location
+								on the street.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="streetName" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The name of the street.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="streetSuffix" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Suffix to the street name. For examle,
+								North, South, East, West.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="streetPrefix" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Prefix to the street name. For examle,
+								North, South, East, West.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="streetType" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Type of street. Examples include:
+								street, circle, boulevard, avenue, road,
+								drive, etc.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="poBox" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The post office box.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="suiteNumber" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>The number of the apartment or suite.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="addressGeneral" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Additional address information, for
+								example a mailstop.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="addressGeneral2" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Additional address information, for
+								example a mailstop.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="city" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Name of city.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="stateOrProvince" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Name of the state or province.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="country" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Name of the country.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="postalCode" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Postal code for the address.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ServiceDeliveryPoint">
+    <xs:complexContent>
+      <xs:extension base="tns:IdentifiedObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="serviceType" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Service type: Gas, Water, Electric.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="lifeSupport" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="readRoute" type="tns:IdentifiedObject"/>
+          <xs:element minOccurs="0" name="readSequence" type="xs:string"/>
+          <xs:element minOccurs="0" name="averageDailyUsage" type="xs:double"/>
+          <xs:element name="locationCode" type="xs:string"/>
+          <xs:element name="serviceDeliveryRemarks" type="xs:string"/>
+          <xs:element name="latitude" type="xs:double"/>
+          <xs:element name="longitude" type="xs:double"/>
+          <xs:element minOccurs="0" name="locationAccuracy" type="xs:string"/>
+          <xs:element minOccurs="0" name="locationAccuracyUnits" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ReadingType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="mRID" type="xs:string"/>
+      <xs:element minOccurs="0" name="measurementType" type="xs:string"/>
+      <xs:element minOccurs="0" name="touBinNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="unit" type="xs:string"/>
+      <xs:element minOccurs="0" name="touCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="channelNumber" type="xs:int"/>
+      <xs:element minOccurs="0" name="logicalChannelNumber" type="xs:int"/>
+      <xs:element minOccurs="0" name="aggregateTimePeriod" type="xs:string"/>
+      <xs:element minOccurs="0" name="intervalLength" type="xs:int"/>
+      <xs:element minOccurs="0" name="readSequence" type="xs:string"/>
+      <xs:element minOccurs="0" name="precision" type="xs:int"/>
+      <xs:element minOccurs="0" name="scale" type="xs:int"/>
+      <xs:element minOccurs="0" name="direction" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ReadingTypeList">
+    <xs:sequence>
+      <xs:choice minOccurs="0">
+        <xs:element name="readingTypeId" type="xs:string"/>
+        <xs:element name="ReadingType" type="tns:ReadingType"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="IntervalBlock">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="readingTypeId" type="xs:string"/>
+      <xs:element minOccurs="0" name="ReadingType" type="tns:ReadingType"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="IReading" type="tns:IReading"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="IReading">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="startTime" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="endTime" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="intervalLength" type="xs:int"/>
+      <xs:element minOccurs="0" name="value" type="xs:double"/>
+      <xs:element minOccurs="0" name="demandPeakTime" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="measurementSource" type="xs:string"/>
+      <xs:element minOccurs="0" name="flags" type="xs:long"/>
+      <xs:element minOccurs="0" name="status" type="xs:long">
+        <xs:annotation>
+          <xs:documentation>This will hold a set of flag values where each bit will have a different meaning.
+						Meaning of each bit is listed below starting from the LSB:
+						1: reading is externally vee or not?
+						2-64: Reserved</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="collectionTime" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="quality" type="tns:Quality"/>
+      <xs:element minOccurs="0" name="amiRecordNum" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--Added for VEE7.0-->
+  <xs:complexType name="Quality">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="validationStatus" type="xs:string"/>
+      <xs:element minOccurs="0" name="changeMethod" type="xs:string"/>
+      <xs:element minOccurs="0" name="failCode" type="xs:string"/>
+      <!--Interval record can be locked.  Locked means that interval cannot be updated by any other entity, except for certain manual edits.-->
+      <xs:element minOccurs="0" name="locked" type="xs:boolean"/>
+      <!--ESITMATED flag.  Can contain values (E,M,F).  
+					E - Estimated: could be estimated by EIP or external system.  
+					M - Manual: Manually Entered.  
+					F - Forward Estimated: Estimating an interval in the future.-->
+      <xs:element minOccurs="0" name="estimated" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Reading">
+    <xs:complexContent>
+      <xs:extension base="tns:IReading">
+        <xs:sequence>
+          <xs:choice minOccurs="0">
+            <xs:element name="readingTypeId" type="xs:string"/>
+            <xs:element name="ReadingType" type="tns:ReadingType"/>
+          </xs:choice>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="RestrictedReason">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="FinalRead"/>
+      <xs:enumeration value="InitialRead"/>
+      <xs:enumeration value="SpecialRead"/>
+      <xs:enumeration value="AfterEvent"/>
+      <xs:enumeration value="BeforeEvent"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="MeterReading">
+    <xs:annotation>
+      <xs:documentation>Only IntervalBlock element will be output in v1 of this
+				service implementation.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:annotation>
+        <xs:documentation>reasonForRead : valid values are InitialRead , FinalRead and SpecialRead.
+				InitialRead signifies the reads are specifically intial reads after the 
+				meter program has been changed or meter has been reconfigured.
+				
+				FinalRead signifies the reads are specifically closing reads before the 
+				meter program has been changed or meter has been reconfigured.
+				
+				SpecialRead : This signifies an special reason for the reads received.Not
+				currently used.</xs:documentation>
+      </xs:annotation>
+      <xs:element minOccurs="0" name="reasonForRead" type="tns:RestrictedReason"/>
+      <xs:element minOccurs="0" name="ServiceDeliveryPoint" type="tns:ServiceDeliveryPoint"/>
+      <xs:element minOccurs="0" name="Meter" type="tns:MeterAsset"/>
+      <xs:element minOccurs="0" name="ComFunction" type="tns:ComFunction"/>
+      <xs:element minOccurs="0" name="CustomerAccount" type="tns:CustomerAccount"/>
+      <xs:element minOccurs="0" name="ServiceLocation" type="tns:ServiceLocation"/>
+      <!--EIP-14428-->
+      <xs:element minOccurs="0" name="Channel" type="tns:Channel"/>
+      <xs:element minOccurs="0" name="DistributionNode" type="tns:DistributionNode"/>
+      <!--EIP-14428 Ends-->
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="Reading" type="tns:Reading"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="IntervalBlock" type="tns:IntervalBlock"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="Event" type="tns:Event"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MeterReading" type="tns:MeterReading"/>
+  <xs:complexType name="MeterReadings">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="startTime" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="endTime" type="xs:dateTime"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" ref="tns:MeterReading"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Event">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="category" type="xs:string"/>
+      <xs:element minOccurs="0" name="name" type="xs:string"/>
+      <xs:element minOccurs="0" name="timestamp" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="description" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="argument">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="value" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="source" type="xs:string"/>
+      <xs:element minOccurs="0" name="collectionTime" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="eventStartTime" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="threshold" nillable="true" type="xs:double"/>
+      <xs:element minOccurs="0" name="measuredValue" nillable="true" type="xs:double"/>
+      <xs:element minOccurs="0" name="duration" nillable="true" type="xs:double"/>
+      <xs:element default="-1" minOccurs="0" name="eventRecordNum" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://139.24.137.223:7070/services/UniversalAMIProvisioningService</con:endpoint><con:endpoint>http://localhost:8080/axis2/UniversalAMIServer/services/ProvisioningRequest</con:endpoint></con:endpoints><con:operation id="debbdd9e-f075-48b6-9b68-70426be6ef03" isOneWay="false" action="http://www.emeter.com/energyip/amiinterface/ProvisioningRequest/addMeterAsset" name="addMeterAsset" bindingOperationName="addMeterAsset" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d986139a-4c2c-4790-8547-bf17061dbb87" name="AddMeter_Additional"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://139.24.137.223:7070/services/UniversalAMIProvisioningService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ami="http://www.emeter.com/energyip/amiinterface">
+   <soapenv:Header/>
+   <soapenv:Body>
+	<ami:MeterAssetAddRequestMessage xmlns:ami="http://www.emeter.com/energyip/amiinterface" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+	  <ami:header>
+	    <ami:verb>request</ami:verb>
+	    <ami:noun>MeterAdd</ami:noun>
+	    <ami:revision>1</ami:revision>
+	    <ami:dateTime>2014-10-30T14:09:00.602+08:00</ami:dateTime>
+	    <ami:source>EIP</ami:source>
+	    <ami:messageID>92</ami:messageID>
+	    <ami:asyncReplyTo>http://139.24.137.195:8890</ami:asyncReplyTo>
+	  </ami:header>
+	  <ami:payload>
+	    <ami:meterAsset>
+	      <ami:mRID>ISK1040770373653</ami:mRID>
+	      <ami:idType>METER_X_UDC_ASSET_ID</ami:idType>
+	      <ami:pathName>GPC</ami:pathName>     
+	      <ami:parameter>
+			<ami:name>OptOut</ami:name>
+			<ami:value>true</ami:value>
+		</ami:parameter>
+		<ami:parameter>
+			<ami:name>DisplayLoadProfileOn</ami:name>
+			<ami:value>true</ami:value>
+		</ami:parameter>
+		<ami:parameter>
+			<ami:name>CustomerInterfaceOn</ami:name>a
+			<ami:value>true</ami:value>
+		</ami:parameter>
+		<ami:parameter>
+			<ami:name>DisplayReset</ami:name>
+			<ami:value>2016-11-30T14:09:00</ami:value>
+		</ami:parameter>	
+	      <ami:serviceType>Electric</ami:serviceType>
+	      <ami:electricMeter>
+	        <ami:numWires>3</ami:numWires>
+	      </ami:electricMeter>
+	      <ami:numDigits>6</ami:numDigits>
+	    </ami:meterAsset>
+	    <ami:comFunction>
+	      <ami:mRID>YMT05001370</ami:mRID>
+	      <ami:idType>METER_COMMUNICATION_MODULE_X_NETWORK_ID</ami:idType>
+	      <ami:pathName>UAA EIP</ami:pathName>
+	    </ami:comFunction>
+	    <ami:serviceDeliveryPoint>
+	      <ami:mRID>7330000286998</ami:mRID>
+	      <ami:idType>SDP_X_UDC_ASSET_ID</ami:idType>
+	      <ami:pathName>GPC</ami:pathName>	      
+	      <ami:serviceType>Electric</ami:serviceType>
+	      <ami:readRoute>
+	        <ami:mRID>Monthly</ami:mRID>
+	        <ami:idType>ROUTE_X_UDC_ASSET_ID</ami:idType>
+	        <ami:pathName>16486977</ami:pathName>
+	      </ami:readRoute>
+	      <ami:serviceDeliveryRemarks>YMT05001370</ami:serviceDeliveryRemarks>
+	    </ami:serviceDeliveryPoint>
+	    <ami:serviceLocation>
+	      <ami:mRID>16486977</ami:mRID>
+	      <ami:idType>PREMISE_X_CLIENT_PRMSE_ID</ami:idType>
+	      <ami:pathName>GPC</ami:pathName>
+	      <ami:addressGeneral>testaddress</ami:addressGeneral>
+	      <ami:city>ShanTou</ami:city>
+	      <ami:stateOrProvince>Guang Dong</ami:stateOrProvince>
+	      <ami:country>China</ami:country>
+	      <ami:postalCode>515000</ami:postalCode>
+	    </ami:serviceLocation>
+	    <ami:customerAccount>
+	      <ami:mRID>16486977</ami:mRID>
+	      <ami:idType>ACCOUNT_X_UDC_ACCNT_ID</ami:idType>
+	      <ami:pathName>16486977</ami:pathName>
+	      <ami:billingCycle>Monthly</ami:billingCycle>
+	    </ami:customerAccount>
+	    <ami:executeStartTime>2014-10-30T06:08:58.000Z</ami:executeStartTime>
+	    <ami:executeExpireTime>2014-10-31T06:08:58.000Z</ami:executeExpireTime>
+	  </ami:payload>
+	</ami:MeterAssetAddRequestMessage>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>wcq</con:username><con:password>Password@1</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:preemptive>true</con:preemptive><con:authType>Preemptive</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.emeter.com/energyip/amiinterface/ProvisioningRequest/addMeterAsset"/><con:wsrmConfig version="1.2"/></con:call><con:call id="b664c31c-09cd-4b5a-9625-7e95a4bf5edc" name="Additional_AddMeter"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://139.24.137.223:7070/services/UniversalAMIProvisioningService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ami="http://www.emeter.com/energyip/amiinterface">
+   <soapenv:Header/>
+   <soapenv:Body>
+	<ami:MeterAssetAddRequestMessage xmlns:ami="http://www.emeter.com/energyip/amiinterface" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+	  <ami:header>
+	    <ami:verb>request</ami:verb>
+	    <ami:noun>MeterAdd</ami:noun>
+	    <ami:revision>1</ami:revision>
+	    <ami:dateTime>2014-10-30T14:09:00.602+08:00</ami:dateTime>
+	    <ami:source>EIP</ami:source>
+	    <ami:messageID>92</ami:messageID>
+	    <ami:asyncReplyTo>http://139.24.137.244:8080/UniversalAMIAdapterWS/services/UniversalAMIProvisioningResponseService?wsdl</ami:asyncReplyTo>
+	  </ami:header>
+	  <ami:payload>
+	    <ami:meterAsset>
+	      <ami:mRID>73300006</ami:mRID>
+	      <ami:idType>METER_X_UDC_ASSET_ID</ami:idType>
+	      <ami:pathName>GPC</ami:pathName>
+	      <ami:parameter>
+	        <ami:name>Program Id</ami:name>
+	        <ami:value>IM100</ami:value>
+	      </ami:parameter>
+		<ami:parameter>
+			<ami:name>OptOut</ami:name>
+			<ami:value>true</ami:value>
+		</ami:parameter>
+		<ami:parameter>
+			<ami:name>DisplayLoadProfileOn</ami:name>
+			<ami:value>true</ami:value>
+		</ami:parameter>
+		<ami:parameter>
+			<ami:name>CustomerInterfaceOn</ami:name>
+			<ami:value>true</ami:value>
+		</ami:parameter>
+		<ami:parameter>
+			<ami:name>DisplayLoadProfileDate</ami:name>
+			<ami:value>2016-03-15</ami:value>
+		</ami:parameter>
+	      <ami:serviceType>Electric</ami:serviceType>
+	      <ami:electricMeter>
+	        <ami:numWires>3</ami:numWires>
+	      </ami:electricMeter>
+	      <ami:numDigits>6</ami:numDigits>
+	    </ami:meterAsset>
+	    <ami:comFunction>
+	      <ami:mRID>YMT05001370</ami:mRID>
+	      <ami:idType>METER_COMMUNICATION_MODULE_X_NETWORK_ID</ami:idType>
+	      <ami:pathName>UAA EIP</ami:pathName>
+	    </ami:comFunction>
+	    <ami:serviceDeliveryPoint>
+	      <ami:mRID>7330000286998</ami:mRID>
+	      <ami:idType>SDP_X_UDC_ASSET_ID</ami:idType>
+	      <ami:pathName>GPC</ami:pathName>	      
+	      <ami:serviceType>Electric</ami:serviceType>
+	      <ami:readRoute>
+	        <ami:mRID>Monthly</ami:mRID>
+	        <ami:idType>ROUTE_X_UDC_ASSET_ID</ami:idType>
+	        <ami:pathName>16486977</ami:pathName>
+	      </ami:readRoute>
+	      <ami:serviceDeliveryRemarks>YMT05001370</ami:serviceDeliveryRemarks>
+	    </ami:serviceDeliveryPoint>
+	    <ami:serviceLocation>
+	      <ami:mRID>16486977</ami:mRID>
+	      <ami:idType>PREMISE_X_CLIENT_PRMSE_ID</ami:idType>
+	      <ami:pathName>GPC</ami:pathName>
+	      <ami:addressGeneral>testaddress</ami:addressGeneral>
+	      <ami:city>ShanTou</ami:city>
+	      <ami:stateOrProvince>Guang Dong</ami:stateOrProvince>
+	      <ami:country>China</ami:country>
+	      <ami:postalCode>515000</ami:postalCode>
+	    </ami:serviceLocation>
+	    <ami:customerAccount>
+	      <ami:mRID>16486977</ami:mRID>
+	      <ami:idType>ACCOUNT_X_UDC_ACCNT_ID</ami:idType>
+	      <ami:pathName>16486977</ami:pathName>
+	      <ami:billingCycle>Monthly</ami:billingCycle>
+	    </ami:customerAccount>
+	    <ami:executeStartTime>2014-10-30T06:08:58.000Z</ami:executeStartTime>
+	    <ami:executeExpireTime>2014-10-31T06:08:58.000Z</ami:executeExpireTime>
+	  </ami:payload>
+	</ami:MeterAssetAddRequestMessage>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.emeter.com/energyip/amiinterface/ProvisioningRequest/addMeterAsset"/><con:wsrmConfig version="1.2"/></con:call><con:call id="bab9e257-0cca-422c-a179-198fd6160c7d" name="AddMeter_AllParameters"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://139.24.137.223:7070/services/UniversalAMIProvisioningService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ami="http://www.emeter.com/energyip/amiinterface">
+   <soapenv:Header/>
+   <soapenv:Body>
+	<ami:MeterAssetAddRequestMessage xmlns:ami="http://www.emeter.com/energyip/amiinterface" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+	  <ami:header>
+	    <ami:verb>request</ami:verb>
+	    <ami:noun>MeterAdd</ami:noun>
+	    <ami:revision>1</ami:revision>
+	    <ami:dateTime>2014-10-30T14:09:00.602+08:00</ami:dateTime>
+	    <ami:source>EIP</ami:source>
+	    <ami:messageID>92</ami:messageID>
+	    <ami:asyncReplyTo>http://139.24.137.195:8890/</ami:asyncReplyTo>
+	  </ami:header>
+	  <ami:payload>
+	    <ami:meterAsset>
+	      <ami:mRID>ISK1040770373653</ami:mRID>
+	      <ami:idType>METER_X_UDC_ASSET_ID</ami:idType>
+	      <ami:pathName>GPC</ami:pathName>	 
+	      <ami:parameter>
+        	   <ami:name>Installation Date</ami:name>
+        	   <ami:value>2017-07-25T11:22:00</ami:value>
+      	 </ami:parameter>     
+	      <ami:parameter>
+	        <ami:name>DoNotSendToMeter</ami:name> 
+	        <ami:value>false</ami:value>
+	      </ami:parameter>  
+	      <!--ami:parameter>
+	        <ami:name>Collection Scheme</ami:name> 
+	        <ami:value>wcq_schedule</ami:value>
+	      </ami:parameter-->
+	      <ami:parameter>
+	        <ami:name>Billing Meas Profile</ami:name>
+	        <ami:value>wcq_measurement</ami:value>
+	      </ami:parameter>
+	      <ami:parameter>
+	        <ami:name>Tou Profile</ami:name>
+	        <ami:value>wcq_tou</ami:value>
+	      </ami:parameter>
+	      <ami:parameter>
+	        <ami:name>Load Limit Profile</ami:name>
+	        <ami:value>wcq_load_limit</ami:value>
+	      </ami:parameter>
+	      <ami:parameter>
+	        <ami:name>Clock Profile</ami:name>
+	        <ami:value>wcq_clock</ami:value>
+	      </ami:parameter>
+	      <ami:parameter>
+	        <ami:name>Load Control Time Switch Profile</ami:name>
+	        <ami:value></ami:value>
+	      </ami:parameter>
+		<ami:parameter>
+			<ami:name>OptOut</ami:name>
+			<ami:value>true</ami:value>
+		</ami:parameter>
+		<ami:parameter>
+			<ami:name>DisplayLoadProfileOn</ami:name>
+			<ami:value>true</ami:value>
+		</ami:parameter>
+		<ami:parameter>
+			<ami:name>CustomerInterfaceOn</ami:name>a
+			<ami:value>true</ami:value>
+		</ami:parameter>
+		<ami:parameter>
+			<ami:name>DisplayReset</ami:name>
+			<ami:value>2016-11-30T14:09:00</ami:value>
+		</ami:parameter>
+	      <ami:serviceType>Electric</ami:serviceType>
+	      <ami:electricMeter>
+	        <ami:numWires>3</ami:numWires>
+	      </ami:electricMeter>
+	      <ami:numDigits>6</ami:numDigits>
+	    </ami:meterAsset>
+	    <ami:comFunction>
+	      <ami:mRID>YMT05001370</ami:mRID>
+	      <ami:idType>METER_COMMUNICATION_MODULE_X_NETWORK_ID</ami:idType>
+	      <ami:pathName>UAA EIP</ami:pathName>
+	    </ami:comFunction>
+	    <ami:serviceDeliveryPoint>
+	      <ami:mRID>7330000286998</ami:mRID>
+	      <ami:idType>SDP_X_UDC_ASSET_ID</ami:idType>
+	      <ami:pathName>GPC</ami:pathName>	      
+	      <ami:serviceType>Electric</ami:serviceType>
+	      <ami:readRoute>
+	        <ami:mRID>Monthly</ami:mRID>
+	        <ami:idType>ROUTE_X_UDC_ASSET_ID</ami:idType>
+	        <ami:pathName>16486977</ami:pathName>
+	      </ami:readRoute>
+	      <ami:serviceDeliveryRemarks>YMT05001370</ami:serviceDeliveryRemarks>
+	    </ami:serviceDeliveryPoint>
+	    <ami:serviceLocation>
+	      <ami:mRID>16486977</ami:mRID>
+	      <ami:idType>PREMISE_X_CLIENT_PRMSE_ID</ami:idType>
+	      <ami:pathName>GPC</ami:pathName>
+	      <ami:addressGeneral>testaddress</ami:addressGeneral>
+	      <ami:city>ShanTou</ami:city>
+	      <ami:stateOrProvince>Guang Dong</ami:stateOrProvince>
+	      <ami:country>China</ami:country>
+	      <ami:postalCode>515000</ami:postalCode>
+	    </ami:serviceLocation>
+	    <ami:customerAccount>
+	      <ami:mRID>16486977</ami:mRID>
+	      <ami:idType>ACCOUNT_X_UDC_ACCNT_ID</ami:idType>
+	      <ami:pathName>16486977</ami:pathName>
+	      <ami:billingCycle>Monthly</ami:billingCycle>
+	    </ami:customerAccount>
+	    <ami:executeStartTime>2018-09-30T03:06:58.000Z</ami:executeStartTime>
+	    <ami:executeExpireTime>2018-09-30T17:15:58.000Z</ami:executeExpireTime>
+	  </ami:payload>
+	</ami:MeterAssetAddRequestMessage>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>wcq</con:username><con:password>Password@1</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:preemptive>true</con:preemptive><con:authType>Preemptive</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.emeter.com/energyip/amiinterface/ProvisioningRequest/addMeterAsset"/><con:wsrmConfig version="1.2"/></con:call><con:call id="cb219533-ab03-466f-82fa-2099050ceaeb" name="AddMeter_Collection"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://139.24.137.223:7070/services/UniversalAMIProvisioningService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ami="http://www.emeter.com/energyip/amiinterface">
+   <soapenv:Header/>
+   <soapenv:Body>
+	<ami:MeterAssetAddRequestMessage xmlns:ami="http://www.emeter.com/energyip/amiinterface" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+	  <ami:header>
+	    <ami:verb>request</ami:verb>
+	    <ami:noun>MeterAdd</ami:noun>
+	    <ami:revision>1</ami:revision>
+	    <ami:dateTime>2014-10-30T14:09:00.602+08:00</ami:dateTime>
+	    <ami:source>EIP</ami:source>
+	    <ami:messageID>92</ami:messageID>
+	    <ami:asyncReplyTo>http://139.24.137.195:8890</ami:asyncReplyTo>
+	  </ami:header>
+	  <ami:payload>
+	    <ami:meterAsset>
+	      <ami:mRID>ISK1040770373653</ami:mRID>
+	      <ami:idType>METER_X_UDC_ASSET_ID</ami:idType>
+	      <ami:pathName>GPC</ami:pathName>	      
+	      <ami:parameter>
+	        <ami:name>Collection Scheme</ami:name> 
+	        <ami:value>vMeter_Scheme1</ami:value>
+	      </ami:parameter>	      	 
+	      <ami:parameter>
+        	   <ami:name>Installation Date</ami:name>
+        	   <ami:value>2016-11-02T12:34:56</ami:value>
+      	 </ami:parameter>   
+	      <ami:serviceType>Electric</ami:serviceType>
+	      <ami:electricMeter>
+	        <ami:numWires>3</ami:numWires>
+	      </ami:electricMeter>
+	      <ami:numDigits>6</ami:numDigits>
+	    </ami:meterAsset>
+	    <ami:comFunction>
+	      <ami:mRID>YMT05001370</ami:mRID>
+	      <ami:idType>METER_COMMUNICATION_MODULE_X_NETWORK_ID</ami:idType>
+	      <ami:pathName>UAA EIP</ami:pathName>
+	    </ami:comFunction>
+	    <ami:serviceDeliveryPoint>
+	      <ami:mRID>7330000286998</ami:mRID>
+	      <ami:idType>SDP_X_UDC_ASSET_ID</ami:idType>
+	      <ami:pathName>GPC</ami:pathName>	      
+	      <ami:serviceType>Electric</ami:serviceType>
+	      <ami:readRoute>
+	        <ami:mRID>Monthly</ami:mRID>
+	        <ami:idType>ROUTE_X_UDC_ASSET_ID</ami:idType>
+	        <ami:pathName>16486977</ami:pathName>
+	      </ami:readRoute>
+	      <ami:serviceDeliveryRemarks>YMT05001370</ami:serviceDeliveryRemarks>
+	    </ami:serviceDeliveryPoint>
+	    <ami:serviceLocation>
+	      <ami:mRID>16486977</ami:mRID>
+	      <ami:idType>PREMISE_X_CLIENT_PRMSE_ID</ami:idType>
+	      <ami:pathName>GPC</ami:pathName>
+	      <ami:addressGeneral>testaddress</ami:addressGeneral>
+	      <ami:city>ShanTou</ami:city>
+	      <ami:stateOrProvince>Guang Dong</ami:stateOrProvince>
+	      <ami:country>China</ami:country>
+	      <ami:postalCode>515000</ami:postalCode>
+	    </ami:serviceLocation>
+	    <ami:customerAccount>
+	      <ami:mRID>16486977</ami:mRID>
+	      <ami:idType>ACCOUNT_X_UDC_ACCNT_ID</ami:idType>
+	      <ami:pathName>16486977</ami:pathName>
+	      <ami:billingCycle>Monthly</ami:billingCycle>
+	    </ami:customerAccount>
+	    <ami:executeStartTime>2014-10-30T06:08:58.000Z</ami:executeStartTime>
+	    <ami:executeExpireTime>2014-10-31T06:08:58.000Z</ami:executeExpireTime>
+	  </ami:payload>
+	</ami:MeterAssetAddRequestMessage>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>wcq</con:username><con:password>Password@1</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:preemptive>true</con:preemptive><con:authType>Preemptive</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.emeter.com/energyip/amiinterface/ProvisioningRequest/addMeterAsset"/><con:wsrmConfig version="1.2"/></con:call><con:call id="98cc8459-b990-4df9-9956-db158661bf73" name="AddMeter_Collection_GW"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://139.24.137.223:7070/services/UniversalAMIProvisioningService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ami="http://www.emeter.com/energyip/amiinterface">
+   <soapenv:Header/>
+   <soapenv:Body>
+	<ami:MeterAssetAddRequestMessage xmlns:ami="http://www.emeter.com/energyip/amiinterface" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+	  <ami:header>
+	    <ami:verb>request</ami:verb>
+	    <ami:noun>MeterAdd</ami:noun>
+	    <ami:revision>1</ami:revision>
+	    <ami:dateTime>2014-10-30T14:09:00.602+08:00</ami:dateTime>
+	    <ami:source>EIP</ami:source>
+	    <ami:messageID>92</ami:messageID>
+	    <ami:asyncReplyTo>http://139.24.137.244:8080/UniversalAMIAdapterWS/services/UniversalAMIProvisioningResponseService?wsdl</ami:asyncReplyTo>
+	  </ami:header>
+	  <ami:payload>
+	    <ami:meterAsset>
+	      <ami:mRID>GW_InternalTest</ami:mRID>
+	      <ami:idType>METER_X_UDC_ASSET_ID</ami:idType>
+	      <ami:pathName>GPC</ami:pathName>	    
+	      <ami:parameter>
+	        <ami:name>Collection Scheme</ami:name> 
+	        <ami:value>GW_Scheme</ami:value>
+	      </ami:parameter>	   
+	      <ami:parameter>
+        	   <ami:name>Installation Date</ami:name>
+        	   <ami:value>2016-11-09T12:34:56</ami:value>
+      	 </ami:parameter>     
+	      <ami:serviceType>Electric</ami:serviceType>
+	      <ami:electricMeter>
+	        <ami:numWires>3</ami:numWires>
+	      </ami:electricMeter>
+	      <ami:numDigits>6</ami:numDigits>
+	    </ami:meterAsset>
+	    <ami:comFunction>
+	      <ami:mRID>YMT05001370</ami:mRID>
+	      <ami:idType>METER_COMMUNICATION_MODULE_X_NETWORK_ID</ami:idType>
+	      <ami:pathName>UAA EIP</ami:pathName>
+	    </ami:comFunction>
+	    <ami:serviceDeliveryPoint>
+	      <ami:mRID>7330000286998</ami:mRID>
+	      <ami:idType>SDP_X_UDC_ASSET_ID</ami:idType>
+	      <ami:pathName>GPC</ami:pathName>	      
+	      <ami:serviceType>Electric</ami:serviceType>
+	      <ami:readRoute>
+	        <ami:mRID>Monthly</ami:mRID>
+	        <ami:idType>ROUTE_X_UDC_ASSET_ID</ami:idType>
+	        <ami:pathName>16486977</ami:pathName>
+	      </ami:readRoute>
+	      <ami:serviceDeliveryRemarks>YMT05001370</ami:serviceDeliveryRemarks>
+	    </ami:serviceDeliveryPoint>
+	    <ami:serviceLocation>
+	      <ami:mRID>16486977</ami:mRID>
+	      <ami:idType>PREMISE_X_CLIENT_PRMSE_ID</ami:idType>
+	      <ami:pathName>GPC</ami:pathName>
+	      <ami:addressGeneral>testaddress</ami:addressGeneral>
+	      <ami:city>ShanTou</ami:city>
+	      <ami:stateOrProvince>Guang Dong</ami:stateOrProvince>
+	      <ami:country>China</ami:country>
+	      <ami:postalCode>515000</ami:postalCode>
+	    </ami:serviceLocation>
+	    <ami:customerAccount>
+	      <ami:mRID>16486977</ami:mRID>
+	      <ami:idType>ACCOUNT_X_UDC_ACCNT_ID</ami:idType>
+	      <ami:pathName>16486977</ami:pathName>
+	      <ami:billingCycle>Monthly</ami:billingCycle>
+	    </ami:customerAccount>
+	    <ami:executeStartTime>2014-10-30T06:08:58.000Z</ami:executeStartTime>
+	    <ami:executeExpireTime>2014-10-31T06:08:58.000Z</ami:executeExpireTime>
+	  </ami:payload>
+	</ami:MeterAssetAddRequestMessage>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>kngadmin</con:username><con:password>Password1</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:preemptive>true</con:preemptive><con:authType>Preemptive</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.emeter.com/energyip/amiinterface/ProvisioningRequest/addMeterAsset"/><con:wsrmConfig version="1.2"/></con:call><con:call id="f1400ed3-ff24-4dd9-bae2-976dfa9887e3" name="AddMeter_WN"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://139.24.137.223:7070/services/UniversalAMIProvisioningService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ami="http://www.emeter.com/energyip/amiinterface">
+   <soapenv:Header/>
+   <soapenv:Body>
+	<ami:MeterAssetAddRequestMessage xmlns:ami="http://www.emeter.com/energyip/amiinterface" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+	  <ami:header>
+	    <ami:verb>request</ami:verb>
+	    <ami:noun>MeterAdd</ami:noun>
+	    <ami:revision>1</ami:revision>
+	    <ami:dateTime>2018-07-10T14:09:00.602+08:00</ami:dateTime>
+	    <ami:source>EIP</ami:source>
+	    <ami:messageID>92</ami:messageID>
+	    <ami:asyncReplyTo>http://139.24.137.195</ami:asyncReplyTo>
+	  </ami:header>
+	  <ami:payload>
+	    <ami:meterAsset>
+	      <ami:mRID>ISK1040770373653</ami:mRID>
+	      <ami:idType>METER_X_UDC_ASSET_ID</ami:idType>
+	      <ami:pathName>GPC</ami:pathName>	 
+	      <!--<ami:parameter>
+        	   <ami:name>Installation Date</ami:name>
+        	   <ami:value>2016-11-10T11:22:00</ami:value>
+      	 </ami:parameter> -->   
+	      <!--ami:parameter>
+	        <ami:name>Collection Scheme</ami:name> 
+	        <ami:value>IMS_SIE</ami:value>
+	      </ami:parameter-->
+	      <!--ami:parameter>
+	        <ami:name>Billing Meas Profile</ami:name>
+	        <ami:value>IME</ami:value>
+	      </ami:parameter->
+	     <!-- <ami:parameter>
+	        <ami:name>Tou Profile</ami:name>
+	        <ami:value>ToU</ami:value>
+	      </ami:parameter>-->
+	      <!--ami:parameter>
+	        <ami:name>Load Control Time Switch Profile</ami:name>
+	        <ami:value></ami:value>
+	      </ami:parameter-->
+		<!--ami:parameter>
+			<ami:name>OptOut</ami:name>
+			<ami:value>false</ami:value>
+		</ami:parameter>
+		<ami:parameter>
+			<ami:name>DisplayLoadProfileOn</ami:name>
+			<ami:value>true</ami:value>
+		</ami:parameter>
+		<ami:parameter>
+			<ami:name>CustomerInterfaceOn</ami:name>a
+			<ami:value>true</ami:value>
+		</ami:parameter-->
+		<!--ami:parameter>
+			<ami:name>DisplayReset</ami:name>
+			<ami:value>2016-11-30T14:09:00</ami:value>
+		</ami:parameter-->
+		<!--ami:parameter>
+			<ami:name>DoNotSendToMeter</ami:name>
+			<ami:value>true</ami:value>
+		</ami:parameter-->
+	      <ami:serviceType>Electric</ami:serviceType>
+	      <ami:electricMeter>
+	        <ami:numWires>3</ami:numWires>
+	      </ami:electricMeter>
+	      <ami:numDigits>6</ami:numDigits>
+	    </ami:meterAsset>
+	    <ami:executeStartTime>2018-07-12T06:08:58.000Z</ami:executeStartTime>
+	    <ami:executeExpireTime>2018-07-18T06:08:58.000Z</ami:executeExpireTime>
+	  </ami:payload>
+	</ami:MeterAssetAddRequestMessage>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>system</con:username><con:password>system123</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:preemptive>true</con:preemptive><con:authType>Preemptive</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.emeter.com/energyip/amiinterface/ProvisioningRequest/addMeterAsset"/><con:wsrmConfig version="1.2"/></con:call><con:call id="cd965925-a432-4818-bbfa-4df243e957d5" name="Copy of AddMeter_WN"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://139.24.137.223:7070/services/UniversalAMIProvisioningService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ami="http://www.emeter.com/energyip/amiinterface">
+   <soapenv:Header/>
+   <soapenv:Body>
+	<ami:MeterAssetAddRequestMessage xmlns:ami="http://www.emeter.com/energyip/amiinterface" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+	  <ami:header>
+	    <ami:verb>request</ami:verb>
+	    <ami:noun>MeterAdd</ami:noun>
+	    <ami:revision>1</ami:revision>
+	    <ami:dateTime>2018-07-10T14:09:00.602+08:00</ami:dateTime>
+	    <ami:source>EIP</ami:source>
+	    <ami:messageID>92</ami:messageID>
+	    <ami:asyncReplyTo>http://139.24.137.37:50001</ami:asyncReplyTo>
+	  </ami:header>
+	  <ami:payload>
+	    <ami:meterAsset>
+	      <ami:mRID>73300007</ami:mRID>
+	      <ami:idType>METER_X_UDC_ASSET_ID</ami:idType>
+	      <ami:pathName>GPC</ami:pathName>	 
+	      <!--<ami:parameter>
+        	   <ami:name>Installation Date</ami:name>
+        	   <ami:value>2016-11-10T11:22:00</ami:value>
+      	 </ami:parameter> -->   
+	      <!--ami:parameter>
+	        <ami:name>Collection Scheme</ami:name> 
+	        <ami:value>IMS_SIE</ami:value>
+	      </ami:parameter-->
+	      <ami:parameter>
+	        <ami:name>Billing Meas Profile</ami:name>
+	        <ami:value>IMS</ami:value>
+	      </ami:parameter>
+	     <!-- <ami:parameter>
+	        <ami:name>Tou Profile</ami:name>
+	        <ami:value>ToU</ami:value>
+	      </ami:parameter>-->
+	      <!--ami:parameter>
+	        <ami:name>Load Control Time Switch Profile</ami:name>
+	        <ami:value></ami:value>
+	      </ami:parameter-->
+		<!--ami:parameter>
+			<ami:name>OptOut</ami:name>
+			<ami:value>false</ami:value>
+		</ami:parameter>
+		<ami:parameter>
+			<ami:name>DisplayLoadProfileOn</ami:name>
+			<ami:value>true</ami:value>
+		</ami:parameter>
+		<ami:parameter>
+			<ami:name>CustomerInterfaceOn</ami:name>a
+			<ami:value>true</ami:value>
+		</ami:parameter-->
+		<!--ami:parameter>
+			<ami:name>DisplayReset</ami:name>
+			<ami:value>2016-11-30T14:09:00</ami:value>
+		</ami:parameter-->
+		<!--ami:parameter>
+			<ami:name>DoNotSendToMeter</ami:name>
+			<ami:value>true</ami:value>
+		</ami:parameter-->
+	      <ami:serviceType>Electric</ami:serviceType>
+	      <ami:electricMeter>
+	        <ami:numWires>3</ami:numWires>
+	      </ami:electricMeter>
+	      <ami:numDigits>6</ami:numDigits>
+	    </ami:meterAsset>
+	    <ami:executeStartTime>2018-07-12T06:08:58.000Z</ami:executeStartTime>
+	    <ami:executeExpireTime>2018-07-18T06:08:58.000Z</ami:executeExpireTime>
+	  </ami:payload>
+	</ami:MeterAssetAddRequestMessage>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>system</con:username><con:password>system123</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:preemptive>true</con:preemptive><con:authType>Preemptive</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.emeter.com/energyip/amiinterface/ProvisioningRequest/addMeterAsset"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="2b7e2858-26b0-408a-8eac-25963a544a6c" isOneWay="false" action="http://www.emeter.com/energyip/amiinterface/ProvisioningRequest/deleteMeterAsset" name="deleteMeterAsset" bindingOperationName="deleteMeterAsset" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f52faea4-aa5e-45f4-844e-6e31743ee5dc" name="DeleteMeter"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://139.24.137.223:7070/services/UniversalAMIProvisioningService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ami="http://www.emeter.com/energyip/amiinterface">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ami:MeterAssetDeleteRequestMessage xmlns:ami="http://www.emeter.com/energyip/amiinterface">
+   <ami:header>
+      <ami:verb>request</ami:verb>
+      <ami:noun>MeterDelete</ami:noun>
+      <ami:revision>1</ami:revision>
+      <ami:dateTime>2013-05-15T07:17:00.491-08:00</ami:dateTime>
+      <ami:source>SOURCE1</ami:source>
+      <ami:messageID>1991</ami:messageID>
+      <ami:utilityId>SOURCE1</ami:utilityId>
+	    <ami:asyncReplyTo>http://139.24.137.195:8890</ami:asyncReplyTo>
+   </ami:header>
+   <ami:payload>
+      <ami:meterAsset>
+         <ami:mRID>73300001</ami:mRID>
+         <ami:idType>METER_X_UDC_ASSET_ID</ami:idType>
+         <ami:pathName>SOURCE1</ami:pathName>
+         <ami:modelNumber>ABC</ami:modelNumber>
+         <ami:manufacturedDate>2011-01-15T00:00:00.000-08:00</ami:manufacturedDate>
+         <ami:lotNumber>123</ami:lotNumber>
+         <ami:serviceType>ELECTRIC</ami:serviceType>
+         <ami:electricMeter> 
+            <ami:numWires>2</ami:numWires>      
+         </ami:electricMeter>
+         <ami:numDigits>5</ami:numDigits>
+      </ami:meterAsset>
+      <ami:comFunction>
+         <ami:mRID>Uaa801</ami:mRID>
+         <ami:idType>METER_COMMUNICATION_MODULE_X_UDC_ASSET_ID</ami:idType>
+         <ami:pathName>UAA EIP</ami:pathName>
+         <ami:manufacturedDate>2011-01-15T00:00:00.000-08:00</ami:manufacturedDate>
+         <ami:serialNumber>XYZ</ami:serialNumber>
+         <ami:lotNumber>123</ami:lotNumber>
+         <ami:testDate>2011-01-15T00:00:00.000-08:00</ami:testDate>
+      </ami:comFunction>
+      <ami:serviceDeliveryPoint>
+         <ami:mRID>Uaa801</ami:mRID>
+         <ami:idType>SDP_X_UDC_ASSET_ID</ami:idType>
+         <ami:pathName>SOURCE1</ami:pathName>
+         <ami:serviceType>Electric</ami:serviceType>
+         <ami:lifeSupport>true</ami:lifeSupport>
+         <ami:serviceDeliveryRemarks>desc</ami:serviceDeliveryRemarks>
+         <ami:latitude>10.2</ami:latitude>
+         <ami:longitude>30.4</ami:longitude>
+         <ami:locationAccuracy>5.25</ami:locationAccuracy>
+      </ami:serviceDeliveryPoint>
+      <ami:serviceLocation>
+         <ami:mRID>Uaa801</ami:mRID>
+         <ami:idType>PREMISE_X_CLIENT_PRMSE_ID</ami:idType>
+         <ami:pathName>SOURCE1</ami:pathName>
+         <ami:addressGeneral>addressLine1</ami:addressGeneral>
+         <ami:addressGeneral2>Sector 62</ami:addressGeneral2>
+         <ami:city>Noida</ami:city>
+         <ami:stateOrProvince>Florida</ami:stateOrProvince>
+         <ami:country>United States</ami:country>
+         <ami:postalCode>201301</ami:postalCode>
+         <ami:latitude>22.21</ami:latitude>
+         <ami:longitude>22.21</ami:longitude>
+      </ami:serviceLocation>
+      <ami:customerAccount>
+         <ami:mRID>Uaa801</ami:mRID>
+         <ami:idType>ACCOUNT_X_UDC_ID</ami:idType>
+         <ami:pathName>SOURCE1</ami:pathName>
+      </ami:customerAccount>
+      <ami:executeStartTime>2013-05-15T16:17:00.319Z</ami:executeStartTime>
+      <ami:executeExpireTime>2017-05-16T18:17:00.319Z</ami:executeExpireTime>
+   </ami:payload>
+</ami:MeterAssetDeleteRequestMessage>
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.emeter.com/energyip/amiinterface/ProvisioningRequest/deleteMeterAsset"/><con:wsrmConfig version="1.2"/></con:call><con:call id="779b8d57-c783-4811-9693-f1ff2bae851b" name="DeleteGW"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://139.24.137.223:7070/services/UniversalAMIProvisioningService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ami="http://www.emeter.com/energyip/amiinterface">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ami:MeterAssetDeleteRequestMessage xmlns:ami="http://www.emeter.com/energyip/amiinterface">
+   <ami:header>
+      <ami:verb>request</ami:verb>
+      <ami:noun>MeterDelete</ami:noun>
+      <ami:revision>1</ami:revision>
+      <ami:dateTime>2013-05-15T07:17:00.491-08:00</ami:dateTime>
+      <ami:source>SOURCE1</ami:source>
+      <ami:messageID>1991</ami:messageID>
+      <ami:utilityId>SOURCE1</ami:utilityId>
+	    <ami:asyncReplyTo>http://139.24.137.195:8890</ami:asyncReplyTo>
+   </ami:header>
+   <ami:payload>
+      <ami:meterAsset>
+         <ami:mRID>GW_TestGW005</ami:mRID>
+         <ami:idType>METER_X_UDC_ASSET_ID</ami:idType>
+         <ami:pathName>SOURCE1</ami:pathName>
+         <ami:modelNumber>ABC</ami:modelNumber>
+         <ami:manufacturedDate>2011-01-15T00:00:00.000-08:00</ami:manufacturedDate>
+         <ami:lotNumber>123</ami:lotNumber>
+         <ami:serviceType>ELECTRIC</ami:serviceType>
+         <ami:electricMeter> 
+            <ami:numWires>2</ami:numWires>      
+         </ami:electricMeter>
+         <ami:numDigits>5</ami:numDigits>
+      </ami:meterAsset>
+      <ami:comFunction>
+         <ami:mRID>Uaa801</ami:mRID>
+         <ami:idType>METER_COMMUNICATION_MODULE_X_UDC_ASSET_ID</ami:idType>
+         <ami:pathName>UAA EIP</ami:pathName>
+         <ami:manufacturedDate>2011-01-15T00:00:00.000-08:00</ami:manufacturedDate>
+         <ami:serialNumber>XYZ</ami:serialNumber>
+         <ami:lotNumber>123</ami:lotNumber>
+         <ami:testDate>2011-01-15T00:00:00.000-08:00</ami:testDate>
+      </ami:comFunction>
+      <ami:serviceDeliveryPoint>
+         <ami:mRID>Uaa801</ami:mRID>
+         <ami:idType>SDP_X_UDC_ASSET_ID</ami:idType>
+         <ami:pathName>SOURCE1</ami:pathName>
+         <ami:serviceType>Electric</ami:serviceType>
+         <ami:lifeSupport>true</ami:lifeSupport>
+         <ami:serviceDeliveryRemarks>desc</ami:serviceDeliveryRemarks>
+         <ami:latitude>10.2</ami:latitude>
+         <ami:longitude>30.4</ami:longitude>
+         <ami:locationAccuracy>5.25</ami:locationAccuracy>
+      </ami:serviceDeliveryPoint>
+      <ami:serviceLocation>
+         <ami:mRID>Uaa801</ami:mRID>
+         <ami:idType>PREMISE_X_CLIENT_PRMSE_ID</ami:idType>
+         <ami:pathName>SOURCE1</ami:pathName>
+         <ami:addressGeneral>addressLine1</ami:addressGeneral>
+         <ami:addressGeneral2>Sector 62</ami:addressGeneral2>
+         <ami:city>Noida</ami:city>
+         <ami:stateOrProvince>Florida</ami:stateOrProvince>
+         <ami:country>United States</ami:country>
+         <ami:postalCode>201301</ami:postalCode>
+         <ami:latitude>22.21</ami:latitude>
+         <ami:longitude>22.21</ami:longitude>
+      </ami:serviceLocation>
+      <ami:customerAccount>
+         <ami:mRID>Uaa801</ami:mRID>
+         <ami:idType>ACCOUNT_X_UDC_ID</ami:idType>
+         <ami:pathName>SOURCE1</ami:pathName>
+      </ami:customerAccount>
+      <ami:executeStartTime>2013-05-15T16:17:00.319Z</ami:executeStartTime>
+      <ami:executeExpireTime>2017-05-16T18:17:00.319Z</ami:executeExpireTime>
+   </ami:payload>
+</ami:MeterAssetDeleteRequestMessage>
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.emeter.com/energyip/amiinterface/ProvisioningRequest/deleteMeterAsset"/><con:wsrmConfig version="1.2"/></con:call><con:call id="c1b6edd2-6d4d-4432-8fb9-c1e4fbfa1ce5" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://139.24.137.223:7070/services/UniversalAMIProvisioningService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ami="http://www.emeter.com/energyip/amiinterface">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ami:MeterAssetDeleteRequestMessage>\r
+         <ami:header>\r
+            <!--Optional:-->\r
+            <ami:verb>?</ami:verb>\r
+            <!--Optional:-->\r
+            <ami:noun>?</ami:noun>\r
+            <!--Optional:-->\r
+            <ami:revision>1</ami:revision>\r
+            <!--Optional:-->\r
+            <ami:dateTime>?</ami:dateTime>\r
+            <!--Optional:-->\r
+            <ami:source>?</ami:source>\r
+            <!--Optional:-->\r
+            <ami:messageID>?</ami:messageID>\r
+            <!--Optional:-->\r
+            <ami:asyncReplyTo>?</ami:asyncReplyTo>\r
+            <!--Optional:-->\r
+            <ami:utilityId>?</ami:utilityId>\r
+         </ami:header>\r
+         <!--Optional:-->\r
+         <ami:payload>\r
+            <ami:meterAsset>\r
+               <!--Optional:-->\r
+               <ami:mRID>?</ami:mRID>\r
+               <!--Optional:-->\r
+               <ami:idType>?</ami:idType>\r
+               <!--Optional:-->\r
+               <ami:pathName>?</ami:pathName>\r
+               <!--Zero or more repetitions:-->\r
+               <ami:parameter>\r
+                  <ami:name>?</ami:name>\r
+                  <ami:value>?</ami:value>\r
+               </ami:parameter>\r
+               <!--Optional:-->\r
+               <ami:manufacturer>?</ami:manufacturer>\r
+               <!--Optional:-->\r
+               <ami:modelNumber>?</ami:modelNumber>\r
+               <!--Optional:-->\r
+               <ami:manufacturedDate>?</ami:manufacturedDate>\r
+               <!--Optional:-->\r
+               <ami:serialNumber>?</ami:serialNumber>\r
+               <!--Optional:-->\r
+               <ami:lotNumber>?</ami:lotNumber>\r
+               <!--Optional:-->\r
+               <ami:testDate>?</ami:testDate>\r
+               <!--Optional:-->\r
+               <ami:serviceType>?</ami:serviceType>\r
+               <!--You have a CHOICE of the next 3 items at this level-->\r
+               <!--Optional:-->\r
+               <ami:electricMeter>\r
+                  <!--Optional:-->\r
+                  <ami:aepCode>?</ami:aepCode>\r
+                  <!--Optional:-->\r
+                  <ami:form>?</ami:form>\r
+                  <!--Optional:-->\r
+                  <ami:base>?</ami:base>\r
+                  <!--Optional:-->\r
+                  <ami:voltageRating>?</ami:voltageRating>\r
+                  <!--Optional:-->\r
+                  <ami:currentRating>?</ami:currentRating>\r
+                  <!--Optional:-->\r
+                  <ami:frequencyRating>?</ami:frequencyRating>\r
+                  <!--Optional:-->\r
+                  <ami:numPhases>?</ami:numPhases>\r
+                  <!--Optional:-->\r
+                  <ami:numWires>?</ami:numWires>\r
+                  <!--Optional:-->\r
+                  <ami:kh>?</ami:kh>\r
+                  <!--Optional:-->\r
+                  <ami:registerRatio>?</ami:registerRatio>\r
+               </ami:electricMeter>\r
+               <!--Optional:-->\r
+               <ami:waterMeter>\r
+                  <!--Optional:-->\r
+                  <ami:inletDiameter>?</ami:inletDiameter>\r
+                  <!--Optional:-->\r
+                  <ami:outletDiameter>?</ami:outletDiameter>\r
+                  <!--Optional:-->\r
+                  <ami:operatingPressure>?</ami:operatingPressure>\r
+                  <!--Optional:-->\r
+                  <ami:flowRange>?</ami:flowRange>\r
+               </ami:waterMeter>\r
+               <!--Optional:-->\r
+               <ami:gasMeter>\r
+                  <!--Optional:-->\r
+                  <ami:operatingPressure>?</ami:operatingPressure>\r
+                  <!--Optional:-->\r
+                  <ami:flowRange>?</ami:flowRange>\r
+               </ami:gasMeter>\r
+               <!--Optional:-->\r
+               <ami:numDigits>?</ami:numDigits>\r
+               <!--Optional:-->\r
+               <ami:typeMeter>?</ami:typeMeter>\r
+               <!--Optional:-->\r
+               <ami:ProgramId>?</ami:ProgramId>\r
+            </ami:meterAsset>\r
+            <ami:comFunction>\r
+               <!--Optional:-->\r
+               <ami:mRID>?</ami:mRID>\r
+               <!--Optional:-->\r
+               <ami:idType>?</ami:idType>\r
+               <!--Optional:-->\r
+               <ami:pathName>?</ami:pathName>\r
+               <!--Zero or more repetitions:-->\r
+               <ami:parameter>\r
+                  <ami:name>?</ami:name>\r
+                  <ami:value>?</ami:value>\r
+               </ami:parameter>\r
+               <!--Optional:-->\r
+               <ami:manufacturer>?</ami:manufacturer>\r
+               <!--Optional:-->\r
+               <ami:modelNumber>?</ami:modelNumber>\r
+               <!--Optional:-->\r
+               <ami:manufacturedDate>?</ami:manufacturedDate>\r
+               <!--Optional:-->\r
+               <ami:serialNumber>?</ami:serialNumber>\r
+               <!--Optional:-->\r
+               <ami:lotNumber>?</ami:lotNumber>\r
+               <!--Optional:-->\r
+               <ami:testDate>?</ami:testDate>\r
+               <!--Optional:-->\r
+               <ami:amrAddress>?</ami:amrAddress>\r
+               <!--Optional:-->\r
+               <ami:amrSystem>?</ami:amrSystem>\r
+            </ami:comFunction>\r
+            <ami:serviceDeliveryPoint>\r
+               <!--Optional:-->\r
+               <ami:mRID>?</ami:mRID>\r
+               <!--Optional:-->\r
+               <ami:idType>?</ami:idType>\r
+               <!--Optional:-->\r
+               <ami:pathName>?</ami:pathName>\r
+               <!--Zero or more repetitions:-->\r
+               <ami:parameter>\r
+                  <ami:name>?</ami:name>\r
+                  <ami:value>?</ami:value>\r
+               </ami:parameter>\r
+               <!--Optional:-->\r
+               <ami:serviceType>?</ami:serviceType>\r
+               <!--Optional:-->\r
+               <ami:lifeSupport>?</ami:lifeSupport>\r
+               <!--Optional:-->\r
+               <ami:readRoute>\r
+                  <!--Optional:-->\r
+                  <ami:mRID>?</ami:mRID>\r
+                  <!--Optional:-->\r
+                  <ami:idType>?</ami:idType>\r
+                  <!--Optional:-->\r
+                  <ami:pathName>?</ami:pathName>\r
+                  <!--Zero or more repetitions:-->\r
+                  <ami:parameter>\r
+                     <ami:name>?</ami:name>\r
+                     <ami:value>?</ami:value>\r
+                  </ami:parameter>\r
+               </ami:readRoute>\r
+               <!--Optional:-->\r
+               <ami:readSequence>?</ami:readSequence>\r
+               <!--Optional:-->\r
+               <ami:averageDailyUsage>?</ami:averageDailyUsage>\r
+               <ami:locationCode>?</ami:locationCode>\r
+               <ami:serviceDeliveryRemarks>?</ami:serviceDeliveryRemarks>\r
+               <ami:latitude>?</ami:latitude>\r
+               <ami:longitude>?</ami:longitude>\r
+               <!--Optional:-->\r
+               <ami:locationAccuracy>?</ami:locationAccuracy>\r
+               <!--Optional:-->\r
+               <ami:locationAccuracyUnits>?</ami:locationAccuracyUnits>\r
+            </ami:serviceDeliveryPoint>\r
+            <ami:serviceLocation>\r
+               <!--Optional:-->\r
+               <ami:mRID>?</ami:mRID>\r
+               <!--Optional:-->\r
+               <ami:idType>?</ami:idType>\r
+               <!--Optional:-->\r
+               <ami:pathName>?</ami:pathName>\r
+               <!--Zero or more repetitions:-->\r
+               <ami:parameter>\r
+                  <ami:name>?</ami:name>\r
+                  <ami:value>?</ami:value>\r
+               </ami:parameter>\r
+               <!--Optional:-->\r
+               <ami:streetNumber>?</ami:streetNumber>\r
+               <!--Optional:-->\r
+               <ami:streetName>?</ami:streetName>\r
+               <!--Optional:-->\r
+               <ami:streetSuffix>?</ami:streetSuffix>\r
+               <!--Optional:-->\r
+               <ami:streetPrefix>?</ami:streetPrefix>\r
+               <!--Optional:-->\r
+               <ami:streetType>?</ami:streetType>\r
+               <!--Optional:-->\r
+               <ami:poBox>?</ami:poBox>\r
+               <!--Optional:-->\r
+               <ami:suiteNumber>?</ami:suiteNumber>\r
+               <!--Optional:-->\r
+               <ami:addressGeneral>?</ami:addressGeneral>\r
+               <!--Optional:-->\r
+               <ami:addressGeneral2>?</ami:addressGeneral2>\r
+               <!--Optional:-->\r
+               <ami:city>?</ami:city>\r
+               <!--Optional:-->\r
+               <ami:stateOrProvince>?</ami:stateOrProvince>\r
+               <!--Optional:-->\r
+               <ami:country>?</ami:country>\r
+               <!--Optional:-->\r
+               <ami:postalCode>?</ami:postalCode>\r
+               <!--Optional:-->\r
+               <ami:nearestIntersection>?</ami:nearestIntersection>\r
+               <!--Optional:-->\r
+               <ami:subdivision>?</ami:subdivision>\r
+               <!--Optional:-->\r
+               <ami:lot>?</ami:lot>\r
+               <!--Optional:-->\r
+               <ami:block>?</ami:block>\r
+               <!--Optional:-->\r
+               <ami:locationType>?</ami:locationType>\r
+               <!--Optional:-->\r
+               <ami:locationCode>?</ami:locationCode>\r
+               <!--Optional:-->\r
+               <ami:latitude>?</ami:latitude>\r
+               <!--Optional:-->\r
+               <ami:longitude>?</ami:longitude>\r
+               <!--Optional:-->\r
+               <ami:locationAccuracy>?</ami:locationAccuracy>\r
+               <!--Optional:-->\r
+               <ami:locationAccuracyUnits>?</ami:locationAccuracyUnits>\r
+            </ami:serviceLocation>\r
+            <ami:customerAccount>\r
+               <!--Optional:-->\r
+               <ami:mRID>?</ami:mRID>\r
+               <!--Optional:-->\r
+               <ami:idType>?</ami:idType>\r
+               <!--Optional:-->\r
+               <ami:pathName>?</ami:pathName>\r
+               <!--Zero or more repetitions:-->\r
+               <ami:parameter>\r
+                  <ami:name>?</ami:name>\r
+                  <ami:value>?</ami:value>\r
+               </ami:parameter>\r
+               <ami:billingCycle>?</ami:billingCycle>\r
+            </ami:customerAccount>\r
+            <!--Optional:-->\r
+            <ami:provisioningGroup>\r
+               <ami:name>?</ami:name>\r
+               <ami:fuseSize>?</ami:fuseSize>\r
+               <!--Zero or more repetitions:-->\r
+               <ami:readingType>\r
+                  <!--Optional:-->\r
+                  <ami:mRID>?</ami:mRID>\r
+                  <!--Optional:-->\r
+                  <ami:measurementType>?</ami:measurementType>\r
+                  <!--Optional:-->\r
+                  <ami:touBinNumber>?</ami:touBinNumber>\r
+                  <!--Optional:-->\r
+                  <ami:unit>?</ami:unit>\r
+                  <!--Optional:-->\r
+                  <ami:touCode>?</ami:touCode>\r
+                  <!--Optional:-->\r
+                  <ami:channelNumber>?</ami:channelNumber>\r
+                  <!--Optional:-->\r
+                  <ami:logicalChannelNumber>?</ami:logicalChannelNumber>\r
+                  <!--Optional:-->\r
+                  <ami:aggregateTimePeriod>?</ami:aggregateTimePeriod>\r
+                  <!--Optional:-->\r
+                  <ami:intervalLength>?</ami:intervalLength>\r
+                  <!--Optional:-->\r
+                  <ami:readSequence>?</ami:readSequence>\r
+                  <!--Optional:-->\r
+                  <ami:precision>?</ami:precision>\r
+                  <!--Optional:-->\r
+                  <ami:scale>?</ami:scale>\r
+                  <!--Optional:-->\r
+                  <ami:direction>?</ami:direction>\r
+               </ami:readingType>\r
+            </ami:provisioningGroup>\r
+            <!--Optional:-->\r
+            <ami:collectionGroup>\r
+               <ami:name>?</ami:name>\r
+               <ami:readfrequency>?</ami:readfrequency>\r
+               <ami:readwindowstarttime>?</ami:readwindowstarttime>\r
+               <ami:readwindowendtime>?</ami:readwindowendtime>\r
+               <ami:deliveryfrequency>?</ami:deliveryfrequency>\r
+               <ami:deliverywindowstarttime>?</ami:deliverywindowstarttime>\r
+               <ami:deliverywindowendtime>?</ami:deliverywindowendtime>\r
+            </ami:collectionGroup>\r
+            <!--Optional:-->\r
+            <ami:broadcastGroup>\r
+               <ami:name>?</ami:name>\r
+            </ami:broadcastGroup>\r
+            <!--Optional:-->\r
+            <ami:executeStartTime>?</ami:executeStartTime>\r
+            <!--Optional:-->\r
+            <ami:executeExpireTime>?</ami:executeExpireTime>\r
+         </ami:payload>\r
+      </ami:MeterAssetDeleteRequestMessage>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.emeter.com/energyip/amiinterface/ProvisioningRequest/deleteMeterAsset"/></con:call></con:operation><con:operation id="9a4c62be-20f4-4f99-9103-612af446aa4f" isOneWay="false" action="http://www.emeter.com/energyip/amiinterface/ProvisioningRequest/updateMeterAsset" name="updateMeterAsset" bindingOperationName="updateMeterAsset" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="ffc34e21-470b-4ab3-bdd6-c61c7d1c4bc9" name="LoadSwitchTimetable"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://139.24.137.223:7070/services/UniversalAMIProvisioningService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ami="http://www.emeter.com/energyip/amiinterface">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+    <MeterAssetUpdateRequestMessage xmlns="http://www.emeter.com/energyip/amiinterface" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <header>
+    <verb>request</verb>
+    <noun>MeterUpdate</noun>
+    <revision>1</revision>
+    <dateTime>2015-09-22T16:08:47.375+08:00</dateTime>
+    <source>SMSC</source>
+    <messageID>2559</messageID>
+    <asyncReplyTo>http://139.24.137.244:8080/UniversalAMIAdapterWS/services/UniversalAMIProvisioningResponseService?wsdl</asyncReplyTo>
+    <utilityId>SMSC</utilityId>
+  </header>
+  <payload>
+    <meterAsset>
+      <mRID>73300001</mRID>
+      <idType>METER_X_UDC_ASSET_ID</idType>
+      <pathName>KNG</pathName>
+      <modelNumber>UAA EIP</modelNumber>
+      <manufacturedDate>2014-01-01T00:00:00.000+08:00</manufacturedDate>
+      <serviceType>ELECTRIC</serviceType>
+      <electricMeter/>
+      <numDigits>5</numDigits>
+    </meterAsset>
+    <comFunction>
+      <mRID>COMOD-73300001</mRID>
+      <idType>METER_COMMUNICATION_MODULE_X_UDC_ASSET_ID</idType>
+      <pathName>UAAEIP</pathName>
+      <modelNumber>ABC</modelNumber>
+      <manufacturedDate>2014-01-01T00:00:00.000+08:00</manufacturedDate>
+      <serialNumber>XYZ</serialNumber>
+      <lotNumber>123</lotNumber>
+      <testDate>2014-01-01T00:00:00.000+08:00</testDate>
+    </comFunction>
+    <serviceDeliveryPoint>
+      <mRID>SDP-73300001</mRID>
+      <idType>SDP_X_UDC_ASSET_ID</idType>
+      <pathName>SMSC</pathName>
+      <serviceType>Electric</serviceType>
+      <lifeSupport>false</lifeSupport>
+      <serviceDeliveryRemarks>Res Electric SDP</serviceDeliveryRemarks>
+      <latitude>37.571603</latitude>
+      <longitude>-122.267501</longitude>
+      <locationAccuracy>5.25</locationAccuracy>
+	      <ami:parameter>
+	        <ami:name>Load Control Time Switch Profile</ami:name>
+	        <ami:value>vMeter_LoadSwitch</ami:value>
+	      </ami:parameter>
+    </serviceDeliveryPoint>
+    <serviceLocation>
+      <mRID>PRMS-73300001</mRID>
+      <idType>PREMISE_X_CLIENT_PRMSE_ID</idType>
+      <pathName>SMSC</pathName>
+      <addressGeneral>73300001</addressGeneral>
+      <addressGeneral2>E Third Ave</addressGeneral2>
+      <city>Foster City</city>
+      <stateOrProvince>California</stateOrProvince>
+      <country>United States</country>
+      <postalCode>94404</postalCode>
+      <latitude>37.571603</latitude>
+      <longitude>-122.267501</longitude>
+    </serviceLocation>
+    <customerAccount>
+      <mRID>ACCT-73300001</mRID>
+      <idType>UdcAccountId</idType>
+      <pathName>SMSC</pathName>
+    </customerAccount>
+    <measurementProfile>Sie_Meas</measurementProfile>
+    <touProfile name="Sie_ToU" clearValue="false"/>
+    <holidayProfile clearValue="true"/>
+    <loadLimitProfile name="Sie_LD" clearValue="false"/>
+    <loadControlTimeSwitchProfile  name="Sie_LD" clearValue="true"/>
+  </payload>
+</MeterAssetUpdateRequestMessage>
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.emeter.com/energyip/amiinterface/ProvisioningRequest/updateMeterAsset"/><con:wsrmConfig version="1.2"/></con:call><con:call id="70c379f1-3e7c-4ee1-a64f-0e3539f90160" name="KeyExchange"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://139.24.137.223:7070/services/UniversalAMIProvisioningService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ami="http://www.emeter.com/energyip/amiinterface">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ami:MeterAssetUpdateRequestMessage xmlns:ami="http://www.emeter.com/energyip/amiinterface" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+
+  <ami:header>
+    <ami:verb>request</ami:verb>
+    <ami:noun>MeterUpdate</ami:noun>
+    <ami:revision>1</ami:revision>
+    <ami:dateTime>2014-10-23T11:37:28.837+08:00</ami:dateTime>
+    <ami:source>EIP</ami:source>
+    <ami:messageID>79</ami:messageID>
+    <ami:asyncReplyTo>http://139.24.137.244:8080/UniversalAMIAdapterWS/services/UniversalAMIProvisioningResponseService?wsdl</ami:asyncReplyTo>
+  </ami:header>
+  <ami:payload>
+    <ami:meterAsset>
+      <ami:mRID>73300001</ami:mRID>
+      <ami:idType>METER_X_UDC_ASSET_ID</ami:idType>
+      <ami:pathName>16486977</ami:pathName>
+      <ami:serviceType>Electric</ami:serviceType>
+      <ami:electricMeter>
+        <ami:numWires>3</ami:numWires>
+      </ami:electricMeter>
+      <ami:numDigits>6</ami:numDigits>
+      <ami:parameter>
+	    <ami:name>KeyExchange.keytype</ami:name>
+	    <ami:value>GUEK</ami:value>
+	  </ami:parameter>
+	  <ami:parameter>
+	    <ami:name>KeyExchange.keyNumberOfParts</ami:name>
+	    <ami:value>3</ami:value>
+	  </ami:parameter>
+	  <ami:parameter>
+	    <ami:name>KeyExchange.keyPart1</ami:name>
+	    <ami:value>89541365548954136554895413655489541365548954136554</ami:value>
+	  </ami:parameter>
+	  <ami:parameter>
+	    <ami:name>KeyExchange.keyPart2</ami:name>
+	    <ami:value>89541365548954136554895413655489541365548954136554</ami:value>
+	  </ami:parameter>
+	  <ami:parameter>
+	    <ami:name>KeyExchange.keyPart3</ami:name>
+	    <ami:value>89541365548954136554895413655489541365548954136554</ami:value>
+	  </ami:parameter>
+	  <ami:parameter>
+	    <ami:name>KeyExchange.role</ami:name>
+	    <ami:value>Admin</ami:value>
+	  </ami:parameter>
+    </ami:meterAsset>
+    <ami:comFunction>
+      <ami:mRID>YMT05001370</ami:mRID>
+      <ami:idType>METER_COMMUNICATION_MODULE_X_NETWORK_ID</ami:idType>
+      <ami:pathName>UAA EIP</ami:pathName>
+    </ami:comFunction>
+    <ami:serviceDeliveryPoint>
+      <ami:mRID>16486998</ami:mRID>
+      <ami:idType>SDP_X_UDC_ASSET_ID</ami:idType>
+      <ami:pathName>16486977</ami:pathName>	  
+      <ami:serviceType>Electric</ami:serviceType>
+      <ami:readRoute>
+        <ami:mRID>Monthly</ami:mRID>
+        <ami:idType>ROUTE_X_UDC_ASSET_ID</ami:idType>
+        <ami:pathName>16486977</ami:pathName>
+      </ami:readRoute>
+      <ami:serviceDeliveryRemarks>YMT05001370</ami:serviceDeliveryRemarks>
+    </ami:serviceDeliveryPoint>
+    <ami:serviceLocation>
+      <ami:mRID>16486977</ami:mRID>
+      <ami:idType>PREMISE_X_CLIENT_PRMSE_ID</ami:idType>
+      <ami:pathName>GPC</ami:pathName>
+      <ami:addressGeneral>SampleAddress</ami:addressGeneral>
+      <ami:city>ShanTou</ami:city>
+      <ami:stateOrProvince>Guang Dong</ami:stateOrProvince>
+      <ami:country>China</ami:country>
+      <ami:postalCode>515000</ami:postalCode>
+    </ami:serviceLocation>
+    <ami:customerAccount>
+      <ami:mRID>16486977</ami:mRID>
+      <ami:idType>ACCOUNT_X_UDC_ACCNT_ID</ami:idType>
+      <ami:pathName>16486977</ami:pathName>
+      <ami:billingCycle>Monthly</ami:billingCycle>
+    </ami:customerAccount>
+    <ami:executeStartTime>2014-10-23T03:37:24.000Z</ami:executeStartTime>
+    <ami:executeExpireTime>2017-10-24T03:37:24.000Z</ami:executeExpireTime>
+    <ami:measurementProfile>Data Collection - PH3</ami:measurementProfile>
+    <ami:touProfile name="test" clearValue="false"/>
+    <ami:loadLimitProfile name="test" clearValue="false"/>
+  </ami:payload>
+</ami:MeterAssetUpdateRequestMessage>
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.emeter.com/energyip/amiinterface/ProvisioningRequest/updateMeterAsset"/><con:wsrmConfig version="1.2"/></con:call><con:call id="f496825c-c5fe-4be0-a9f8-9297c7ffc059" name="LoadSwitchAndKey"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://139.24.137.223:7070/services/UniversalAMIProvisioningService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ami="http://www.emeter.com/energyip/amiinterface">
+   <soapenv:Header/>
+   <soapenv:Body>
+    <MeterAssetUpdateRequestMessage xmlns="http://www.emeter.com/energyip/amiinterface" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <header>
+    <verb>request</verb>
+    <noun>MeterUpdate</noun>
+    <revision>1</revision>
+    <dateTime>2015-09-22T16:08:47.375+08:00</dateTime>
+    <source>SMSC</source>
+    <messageID>2559</messageID>
+    <asyncReplyTo>http://139.24.137.244:8080/UniversalAMIAdapterWS/services/UniversalAMIProvisioningResponseService?wsdl</asyncReplyTo>
+    <utilityId>SMSC</utilityId>
+  </header>
+  <payload>
+    <meterAsset>
+      <mRID>73300001</mRID>
+      <idType>METER_X_UDC_ASSET_ID</idType>
+      <pathName>KNG</pathName>
+      <modelNumber>UAA EIP</modelNumber>
+      <manufacturedDate>2014-01-01T00:00:00.000+08:00</manufacturedDate>
+      <serviceType>ELECTRIC</serviceType>
+      <electricMeter/>
+      <numDigits>5</numDigits>
+    </meterAsset>
+    <comFunction>
+      <mRID>COMOD-73300001</mRID>
+      <idType>METER_COMMUNICATION_MODULE_X_UDC_ASSET_ID</idType>
+      <pathName>UAAEIP</pathName>
+      <modelNumber>ABC</modelNumber>
+      <manufacturedDate>2014-01-01T00:00:00.000+08:00</manufacturedDate>
+      <serialNumber>XYZ</serialNumber>
+      <lotNumber>123</lotNumber>
+      <testDate>2014-01-01T00:00:00.000+08:00</testDate>
+    </comFunction>
+    <serviceDeliveryPoint>
+      <mRID>SDP-73300001</mRID>
+      <idType>SDP_X_UDC_ASSET_ID</idType>
+      <pathName>SMSC</pathName>
+      <serviceType>Electric</serviceType>
+      <lifeSupport>false</lifeSupport>
+      <serviceDeliveryRemarks>Res Electric SDP</serviceDeliveryRemarks>
+      <latitude>37.571603</latitude>
+      <longitude>-122.267501</longitude>
+      <locationAccuracy>5.25</locationAccuracy>
+            <ami:parameter>
+	        <ami:name>Load Control Time Switch Profile</ami:name>
+	        <ami:value>vMeter_LoadSwitch</ami:value>
+	      </ami:parameter>
+	      <ami:parameter>
+	    <ami:name>KeyExchange.keytype</ami:name>
+	    <ami:value>GUEK</ami:value>
+	  </ami:parameter>
+	  <ami:parameter>
+	    <ami:name>KeyExchange.keyNumberOfParts</ami:name>
+	    <ami:value>2</ami:value>
+	  </ami:parameter>
+	  <ami:parameter>
+	    <ami:name>KeyExchange.keyPart1</ami:name>
+	    <ami:value>89541365548954136554895413655489541365548954136554</ami:value>
+	  </ami:parameter>
+	  <ami:parameter>
+	    <ami:name>KeyExchange.keyPart2</ami:name>
+	    <ami:value>89541365548954136554895</ami:value>
+	  </ami:parameter>
+	  <ami:parameter>
+	    <ami:name>KeyExchange.role</ami:name>
+	    <ami:value>Operator</ami:value>
+	  </ami:parameter>
+    </serviceDeliveryPoint>
+    <serviceLocation>
+      <mRID>PRMS-73300001</mRID>
+      <idType>PREMISE_X_CLIENT_PRMSE_ID</idType>
+      <pathName>SMSC</pathName>
+      <addressGeneral>73300001</addressGeneral>
+      <addressGeneral2>E Third Ave</addressGeneral2>
+      <city>Foster City</city>
+      <stateOrProvince>California</stateOrProvince>
+      <country>United States</country>
+      <postalCode>94404</postalCode>
+      <latitude>37.571603</latitude>
+      <longitude>-122.267501</longitude>
+    </serviceLocation>
+    <customerAccount>
+      <mRID>ACCT-73300001</mRID>
+      <idType>UdcAccountId</idType>
+      <pathName>SMSC</pathName>
+    </customerAccount>
+    <measurementProfile>Sie_Meas</measurementProfile>
+    <touProfile name="Sie_ToU" clearValue="false"/>
+    <holidayProfile clearValue="true"/>
+    <loadLimitProfile name="Sie_LD" clearValue="false"/>
+    <loadControlTimeSwitchProfile  name="Sie_LD" clearValue="true"/>
+  </payload>
+</MeterAssetUpdateRequestMessage>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.emeter.com/energyip/amiinterface/ProvisioningRequest/updateMeterAsset"/><con:wsrmConfig version="1.2"/></con:call><con:call id="4aeee2ad-bc2e-426b-a37e-1f10de80ad11" name="KeyExchange_Sim"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://139.24.137.223:7070/services/UniversalAMIProvisioningService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ami="http://www.emeter.com/energyip/amiinterface">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ami:MeterAssetUpdateRequestMessage xmlns:ami="http://www.emeter.com/energyip/amiinterface" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+
+  <ami:header>
+    <ami:verb>request</ami:verb>
+    <ami:noun>MeterUpdate</ami:noun>
+    <ami:revision>1</ami:revision>
+    <ami:dateTime>2014-10-23T11:37:28.837+08:00</ami:dateTime>
+    <ami:source>EIP</ami:source>
+    <ami:messageID>79</ami:messageID>
+    <ami:asyncReplyTo>http://139.24.137.244:8080/UniversalAMIAdapterWS/services/UniversalAMIProvisioningResponseService?wsdl</ami:asyncReplyTo>
+  </ami:header>
+  <ami:payload>
+    <ami:meterAsset>
+      <ami:mRID>SIM1234</ami:mRID>
+      <ami:idType>METER_X_UDC_ASSET_ID</ami:idType>
+      <ami:pathName>16486977</ami:pathName>
+      <ami:serviceType>Electric</ami:serviceType>
+      <ami:electricMeter>
+        <ami:numWires>3</ami:numWires>
+      </ami:electricMeter>
+      <ami:numDigits>6</ami:numDigits>
+    </ami:meterAsset>
+    <ami:comFunction>
+      <ami:mRID>YMT05001370</ami:mRID>
+      <ami:idType>METER_COMMUNICATION_MODULE_X_NETWORK_ID</ami:idType>
+      <ami:pathName>UAA EIP</ami:pathName>
+    </ami:comFunction>
+    <ami:serviceDeliveryPoint>
+      <ami:mRID>16486998</ami:mRID>
+      <ami:idType>SDP_X_UDC_ASSET_ID</ami:idType>
+      <ami:pathName>16486977</ami:pathName>
+	  <ami:parameter>
+	    <ami:name>KeyExchange.keytype</ami:name>
+	    <ami:value>GUEK</ami:value>
+	  </ami:parameter>
+	  <ami:parameter>
+	    <ami:name>KeyExchange.keyNumberOfParts</ami:name>
+	    <ami:value>2</ami:value>
+	  </ami:parameter>
+	  <ami:parameter>
+	    <ami:name>KeyExchange.keyPart1</ami:name>
+	    <ami:value>89541365548954136554895413655489541365548954136554</ami:value>
+	  </ami:parameter>
+	  <ami:parameter>
+	    <ami:name>KeyExchange.keyPart2</ami:name>
+	    <ami:value>89541365548954136554895</ami:value>
+	  </ami:parameter>
+	  <ami:parameter>
+	    <ami:name>KeyExchange.role</ami:name>
+	    <ami:value>Operator</ami:value>
+	  </ami:parameter>
+      <ami:serviceType>Electric</ami:serviceType>
+      <ami:readRoute>
+        <ami:mRID>Monthly</ami:mRID>
+        <ami:idType>ROUTE_X_UDC_ASSET_ID</ami:idType>
+        <ami:pathName>16486977</ami:pathName>
+      </ami:readRoute>
+      <ami:serviceDeliveryRemarks>YMT05001370</ami:serviceDeliveryRemarks>
+    </ami:serviceDeliveryPoint>
+    <ami:serviceLocation>
+      <ami:mRID>16486977</ami:mRID>
+      <ami:idType>PREMISE_X_CLIENT_PRMSE_ID</ami:idType>
+      <ami:pathName>GPC</ami:pathName>
+      <ami:addressGeneral>SampleAddress</ami:addressGeneral>
+      <ami:city>ShanTou</ami:city>
+      <ami:stateOrProvince>Guang Dong</ami:stateOrProvince>
+      <ami:country>China</ami:country>
+      <ami:postalCode>515000</ami:postalCode>
+    </ami:serviceLocation>
+    <ami:customerAccount>
+      <ami:mRID>16486977</ami:mRID>
+      <ami:idType>ACCOUNT_X_UDC_ACCNT_ID</ami:idType>
+      <ami:pathName>16486977</ami:pathName>
+      <ami:billingCycle>Monthly</ami:billingCycle>
+    </ami:customerAccount>
+    <ami:executeStartTime>2014-10-23T03:37:24.000Z</ami:executeStartTime>
+    <ami:executeExpireTime>2014-10-24T03:37:24.000Z</ami:executeExpireTime>
+    <ami:measurementProfile>Data Collection - PH3</ami:measurementProfile>
+    <ami:touProfile name="test" clearValue="false"/>
+    <ami:loadLimitProfile name="test" clearValue="false"/>
+  </ami:payload>
+</ami:MeterAssetUpdateRequestMessage>
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.emeter.com/energyip/amiinterface/ProvisioningRequest/updateMeterAsset"/><con:wsrmConfig version="1.2"/></con:call><con:call id="be55fa77-5068-49de-9f55-02daa7426e0b" name="AllProfile"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://139.24.137.223:7070/services/UniversalAMIProvisioningService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ami="http://www.emeter.com/energyip/amiinterface">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<MeterAssetUpdateRequestMessage xmlns="http://www.emeter.com/energyip/amiinterface" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+			<header>
+				<verb>request</verb>
+				<noun>MeterUpdate</noun>
+				<revision>1</revision>
+				<dateTime>2015-09-22T16:08:47.375+08:00</dateTime>
+				<source>SMSC</source>
+				<messageID>2559</messageID>
+				<asyncReplyTo>http://eipapp.vms:8081/UAAWSInboundAdapter/services/UniversalAMIMeterControlResponseService?wsdl</asyncReplyTo>
+				<utilityId>SMSC</utilityId>
+			</header>
+			<payload>
+				<meterAsset>
+					<mRID>73300001</mRID>
+					<idType>METER_X_UDC_ASSET_ID</idType>
+					<pathName>SMSC</pathName>
+					<modelNumber>UAA EIP</modelNumber>
+					<manufacturedDate>2014-01-01T00:00:00.000+08:00</manufacturedDate>
+					<serviceType>ELECTRIC</serviceType>
+					<electricMeter/>
+					<numDigits>5</numDigits>
+					     
+	      <ami:parameter>
+	        <ami:name>DoNotSendToMeter</ami:name> 
+	        <ami:value>true</ami:value>
+	      </ami:parameter> 
+					<ami:parameter>
+	        <ami:name>Collection Scheme</ami:name> 
+	        <ami:value>Scheme</ami:value>
+	      </ami:parameter>
+	      <ami:parameter>
+	        <ami:name>Billing Meas Profile</ami:name>
+	        <ami:value>Meas</ami:value>
+	      </ami:parameter>
+	      <ami:parameter>
+	        <ami:name>Tou Profile</ami:name>
+	        <ami:value>ToU</ami:value>
+	      </ami:parameter>
+	      <ami:parameter>
+	        <ami:name>Load Limit Profile</ami:name>
+	        <ami:value>LoadLimit</ami:value>
+	      </ami:parameter>
+	      <ami:parameter>
+	        <ami:name>Clock Profile</ami:name>
+	        <ami:value>Clock</ami:value>
+	      </ami:parameter>
+	      <ami:parameter>
+	        <ami:name>Load Control Time Switch Profile</ami:name>
+	        <ami:value>LD</ami:value>
+	      </ami:parameter>
+	      <ami:parameter>
+	    <ami:name>KeyExchange.keytype</ami:name>
+	    <ami:value>GUEK</ami:value>
+	  </ami:parameter>
+	  <ami:parameter>
+	    <ami:name>KeyExchange.keyNumberOfParts</ami:name>
+	    <ami:value>3</ami:value>
+	  </ami:parameter>	  
+		<ami:parameter>
+			<ami:name>OptOut</ami:name>
+			<ami:value>true</ami:value>
+		</ami:parameter>
+		<ami:parameter>
+			<ami:name>DisplayLoadProfileOn</ami:name>
+			<ami:value>true</ami:value>
+		</ami:parameter>
+		<ami:parameter>
+			<ami:name>CustomerInterfaceOn</ami:name>a
+			<ami:value>true</ami:value>
+		</ami:parameter>
+		<ami:parameter>
+			<ami:name>DisplayReset</ami:name>
+			<ami:value>2016-11-30T14:09:00</ami:value>
+		</ami:parameter>
+	  <ami:parameter>
+	    <ami:name>KeyExchange.keyPart1</ami:name>
+	    <ami:value>89541365548954136554895413655489541365548954136554</ami:value>
+	  </ami:parameter>
+	  <ami:parameter>
+	    <ami:name>KeyExchange.keyPart2</ami:name>
+	    <ami:value>89541365548954136554895413655489541365548954136554</ami:value>
+	  </ami:parameter>
+	  <ami:parameter>
+	    <ami:name>KeyExchange.keyPart3</ami:name>
+	    <ami:value>89541365548954136554895413655489541365548954136554</ami:value>
+	  </ami:parameter>
+	  <ami:parameter>
+	    <ami:name>KeyExchange.role</ami:name>
+	    <ami:value>Admin</ami:value>
+	  </ami:parameter>
+				</meterAsset>
+				<comFunction>
+					<mRID>COMOD-73300001</mRID>
+					<idType>METER_COMMUNICATION_MODULE_X_UDC_ASSET_ID</idType>
+					<pathName>UAAEIP</pathName>
+					<modelNumber>ABC</modelNumber>
+					<manufacturedDate>2014-01-01T00:00:00.000+08:00</manufacturedDate>
+					<serialNumber>XYZ</serialNumber>
+					<lotNumber>123</lotNumber>
+					<testDate>2014-01-01T00:00:00.000+08:00</testDate>
+				</comFunction>
+				<serviceDeliveryPoint>
+					<mRID>SDP-73300001</mRID>
+					<idType>SDP_X_UDC_ASSET_ID</idType>
+					<pathName>SMSC</pathName>
+					<serviceType>Electric</serviceType>
+					<lifeSupport>false</lifeSupport>
+					<serviceDeliveryRemarks>Res Electric SDP</serviceDeliveryRemarks>
+					<latitude>37.571603</latitude>
+					<longitude>-122.267501</longitude>
+					<locationAccuracy>5.25</locationAccuracy>        	 
+				</serviceDeliveryPoint>
+				<serviceLocation>
+					<mRID>PRMS-73300001</mRID>
+					<idType>PREMISE_X_CLIENT_PRMSE_ID</idType>
+					<pathName>SMSC</pathName>
+					<addressGeneral>73300001</addressGeneral>
+					<addressGeneral2>E Third Ave</addressGeneral2>
+					<city>Foster City</city>
+					<stateOrProvince>California</stateOrProvince>
+					<country>United States</country>
+					<postalCode>94404</postalCode>
+					<latitude>37.571603</latitude>
+					<longitude>-122.267501</longitude>
+				</serviceLocation>
+				<customerAccount>
+					<mRID>ACCT-73300001</mRID>
+					<idType>UdcAccountId</idType>
+					<pathName>SMSC</pathName>
+				</customerAccount>
+				<measurementProfile>vMeter_Meas</measurementProfile>
+				<touProfile name="vMeter_ToU" clearValue="false"/>
+				<holidayProfile clearValue="true"/>
+				<loadLimitProfile name="vMeter_LoadProfile" clearValue="false"/>
+				<loadControlTimeSwitchProfile clearValue="true"/>
+				<ami:executeStartTime>2016-07-28T05:00:20.000Z</ami:executeStartTime>
+				<ami:executeExpireTime>2019-07-31T08:35:20.000Z</ami:executeExpireTime>
+			</payload>
+		</MeterAssetUpdateRequestMessage>
+	</soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>kngadmin</con:username><con:password>Password1</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:preemptive>true</con:preemptive><con:authType>Preemptive</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.emeter.com/energyip/amiinterface/ProvisioningRequest/updateMeterAsset"/><con:wsrmConfig version="1.2"/></con:call><con:call id="c45a0bdb-4069-4d65-81e3-5f49ae6ad6bc" name="UpdateGW"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://139.24.137.223:7070/services/UniversalAMIProvisioningService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ami="http://www.emeter.com/energyip/amiinterface">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ami:MeterAssetUpdateRequestMessage xmlns:ami="http://www.emeter.com/energyip/amiinterface" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+
+  <ami:header>
+    <ami:verb>request</ami:verb>
+    <ami:noun>MeterUpdate</ami:noun>
+    <ami:revision>1</ami:revision>
+    <ami:dateTime>2014-10-23T11:37:28.837+08:00</ami:dateTime>
+    <ami:source>EIP</ami:source>
+    <ami:messageID>79</ami:messageID>
+    <ami:asyncReplyTo>http://139.24.137.244:8080/UniversalAMIAdapterWS/services/UniversalAMIProvisioningResponseService?wsdl</ami:asyncReplyTo>
+  </ami:header>
+  <ami:payload>
+    <ami:meterAsset>
+      <ami:mRID>GW_TestGW005</ami:mRID>
+      <ami:idType>METER_X_UDC_ASSET_ID</ami:idType>
+      <ami:pathName>16486977</ami:pathName>
+      <ami:serviceType>Electric</ami:serviceType>
+      <ami:electricMeter>
+        <ami:numWires>3</ami:numWires>
+      </ami:electricMeter>
+      <ami:numDigits>6</ami:numDigits>
+      <ami:parameter>
+	    <ami:name>Collection Scheme</ami:name> 
+	    <ami:value>GW_Scheme</ami:value>
+	  </ami:parameter>
+    </ami:meterAsset>
+    <ami:comFunction>
+      <ami:mRID>YMT05001370</ami:mRID>
+      <ami:idType>METER_COMMUNICATION_MODULE_X_NETWORK_ID</ami:idType>
+      <ami:pathName>UAA EIP</ami:pathName>
+    </ami:comFunction>
+    <ami:serviceDeliveryPoint>
+      <ami:mRID>16486998</ami:mRID>
+      <ami:idType>SDP_X_UDC_ASSET_ID</ami:idType>
+      <ami:pathName>16486977</ami:pathName>	  
+      <ami:serviceType>Electric</ami:serviceType>
+      <ami:readRoute>
+        <ami:mRID>Monthly</ami:mRID>
+        <ami:idType>ROUTE_X_UDC_ASSET_ID</ami:idType>
+        <ami:pathName>16486977</ami:pathName>
+      </ami:readRoute>
+      <ami:serviceDeliveryRemarks>YMT05001370</ami:serviceDeliveryRemarks>
+    </ami:serviceDeliveryPoint>
+    <ami:serviceLocation>
+      <ami:mRID>16486977</ami:mRID>
+      <ami:idType>PREMISE_X_CLIENT_PRMSE_ID</ami:idType>
+      <ami:pathName>GPC</ami:pathName>
+      <ami:addressGeneral>SampleAddress</ami:addressGeneral>
+      <ami:city>ShanTou</ami:city>
+      <ami:stateOrProvince>Guang Dong</ami:stateOrProvince>
+      <ami:country>China</ami:country>
+      <ami:postalCode>515000</ami:postalCode>
+    </ami:serviceLocation>
+    <ami:customerAccount>
+      <ami:mRID>16486977</ami:mRID>
+      <ami:idType>ACCOUNT_X_UDC_ACCNT_ID</ami:idType>
+      <ami:pathName>16486977</ami:pathName>
+      <ami:billingCycle>Monthly</ami:billingCycle>
+    </ami:customerAccount>
+    <ami:executeStartTime>2014-10-23T03:37:24.000Z</ami:executeStartTime>
+    <ami:executeExpireTime>2017-10-24T03:37:24.000Z</ami:executeExpireTime>
+    <ami:measurementProfile>Data Collection - PH3</ami:measurementProfile>
+    <ami:touProfile name="test" clearValue="false"/>
+    <ami:loadLimitProfile name="test" clearValue="false"/>
+  </ami:payload>
+</ami:MeterAssetUpdateRequestMessage>
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.emeter.com/energyip/amiinterface/ProvisioningRequest/updateMeterAsset"/><con:wsrmConfig version="1.2"/></con:call><con:call id="67151835-ee6d-438e-9915-747706718b41" name="Collection"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://139.24.137.223:7070/services/UniversalAMIProvisioningService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ami="http://www.emeter.com/energyip/amiinterface">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ami:MeterAssetUpdateRequestMessage xmlns:ami="http://www.emeter.com/energyip/amiinterface" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+
+  <ami:header>
+    <ami:verb>request</ami:verb>
+    <ami:noun>MeterUpdate</ami:noun>
+    <ami:revision>1</ami:revision>
+    <ami:dateTime>2014-10-23T11:37:28.837+08:00</ami:dateTime>
+    <ami:source>EIP</ami:source>
+    <ami:messageID>79</ami:messageID>
+    <ami:asyncReplyTo>http://139.24.137.244:8080/UniversalAMIAdapterWS/services/UniversalAMIProvisioningResponseService?wsdl</ami:asyncReplyTo>
+  </ami:header>
+  <ami:payload>
+    <ami:meterAsset>
+      <ami:mRID>73300001</ami:mRID>
+      <ami:idType>METER_X_UDC_ASSET_ID</ami:idType>
+      <ami:pathName>16486977</ami:pathName>
+      <ami:serviceType>Electric</ami:serviceType>
+      <ami:electricMeter>
+        <ami:numWires>3</ami:numWires>
+      </ami:electricMeter>
+      <ami:numDigits>6</ami:numDigits> 
+		<ami:parameter>
+			<ami:name>OptOut</ami:name>
+			<ami:value>true</ami:value>
+		</ami:parameter>   	 
+    </ami:meterAsset>
+    <ami:comFunction>
+      <ami:mRID>YMT05001370</ami:mRID>
+      <ami:idType>METER_COMMUNICATION_MODULE_X_NETWORK_ID</ami:idType>
+      <ami:pathName>UAA EIP</ami:pathName>
+    </ami:comFunction>
+    <ami:serviceDeliveryPoint>
+      <ami:mRID>16486998</ami:mRID>
+      <ami:idType>SDP_X_UDC_ASSET_ID</ami:idType>
+      <ami:pathName>16486977</ami:pathName>	  
+      <ami:serviceType>Electric</ami:serviceType>
+      <ami:readRoute>
+        <ami:mRID>Monthly</ami:mRID>
+        <ami:idType>ROUTE_X_UDC_ASSET_ID</ami:idType>
+        <ami:pathName>16486977</ami:pathName>
+      </ami:readRoute>
+      <ami:serviceDeliveryRemarks>YMT05001370</ami:serviceDeliveryRemarks>
+    </ami:serviceDeliveryPoint>
+    <ami:serviceLocation>
+      <ami:mRID>16486977</ami:mRID>
+      <ami:idType>PREMISE_X_CLIENT_PRMSE_ID</ami:idType>
+      <ami:pathName>GPC</ami:pathName>
+      <ami:addressGeneral>SampleAddress</ami:addressGeneral>
+      <ami:city>ShanTou</ami:city>
+      <ami:stateOrProvince>Guang Dong</ami:stateOrProvince>
+      <ami:country>China</ami:country>
+      <ami:postalCode>515000</ami:postalCode>
+    </ami:serviceLocation>
+    <ami:customerAccount>
+      <ami:mRID>16486977</ami:mRID>
+      <ami:idType>ACCOUNT_X_UDC_ACCNT_ID</ami:idType>
+      <ami:pathName>16486977</ami:pathName>
+      <ami:billingCycle>Monthly</ami:billingCycle>
+    </ami:customerAccount>
+    <ami:executeStartTime>2014-10-23T03:37:24.000Z</ami:executeStartTime>
+    <ami:executeExpireTime>2017-10-24T03:37:24.000Z</ami:executeExpireTime>
+    <ami:measurementProfile>Data Collection - PH3</ami:measurementProfile>
+    <ami:touProfile name="test" clearValue="false"/>
+    <ami:loadLimitProfile name="test" clearValue="false"/>
+  </ami:payload>
+</ami:MeterAssetUpdateRequestMessage>
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.emeter.com/energyip/amiinterface/ProvisioningRequest/updateMeterAsset"/><con:wsrmConfig version="1.2"/></con:call><con:call id="9dddd184-e2ce-46af-96be-bde55c7a841d" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://139.24.137.223:7070/services/UniversalAMIProvisioningService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ami="http://www.emeter.com/energyip/amiinterface">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ami:MeterAssetUpdateRequestMessage>\r
+         <ami:header>\r
+            <!--Optional:-->\r
+            <ami:verb>?</ami:verb>\r
+            <!--Optional:-->\r
+            <ami:noun>?</ami:noun>\r
+            <!--Optional:-->\r
+            <ami:revision>1</ami:revision>\r
+            <!--Optional:-->\r
+            <ami:dateTime>?</ami:dateTime>\r
+            <!--Optional:-->\r
+            <ami:source>?</ami:source>\r
+            <!--Optional:-->\r
+            <ami:messageID>?</ami:messageID>\r
+            <!--Optional:-->\r
+            <ami:asyncReplyTo>?</ami:asyncReplyTo>\r
+            <!--Optional:-->\r
+            <ami:utilityId>?</ami:utilityId>\r
+         </ami:header>\r
+         <!--Optional:-->\r
+         <ami:payload>\r
+            <ami:meterAsset>\r
+               <!--Optional:-->\r
+               <ami:mRID>?</ami:mRID>\r
+               <!--Optional:-->\r
+               <ami:idType>?</ami:idType>\r
+               <!--Optional:-->\r
+               <ami:pathName>?</ami:pathName>\r
+               <!--Zero or more repetitions:-->\r
+               <ami:parameter>\r
+                  <ami:name>?</ami:name>\r
+                  <ami:value>?</ami:value>\r
+               </ami:parameter>\r
+               <!--Optional:-->\r
+               <ami:manufacturer>?</ami:manufacturer>\r
+               <!--Optional:-->\r
+               <ami:modelNumber>?</ami:modelNumber>\r
+               <!--Optional:-->\r
+               <ami:manufacturedDate>?</ami:manufacturedDate>\r
+               <!--Optional:-->\r
+               <ami:serialNumber>?</ami:serialNumber>\r
+               <!--Optional:-->\r
+               <ami:lotNumber>?</ami:lotNumber>\r
+               <!--Optional:-->\r
+               <ami:testDate>?</ami:testDate>\r
+               <!--Optional:-->\r
+               <ami:serviceType>?</ami:serviceType>\r
+               <!--You have a CHOICE of the next 3 items at this level-->\r
+               <!--Optional:-->\r
+               <ami:electricMeter>\r
+                  <!--Optional:-->\r
+                  <ami:aepCode>?</ami:aepCode>\r
+                  <!--Optional:-->\r
+                  <ami:form>?</ami:form>\r
+                  <!--Optional:-->\r
+                  <ami:base>?</ami:base>\r
+                  <!--Optional:-->\r
+                  <ami:voltageRating>?</ami:voltageRating>\r
+                  <!--Optional:-->\r
+                  <ami:currentRating>?</ami:currentRating>\r
+                  <!--Optional:-->\r
+                  <ami:frequencyRating>?</ami:frequencyRating>\r
+                  <!--Optional:-->\r
+                  <ami:numPhases>?</ami:numPhases>\r
+                  <!--Optional:-->\r
+                  <ami:numWires>?</ami:numWires>\r
+                  <!--Optional:-->\r
+                  <ami:kh>?</ami:kh>\r
+                  <!--Optional:-->\r
+                  <ami:registerRatio>?</ami:registerRatio>\r
+               </ami:electricMeter>\r
+               <!--Optional:-->\r
+               <ami:waterMeter>\r
+                  <!--Optional:-->\r
+                  <ami:inletDiameter>?</ami:inletDiameter>\r
+                  <!--Optional:-->\r
+                  <ami:outletDiameter>?</ami:outletDiameter>\r
+                  <!--Optional:-->\r
+                  <ami:operatingPressure>?</ami:operatingPressure>\r
+                  <!--Optional:-->\r
+                  <ami:flowRange>?</ami:flowRange>\r
+               </ami:waterMeter>\r
+               <!--Optional:-->\r
+               <ami:gasMeter>\r
+                  <!--Optional:-->\r
+                  <ami:operatingPressure>?</ami:operatingPressure>\r
+                  <!--Optional:-->\r
+                  <ami:flowRange>?</ami:flowRange>\r
+               </ami:gasMeter>\r
+               <!--Optional:-->\r
+               <ami:numDigits>?</ami:numDigits>\r
+               <!--Optional:-->\r
+               <ami:typeMeter>?</ami:typeMeter>\r
+               <!--Optional:-->\r
+               <ami:ProgramId>?</ami:ProgramId>\r
+            </ami:meterAsset>\r
+            <ami:comFunction>\r
+               <!--Optional:-->\r
+               <ami:mRID>?</ami:mRID>\r
+               <!--Optional:-->\r
+               <ami:idType>?</ami:idType>\r
+               <!--Optional:-->\r
+               <ami:pathName>?</ami:pathName>\r
+               <!--Zero or more repetitions:-->\r
+               <ami:parameter>\r
+                  <ami:name>?</ami:name>\r
+                  <ami:value>?</ami:value>\r
+               </ami:parameter>\r
+               <!--Optional:-->\r
+               <ami:manufacturer>?</ami:manufacturer>\r
+               <!--Optional:-->\r
+               <ami:modelNumber>?</ami:modelNumber>\r
+               <!--Optional:-->\r
+               <ami:manufacturedDate>?</ami:manufacturedDate>\r
+               <!--Optional:-->\r
+               <ami:serialNumber>?</ami:serialNumber>\r
+               <!--Optional:-->\r
+               <ami:lotNumber>?</ami:lotNumber>\r
+               <!--Optional:-->\r
+               <ami:testDate>?</ami:testDate>\r
+               <!--Optional:-->\r
+               <ami:amrAddress>?</ami:amrAddress>\r
+               <!--Optional:-->\r
+               <ami:amrSystem>?</ami:amrSystem>\r
+            </ami:comFunction>\r
+            <ami:serviceDeliveryPoint>\r
+               <!--Optional:-->\r
+               <ami:mRID>?</ami:mRID>\r
+               <!--Optional:-->\r
+               <ami:idType>?</ami:idType>\r
+               <!--Optional:-->\r
+               <ami:pathName>?</ami:pathName>\r
+               <!--Zero or more repetitions:-->\r
+               <ami:parameter>\r
+                  <ami:name>?</ami:name>\r
+                  <ami:value>?</ami:value>\r
+               </ami:parameter>\r
+               <!--Optional:-->\r
+               <ami:serviceType>?</ami:serviceType>\r
+               <!--Optional:-->\r
+               <ami:lifeSupport>?</ami:lifeSupport>\r
+               <!--Optional:-->\r
+               <ami:readRoute>\r
+                  <!--Optional:-->\r
+                  <ami:mRID>?</ami:mRID>\r
+                  <!--Optional:-->\r
+                  <ami:idType>?</ami:idType>\r
+                  <!--Optional:-->\r
+                  <ami:pathName>?</ami:pathName>\r
+                  <!--Zero or more repetitions:-->\r
+                  <ami:parameter>\r
+                     <ami:name>?</ami:name>\r
+                     <ami:value>?</ami:value>\r
+                  </ami:parameter>\r
+               </ami:readRoute>\r
+               <!--Optional:-->\r
+               <ami:readSequence>?</ami:readSequence>\r
+               <!--Optional:-->\r
+               <ami:averageDailyUsage>?</ami:averageDailyUsage>\r
+               <ami:locationCode>?</ami:locationCode>\r
+               <ami:serviceDeliveryRemarks>?</ami:serviceDeliveryRemarks>\r
+               <ami:latitude>?</ami:latitude>\r
+               <ami:longitude>?</ami:longitude>\r
+               <!--Optional:-->\r
+               <ami:locationAccuracy>?</ami:locationAccuracy>\r
+               <!--Optional:-->\r
+               <ami:locationAccuracyUnits>?</ami:locationAccuracyUnits>\r
+            </ami:serviceDeliveryPoint>\r
+            <ami:serviceLocation>\r
+               <!--Optional:-->\r
+               <ami:mRID>?</ami:mRID>\r
+               <!--Optional:-->\r
+               <ami:idType>?</ami:idType>\r
+               <!--Optional:-->\r
+               <ami:pathName>?</ami:pathName>\r
+               <!--Zero or more repetitions:-->\r
+               <ami:parameter>\r
+                  <ami:name>?</ami:name>\r
+                  <ami:value>?</ami:value>\r
+               </ami:parameter>\r
+               <!--Optional:-->\r
+               <ami:streetNumber>?</ami:streetNumber>\r
+               <!--Optional:-->\r
+               <ami:streetName>?</ami:streetName>\r
+               <!--Optional:-->\r
+               <ami:streetSuffix>?</ami:streetSuffix>\r
+               <!--Optional:-->\r
+               <ami:streetPrefix>?</ami:streetPrefix>\r
+               <!--Optional:-->\r
+               <ami:streetType>?</ami:streetType>\r
+               <!--Optional:-->\r
+               <ami:poBox>?</ami:poBox>\r
+               <!--Optional:-->\r
+               <ami:suiteNumber>?</ami:suiteNumber>\r
+               <!--Optional:-->\r
+               <ami:addressGeneral>?</ami:addressGeneral>\r
+               <!--Optional:-->\r
+               <ami:addressGeneral2>?</ami:addressGeneral2>\r
+               <!--Optional:-->\r
+               <ami:city>?</ami:city>\r
+               <!--Optional:-->\r
+               <ami:stateOrProvince>?</ami:stateOrProvince>\r
+               <!--Optional:-->\r
+               <ami:country>?</ami:country>\r
+               <!--Optional:-->\r
+               <ami:postalCode>?</ami:postalCode>\r
+               <!--Optional:-->\r
+               <ami:nearestIntersection>?</ami:nearestIntersection>\r
+               <!--Optional:-->\r
+               <ami:subdivision>?</ami:subdivision>\r
+               <!--Optional:-->\r
+               <ami:lot>?</ami:lot>\r
+               <!--Optional:-->\r
+               <ami:block>?</ami:block>\r
+               <!--Optional:-->\r
+               <ami:locationType>?</ami:locationType>\r
+               <!--Optional:-->\r
+               <ami:locationCode>?</ami:locationCode>\r
+               <!--Optional:-->\r
+               <ami:latitude>?</ami:latitude>\r
+               <!--Optional:-->\r
+               <ami:longitude>?</ami:longitude>\r
+               <!--Optional:-->\r
+               <ami:locationAccuracy>?</ami:locationAccuracy>\r
+               <!--Optional:-->\r
+               <ami:locationAccuracyUnits>?</ami:locationAccuracyUnits>\r
+            </ami:serviceLocation>\r
+            <ami:customerAccount>\r
+               <!--Optional:-->\r
+               <ami:mRID>?</ami:mRID>\r
+               <!--Optional:-->\r
+               <ami:idType>?</ami:idType>\r
+               <!--Optional:-->\r
+               <ami:pathName>?</ami:pathName>\r
+               <!--Zero or more repetitions:-->\r
+               <ami:parameter>\r
+                  <ami:name>?</ami:name>\r
+                  <ami:value>?</ami:value>\r
+               </ami:parameter>\r
+               <ami:billingCycle>?</ami:billingCycle>\r
+            </ami:customerAccount>\r
+            <!--Optional:-->\r
+            <ami:provisioningGroup>\r
+               <ami:name>?</ami:name>\r
+               <ami:fuseSize>?</ami:fuseSize>\r
+               <!--Zero or more repetitions:-->\r
+               <ami:readingType>\r
+                  <!--Optional:-->\r
+                  <ami:mRID>?</ami:mRID>\r
+                  <!--Optional:-->\r
+                  <ami:measurementType>?</ami:measurementType>\r
+                  <!--Optional:-->\r
+                  <ami:touBinNumber>?</ami:touBinNumber>\r
+                  <!--Optional:-->\r
+                  <ami:unit>?</ami:unit>\r
+                  <!--Optional:-->\r
+                  <ami:touCode>?</ami:touCode>\r
+                  <!--Optional:-->\r
+                  <ami:channelNumber>?</ami:channelNumber>\r
+                  <!--Optional:-->\r
+                  <ami:logicalChannelNumber>?</ami:logicalChannelNumber>\r
+                  <!--Optional:-->\r
+                  <ami:aggregateTimePeriod>?</ami:aggregateTimePeriod>\r
+                  <!--Optional:-->\r
+                  <ami:intervalLength>?</ami:intervalLength>\r
+                  <!--Optional:-->\r
+                  <ami:readSequence>?</ami:readSequence>\r
+                  <!--Optional:-->\r
+                  <ami:precision>?</ami:precision>\r
+                  <!--Optional:-->\r
+                  <ami:scale>?</ami:scale>\r
+                  <!--Optional:-->\r
+                  <ami:direction>?</ami:direction>\r
+               </ami:readingType>\r
+            </ami:provisioningGroup>\r
+            <!--Optional:-->\r
+            <ami:collectionGroup>\r
+               <ami:name>?</ami:name>\r
+               <ami:readfrequency>?</ami:readfrequency>\r
+               <ami:readwindowstarttime>?</ami:readwindowstarttime>\r
+               <ami:readwindowendtime>?</ami:readwindowendtime>\r
+               <ami:deliveryfrequency>?</ami:deliveryfrequency>\r
+               <ami:deliverywindowstarttime>?</ami:deliverywindowstarttime>\r
+               <ami:deliverywindowendtime>?</ami:deliverywindowendtime>\r
+            </ami:collectionGroup>\r
+            <!--Optional:-->\r
+            <ami:broadcastGroup>\r
+               <ami:name>?</ami:name>\r
+            </ami:broadcastGroup>\r
+            <!--Optional:-->\r
+            <ami:executeStartTime>?</ami:executeStartTime>\r
+            <!--Optional:-->\r
+            <ami:executeExpireTime>?</ami:executeExpireTime>\r
+         </ami:payload>\r
+      </ami:MeterAssetUpdateRequestMessage>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.emeter.com/energyip/amiinterface/ProvisioningRequest/updateMeterAsset"/></con:call></con:operation></con:interface><con:mockService id="023f78ec-5ce0-4ef1-a264-08c4b3529af7" port="50001" path="/" host="localhost" name="MockService 1" bindToHostOnly="false" docroot=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="addMeterAsset" id="3ee85ccd-139e-4533-a3bc-fda5cd928565" interface="ProvisioningRequestBinding" operation="addMeterAsset"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="fadb7553-00d7-48c4-917c-12add1aac2a5" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ami="http://www.emeter.com/energyip/amiinterface">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ami:MeterAssetAddReplyMessage>
+         <ami:header>
+            <!--Optional:-->
+            <ami:verb>?</ami:verb>
+            <!--Optional:-->
+            <ami:noun>?</ami:noun>
+            <!--Optional:-->
+            <ami:revision>1</ami:revision>
+            <!--Optional:-->
+            <ami:dateTime>?</ami:dateTime>
+            <!--Optional:-->
+            <ami:source>?</ami:source>
+            <!--Optional:-->
+            <ami:messageID>?</ami:messageID>
+            <!--Optional:-->
+            <ami:asyncReplyTo>?</ami:asyncReplyTo>
+            <!--Optional:-->
+            <ami:utilityId>?</ami:utilityId>
+         </ami:header>
+         <!--Optional:-->
+         <ami:reply>
+            <ami:replyCode>?</ami:replyCode>
+            <!--Optional:-->
+            <ami:replyText>?</ami:replyText>
+            <!--Optional:-->
+            <ami:correlationId>?</ami:correlationId>
+         </ami:reply>
+      </ami:MeterAssetAddReplyMessage>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.emeter.com/energyip/amiinterface/ProvisioningRequest/addMeterAsset"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

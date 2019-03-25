@@ -1,0 +1,36 @@
+Procedure of HES send image file to DCU and active the firmware upgrade 
+
+1. HES send initiate request packet to DCU,the parameters should be set correctly (req_InitiateUploadFile.xml)
+               <ns5:InitiateUploadFile> 
+               	<ns5:Type>DCU</ns5:Type>  <!--Type value can be DCU, MMod, SMod, Meter-->
+               	<ns5:Password>000000</ns5:Password>
+               	<ns5:FileName>as_L019-16U02.01_2015-02-15.zip</ns5:FileName>
+                <ns5:FileSize>10240</ns5:FileSize>  <!--real file size-->
+                <ns5:FrameSize>512</ns5:FrameSize>  <!--In a frame, how many bytes are transfered -->
+                <ns5:FrameCount>20</ns5:FrameCount> <!---->
+               </ns5:InitiateUploadFile>
+               
+2. HES receive the response with result of success from DCU (resp_InitiateUploadFile.xml)
+
+3. Then HES begin to upload file to DCU block by block. (req_UploadFile.xml)
+               <ns5:UploadFile> 
+               	<ns5:Type>DCU</ns5:Type>  <!--Type value can be DCU, MMod, SMod, Meter-->
+               	<ns5:Password>000000</ns5:Password>
+               	<ns5:FileName>as_L019-16U02.01_2015-02-15.zip</ns5:FileName>
+               	<ns5:FrameNo>1</ns5:FrameNo>  <!--1,2,3,...-->
+               	<ns5:LastFrame>false</ns5:LastFrame> <!--if it is the last frame-->
+               	<ns5:Data>924A65</ns5:Data>    <!--image block, the length is 2*FrameSize if LastFrame if false, 2 byte compsite a hex data-->
+               </ns5:UploadFile>
+
+4. HES receive the response with result of success from DCU (resp_UploadFile.xml)
+
+5. HES get missing frames' no from DCU (req_GetMissFrameNo.xml) 
+
+6. DCU response the missing frames to HES, if the list is not be 0, HES repeat 3 step to transfer the missing blocks (resp_GetMissFrameNo.xml)
+
+7. If the getting missing block result is 0,mean the image file was transfered completely. HES can send upgrade request to DCU(req_Upgrade.xml)
+
+8. DCU response HES and begin to excute the firmware upgrade command.
+   8.1 If command is upgrade DCU, DCU will upgrade it's firmware after 5 seconds, with parameters and schedule reading data are reserved.
+   8.2 If command is upgrade meters, DCU will response success to notify HES that DCU received command successfully and begin to execute the command.
+       Then DCU add a task to upgrade meters one by one,with lowest priority, but the result of upgrade task will not be feedbacked to HES by DCU.

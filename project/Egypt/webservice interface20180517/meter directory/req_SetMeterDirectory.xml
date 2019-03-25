@@ -1,0 +1,137 @@
+<!--
+    3 Action Value supported:
+      Add(Add meters in the meterlist to meter doc on DCU,if some meterid exist, cover it, for example,
+      116, 117, 118,119, 120 now on DCU, we add 116, 120, 121,Then, after set, 116,117,118,119,120,121 are on DCU, and parameter of 116,120,121 are updated), 
+      Cover(clear the meterdoc on DCU and add the meters in the meter list in the request), 
+      Delete(Delete meters in specified meter list from meterdoc on DCU)
+		
+		MeterID: meter address, in decimal format,it is necessary to fill
+		 
+		PRO_TYPE：protocol type ,identify DCU will communication with meter by what protocol, important
+    			DLMS_46=0x23,
+    			DLMS_47=0x24, 
+    			WATER_188=0x25, 
+    			IEC61107=0x26, 
+    			ANSI=0x27
+    			
+    METER_TYPE：meter type !! now the parameter is not usefully, only for display
+    	    AMETER100                               = 0xD0,    // normal ameter100
+			    AMETER100_ZORO                          = 0xD1,    //ameter100 for ZORO 
+			    AMETER300                               = 0xD2,    // normal ameter300
+			    AMETER300_ZORO                          = 0xD3,    //ameter300 for ZORO 
+			    KEYPAD_KT2                              = 0xF0,    //KT3
+			    KEYPAD_5V33                             = 0xF1,    //3 phase keyboard meter 
+			    
+	 ChannelType: downlink channel type if it is default type, no need to set.
+			   	CARRIER                    = 0x10,                 //PLC carrier, is default type
+					RS485_TYPE                 = 0x20,                 //RS485 channel
+
+		GatherID: gather device address, in decimal format not need config it if meter is linked to DCU directly.
+		MeterPwd: Password to access meter
+					
+   AccessLevel:
+		      Low Level Security(LLS) = 0
+		      High Level Security(HLS) = 1
+
+	 Other parameters are for HLS, if use LLS, they need not be set.
+				      
+	 EncryptedData:
+		      No = 0
+		      Yes = 1
+
+	 SecurityPolicy
+		      No Security = 0
+		      Authenticated = 1
+		      Encrypted = 2
+		      AC&EC(Authenticated and Encrypted) = 3
+
+
+-->
+
+<?xml version="1.0" encoding="UTF-8"?>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+   <S:Header>
+      <ResourceURI xmlns="http://www.energiened.nl/Content/Publications/dsmr/P32">http://www.energiened.nl/Content/Publications/dsmr/P32/ metersDirectory</ResourceURI>
+   </S:Header>
+   <S:Body>
+      <ns3:Create xmlns:ns5="http://www.energiened.nl/Content/Publications/dsmr/P32" xmlns:ns4="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:ns3="http://schemas.xmlsoap.org/ws/2006/08/resourceTransfer" xmlns:ns2="http://www.w3.org/2005/08/addressing" xmlns="http://schemas.xmlsoap.org/ws/2004/08/addressing">
+
+         <ns4:Metadata>
+            <ns4:MetadataSection>
+               <ns3:Metadata>
+                  <ns3:Lifetime>
+                     <ns3:TerminateAt>
+<ns3:TerminationTime>2015-8-23T17:57:21-02:00</ns3:TerminationTime>
+                     </ns3:TerminateAt>
+                  </ns3:Lifetime>
+               </ns3:Metadata>
+            </ns4:MetadataSection>
+         </ns4:Metadata>
+         
+         <ns3:Fragment>
+            <ns3:Expression>p32:MetersDirectory </ns3:Expression>
+            <ns3:Value>
+               <ns5:MetersDirectory>
+               
+                   <ns5:AllowedMetersList>  
+                   	 <ns5:Action Value="Add" />    <!--Can be one of Add Cover or Delete , when add or delete, at most 50 meters in allowerd meterlist-->
+                     <ns5:AllowedMeter MeterID="116"
+                     	ChannelType="0x10"
+                     	ProType="0x23"
+                     	MeterType="0xD0"
+                     	MeterPwd="22222222"
+                     	ClientAddr="2"
+                     	AccessLevel="0"
+                     	EncryptedData="1"
+                     	SecurityPolicy="2"
+                     	ClientTitle="5753453030303031"
+                     	MKey="000001123456789a123456789a123456"
+                     	AKey="000001123456789a123456789a123456"
+                     	EKey="000001123456789a123456789a123456"
+                     	DKey="000001123456789a123456789a123456"
+                     	BKey="000001123456789a123456789a123456"
+                     	PSK="00010203040506070809a0b0c0d0e0f0" />  
+                     	
+                     	<ns5:AllowedMeter MeterID="117"  
+                     	ChannelType="0x10" 
+                     	MeterType="0xD0"   />							<!--parameters of meter 117 are partly filled means other parameters use default set-->                     	
+                     	
+                     	<ns5:AllowedMeter MeterID="118"/> <!--parameters of meter 118 are not filled means all parameters use default set-->
+                                     
+                   </ns5:AllowedMetersList>
+                  
+               </ns5:MetersDirectory>
+            </ns3:Value>
+         </ns3:Fragment>
+      </ns3:Create>
+      
+   </S:Body>
+</S:Envelope>
+
+
+<!--simple example of delete and cover list below from ns5:MetersDirectory node, Only MeterID param needed when delete 
+
+example of cover oporation:
+<ns5:MetersDirectory>
+         
+   <ns5:AllowedMetersList>  
+   	 <ns5:Action Value="Cover" />  
+     <ns5:AllowedMeter MeterID="116"  
+     	ChannelType="0x10" 
+     	ProType="0x23"     
+     	MeterType="0xD0"   
+     	MeterPwd="22222222"  />  
+     <ns5:AllowedMeter MeterID="118"/> 
+   </ns5:AllowedMetersList>
+</ns5:MetersDirectory>
+
+example of delete oporation:
+<ns5:MetersDirectory>
+   <ns5:AllowedMetersList>  
+   	 <ns5:Action Value="Delete" />  
+     <ns5:AllowedMeter MeterID="116"/>
+     	<ns5:AllowedMeter MeterID="118"/> 
+   </ns5:AllowedMetersList>
+</ns5:MetersDirectory>
+
+-->                                                   

@@ -1,0 +1,1673 @@
+{
+    "$schema": "http://json-schema.org/draft-03/schema#",
+    "type": "object",
+    "properties": {
+        "systemManager": {
+            "type": "object",
+            "properties": {
+                "HEADER": {
+                    "type": "object",
+                    "properties": {
+                        "VERSION": {
+                            "type": "object",
+                            "properties": {
+                                "ORIGIN": {
+                                    "type": "string",
+                                    "pattern": "[LOKAL,REMOTE]."
+                                },
+                                "BLOCK": {
+                                    "type": "string",
+                                    "pattern": "^\\d+$"
+                                },
+                                "SCHEMA": {
+                                    "type": "string",
+                                    "pattern": "^\\d+$"
+                                }
+                            }
+                        },
+                        "ACCESS": {
+                            "type": "object",
+                            "properties": {
+                                "ID": {
+                                    "type": "string",
+                                    "pattern": "^[A-Za-z0-9_]*$",
+                                    "blank": true
+                                }
+                            }
+                        }
+                    }
+                },
+                "ETHERNET": {
+                    "type": "object",
+                    "properties": {
+                        "WAN": {
+                            "type": "object",
+                            "properties": {
+                                "DHCP": {
+                                    "type": "boolean",
+                                    "enum": [
+                                        false
+                                    ]
+                                },
+                                "IP_ADR": {
+                                    "type": "string",
+                                    "pattern": "^((?!0\\.0\\.0\\.0)(?!255\\.255\\.255\\.255)\\d+\\.\\d+\\.\\d+\\.\\d+)$"
+                                },
+                                "IP_SUBNET_MSK": {
+                                    "type": "string",
+                                    "pattern": "^((?!0\\.0\\.0\\.0)(?!255\\.255\\.255\\.255)\\d+\\.\\d+\\.\\d+\\.\\d+)$"
+                                },
+                                "IP_DEF_GATEWAY": {
+                                    "type": "string",
+                                    "pattern": "^((?!0\\.0\\.0\\.0)(?!255\\.255\\.255\\.255)\\d+\\.\\d+\\.\\d+\\.\\d+)$"
+                                },
+                                "USED": {
+                                    "type": "boolean",
+                                    "enum": [
+                                        true,
+                                        false
+                                    ]
+                                },
+                                "SPEED": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 8
+                                },
+                                "DNS_PRE_IP_ADDRESS": {
+                                    "type": "string",
+                                    "pattern": "^((?!0\\.0\\.0\\.0)\\d+\\.\\d+\\.\\d+\\.\\d+)$"
+                                },
+                                "DNS_ALT_IP_ADDRESS": {
+                                    "type": "string",
+                                    "pattern": "^((?!0\\.0\\.0\\.0)\\d+\\.\\d+\\.\\d+\\.\\d+)$"
+                                }
+                            }
+                        },
+                        "MTC": {
+                            "type": "object",
+                            "properties": {
+                                "IP_ADR": {
+                                    "type": "string",
+                                    "pattern": "^((?!0\\.0\\.0\\.0)(?!255\\.255\\.255\\.255)\\d+\\.\\d+\\.\\d+\\.\\d+)$"
+                                },
+                                "IP_SUBNET_MSK": {
+                                    "type": "string",
+                                    "pattern": "^((?!0\\.0\\.0\\.0)(?!255\\.255\\.255\\.255)\\d+\\.\\d+\\.\\d+\\.\\d+)$"
+                                },
+                                "IP_DEF_GATEWAY": {
+                                    "type": "string",
+                                    "pattern": "^((?!0\\.0\\.0\\.0)(?!255\\.255\\.255\\.255)\\d+\\.\\d+\\.\\d+\\.\\d+)$"
+                                },
+                                "USED": {
+                                    "type": "boolean",
+                                    "enum": [
+                                        true
+                                    ]
+                                },
+                                "SPEED": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 8
+                                }
+                            }
+                        },
+                        "LAN": {
+                            "type": "object",
+                            "properties": {
+                                "DHCP_SERVER": {
+                                    "type": "boolean",
+                                    "enum": [
+                                        true,
+                                        false
+                                    ]
+                                },
+                                "IP_ADR": {
+                                    "type": "string",
+                                    "pattern": "^((?!0\\.0\\.0\\.0)(?!255\\.255\\.255\\.255)\\d+\\.\\d+\\.\\d+\\.\\d+)$"
+                                },
+                                "IP_SUBNET_MSK": {
+                                    "type": "string",
+                                    "pattern": "^((?!0\\.0\\.0\\.0)(?!255\\.255\\.255\\.255)\\d+\\.\\d+\\.\\d+\\.\\d+)$"
+                                },
+                                "IP_DEF_GATEWAY": {
+                                    "type": "string",
+                                    "pattern": "^((?!0\\.0\\.0\\.0)(?!255\\.255\\.255\\.255)\\d+\\.\\d+\\.\\d+\\.\\d+)$"
+                                },
+                                "USED": {
+                                    "type": "boolean",
+                                    "enum": [
+                                        true,
+                                        false
+                                    ]
+                                },
+                                "SPEED": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 8
+                                }
+                            }
+                        },
+                        "MOBILE": {
+                            "type": "object",
+                            "properties": {
+                                "USED": {
+                                    "type": "boolean",
+                                    "enum": [
+                                        true,
+                                        false
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "dependency_value": [
+                        {
+                            "if": {
+                                "path": [
+                                    "ETHERNET",
+                                    "WAN",
+                                    "USED"
+                                ],
+                                "value": true
+                            },
+                            "then": {
+                                "path": [
+                                    "ETHERNET",
+                                    "MOBILE",
+                                    "USED"
+                                ],
+                                "value": false
+                            }
+                        },
+                        {
+                            "if": {
+                                "path": [
+                                    "ETHERNET",
+                                    "MOBILE",
+                                    "USED"
+                                ],
+                                "value": true
+                            },
+                            "then": {
+                                "path": [
+                                    "ETHERNET",
+                                    "WAN",
+                                    "USED"
+                                ],
+                                "value": false
+                            }
+                        },
+                        {
+                            "if": {
+                                "path": [
+                                    "FEATURES",
+                                    "BRIDGE",
+                                    "MASTER"
+                                ],
+                                "value": true
+                            },
+                            "then": {
+                                "path": [
+                                    "ETHERNET",
+                                    "LAN",
+                                    "USED"
+                                ],
+                                "value": true
+                            }
+                        }
+                    ]
+                },
+                "FIREWALL": {
+                    "type": "object",
+                    "properties": {
+                        "NR_0": {
+                            "type": "object",
+                            "properties": {
+                                "ENABLE": {
+                                    "type": "boolean",
+                                    "enum": [
+                                        true
+                                    ]
+                                },
+                                "INTERFACE": {
+                                    "type": "string",
+                                    "enum": [
+                                        "MTC"
+                                    ]
+                                },
+                                "PORT": {
+                                    "type": "integer",
+                                    "minimum": 443,
+                                    "maximum": 443
+                                },
+                                "TEXT": {
+                                    "type": "string",
+                                    "pattern": "^[A-Za-z0-9_-]*$",
+                                    "blank": true
+                                },
+                                "DIRECTION": {
+                                    "type": "string",
+                                    "enum": [
+                                        "INCOMING"
+                                    ]
+                                },
+                                "TYPE": {
+                                    "type": "string",
+                                    "enum": [
+                                        "TCP"
+                                    ]
+                                }
+                            }
+                        },
+                        "NR_1": {
+                            "type": "object",
+                            "properties": {
+                                "ENABLE": {
+                                    "type": "boolean",
+                                    "enum": [
+                                        true,
+                                        false
+                                    ]
+                                },
+                                "INTERFACE": {
+                                    "type": "string",
+                                    "enum": [
+                                        "MTC",
+                                        "LAN",
+                                        "WAN",
+                                        "MOBILE"
+                                    ]
+                                },
+                                "PORT": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 65535
+                                },
+                                "TEXT": {
+                                    "type": "string",
+                                    "pattern": "^[A-Za-z0-9_-]*$",
+                                    "blank": true
+                                },
+                                "DIRECTION": {
+                                    "type": "string",
+                                    "enum": [
+                                        "INCOMING"
+                                    ]
+                                },
+                                "TYPE": {
+                                    "type": "string",
+                                    "enum": [
+                                        "UDP&TCP",
+                                        "UDP",
+                                        "TCP"
+                                    ]
+                                }
+                            }
+                        },
+                        "NR_2": {
+                            "type": "object",
+                            "properties": {
+                                "ENABLE": {
+                                    "type": "boolean",
+                                    "enum": [
+                                        true,
+                                        false
+                                    ]
+                                },
+                                "INTERFACE": {
+                                    "type": "string",
+                                    "enum": [
+                                        "MTC",
+                                        "LAN",
+                                        "WAN",
+                                        "MOBILE"
+                                    ]
+                                },
+                                "PORT": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 65535
+                                },
+                                "TEXT": {
+                                    "type": "string",
+                                    "pattern": "^[A-Za-z0-9_-]*$",
+                                    "blank": true
+                                },
+                                "DIRECTION": {
+                                    "type": "string",
+                                    "enum": [
+                                        "INCOMING"
+                                    ]
+                                },
+                                "TYPE": {
+                                    "type": "string",
+                                    "enum": [
+                                        "UDP&TCP",
+                                        "UDP",
+                                        "TCP"
+                                    ]
+                                }
+                            }
+                        },
+                        "NR_3": {
+                            "type": "object",
+                            "properties": {
+                                "ENABLE": {
+                                    "type": "boolean",
+                                    "enum": [
+                                        true,
+                                        false
+                                    ]
+                                },
+                                "INTERFACE": {
+                                    "type": "string",
+                                    "enum": [
+                                        "MTC",
+                                        "LAN",
+                                        "WAN",
+                                        "MOBILE"
+                                    ]
+                                },
+                                "PORT": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 65535
+                                },
+                                "TEXT": {
+                                    "type": "string",
+                                    "pattern": "^[A-Za-z0-9_-]*$",
+                                    "blank": true
+                                },
+                                "DIRECTION": {
+                                    "type": "string",
+                                    "enum": [
+                                        "INCOMING"
+                                    ]
+                                },
+                                "TYPE": {
+                                    "type": "string",
+                                    "enum": [
+                                        "UDP&TCP",
+                                        "UDP",
+                                        "TCP"
+                                    ]
+                                }
+                            }
+                        },
+                        "NR_4": {
+                            "type": "object",
+                            "properties": {
+                                "ENABLE": {
+                                    "type": "boolean",
+                                    "enum": [
+                                        true,
+                                        false
+                                    ]
+                                },
+                                "INTERFACE": {
+                                    "type": "string",
+                                    "enum": [
+                                        "MTC",
+                                        "LAN",
+                                        "WAN",
+                                        "MOBILE"
+                                    ]
+                                },
+                                "PORT": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 65535
+                                },
+                                "TEXT": {
+                                    "type": "string",
+                                    "pattern": "^[A-Za-z0-9_-]*$",
+                                    "blank": true
+                                },
+                                "DIRECTION": {
+                                    "type": "string",
+                                    "enum": [
+                                        "INCOMING"
+                                    ]
+                                },
+                                "TYPE": {
+                                    "type": "string",
+                                    "enum": [
+                                        "UDP&TCP",
+                                        "UDP",
+                                        "TCP"
+                                    ]
+                                }
+                            }
+                        },
+                        "NR_5": {
+                            "type": "object",
+                            "properties": {
+                                "ENABLE": {
+                                    "type": "boolean",
+                                    "enum": [
+                                        true,
+                                        false
+                                    ]
+                                },
+                                "INTERFACE": {
+                                    "type": "string",
+                                    "enum": [
+                                        "MTC",
+                                        "LAN",
+                                        "WAN",
+                                        "MOBILE"
+                                    ]
+                                },
+                                "PORT": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 65535
+                                },
+                                "TEXT": {
+                                    "type": "string",
+                                    "pattern": "^[A-Za-z0-9_-]*$",
+                                    "blank": true
+                                },
+                                "DIRECTION": {
+                                    "type": "string",
+                                    "enum": [
+                                        "INCOMING"
+                                    ]
+                                },
+                                "TYPE": {
+                                    "type": "string",
+                                    "enum": [
+                                        "UDP&TCP",
+                                        "UDP",
+                                        "TCP"
+                                    ]
+                                }
+                            }
+                        },
+                        "NR_6": {
+                            "type": "object",
+                            "properties": {
+                                "ENABLE": {
+                                    "type": "boolean",
+                                    "enum": [
+                                        true,
+                                        false
+                                    ]
+                                },
+                                "INTERFACE": {
+                                    "type": "string",
+                                    "enum": [
+                                        "MTC",
+                                        "LAN",
+                                        "WAN",
+                                        "MOBILE"
+                                    ]
+                                },
+                                "PORT": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 65535
+                                },
+                                "TEXT": {
+                                    "type": "string",
+                                    "pattern": "^[A-Za-z0-9_-]*$",
+                                    "blank": true
+                                },
+                                "DIRECTION": {
+                                    "type": "string",
+                                    "enum": [
+                                        "INCOMING"
+                                    ]
+                                },
+                                "TYPE": {
+                                    "type": "string",
+                                    "enum": [
+                                        "UDP&TCP",
+                                        "UDP",
+                                        "TCP"
+                                    ]
+                                }
+                            }
+                        },
+                        "NR_7": {
+                            "type": "object",
+                            "properties": {
+                                "ENABLE": {
+                                    "type": "boolean",
+                                    "enum": [
+                                        true,
+                                        false
+                                    ]
+                                },
+                                "INTERFACE": {
+                                    "type": "string",
+                                    "enum": [
+                                        "MTC",
+                                        "LAN",
+                                        "WAN",
+                                        "MOBILE"
+                                    ]
+                                },
+                                "PORT": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 65535
+                                },
+                                "TEXT": {
+                                    "type": "string",
+                                    "pattern": "^[A-Za-z0-9_-]*$",
+                                    "blank": true
+                                },
+                                "DIRECTION": {
+                                    "type": "string",
+                                    "enum": [
+                                        "INCOMING"
+                                    ]
+                                },
+                                "TYPE": {
+                                    "type": "string",
+                                    "enum": [
+                                        "UDP&TCP",
+                                        "UDP",
+                                        "TCP"
+                                    ]
+                                }
+                            }
+                        },
+                        "NR_8": {
+                            "type": "object",
+                            "properties": {
+                                "ENABLE": {
+                                    "type": "boolean",
+                                    "enum": [
+                                        true,
+                                        false
+                                    ]
+                                },
+                                "INTERFACE": {
+                                    "type": "string",
+                                    "enum": [
+                                        "MTC",
+                                        "LAN",
+                                        "WAN",
+                                        "MOBILE"
+                                    ]
+                                },
+                                "PORT": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 65535
+                                },
+                                "TEXT": {
+                                    "type": "string",
+                                    "pattern": "^[A-Za-z0-9_-]*$",
+                                    "blank": true
+                                },
+                                "DIRECTION": {
+                                    "type": "string",
+                                    "enum": [
+                                        "INCOMING"
+                                    ]
+                                },
+                                "TYPE": {
+                                    "type": "string",
+                                    "enum": [
+                                        "UDP&TCP",
+                                        "UDP",
+                                        "TCP"
+                                    ]
+                                }
+                            }
+                        },
+                        "NR_9": {
+                            "type": "object",
+                            "properties": {
+                                "ENABLE": {
+                                    "type": "boolean",
+                                    "enum": [
+                                        true,
+                                        false
+                                    ]
+                                },
+                                "INTERFACE": {
+                                    "type": "string",
+                                    "enum": [
+                                        "MTC",
+                                        "LAN",
+                                        "WAN",
+                                        "MOBILE"
+                                    ]
+                                },
+                                "PORT": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 65535
+                                },
+                                "TEXT": {
+                                    "type": "string",
+                                    "pattern": "^[A-Za-z0-9_-]*$",
+                                    "blank": true
+                                },
+                                "DIRECTION": {
+                                    "type": "string",
+                                    "enum": [
+                                        "INCOMING"
+                                    ]
+                                },
+                                "TYPE": {
+                                    "type": "string",
+                                    "enum": [
+                                        "UDP&TCP",
+                                        "UDP",
+                                        "TCP"
+                                    ]
+                                }
+                            }
+                        },
+                        "NR_10": {
+                            "type": "object",
+                            "properties": {
+                                "ENABLE": {
+                                    "type": "boolean",
+                                    "enum": [
+                                        true,
+                                        false
+                                    ]
+                                },
+                                "INTERFACE": {
+                                    "type": "string",
+                                    "enum": [
+                                        "MTC",
+                                        "LAN",
+                                        "WAN",
+                                        "MOBILE"
+                                    ]
+                                },
+                                "PORT": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 65535
+                                },
+                                "TEXT": {
+                                    "type": "string",
+                                    "pattern": "^[A-Za-z0-9_-]*$",
+                                    "blank": true
+                                },
+                                "DIRECTION": {
+                                    "type": "string",
+                                    "enum": [
+                                        "INCOMING"
+                                    ]
+                                },
+                                "TYPE": {
+                                    "type": "string",
+                                    "enum": [
+                                        "UDP&TCP",
+                                        "UDP",
+                                        "TCP"
+                                    ]
+                                }
+                            }
+                        },
+                        "NR_11": {
+                            "type": "object",
+                            "properties": {
+                                "ENABLE": {
+                                    "type": "boolean",
+                                    "enum": [
+                                        true,
+                                        false
+                                    ]
+                                },
+                                "INTERFACE": {
+                                    "type": "string",
+                                    "enum": [
+                                        "MTC",
+                                        "LAN",
+                                        "WAN",
+                                        "MOBILE"
+                                    ]
+                                },
+                                "PORT": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 65535
+                                },
+                                "TEXT": {
+                                    "type": "string",
+                                    "pattern": "^[A-Za-z0-9_-]*$",
+                                    "blank": true
+                                },
+                                "DIRECTION": {
+                                    "type": "string",
+                                    "enum": [
+                                        "INCOMING"
+                                    ]
+                                },
+                                "TYPE": {
+                                    "type": "string",
+                                    "enum": [
+                                        "UDP&TCP",
+                                        "UDP",
+                                        "TCP"
+                                    ]
+                                }
+                            }
+                        },
+                        "NR_12": {
+                            "type": "object",
+                            "properties": {
+                                "ENABLE": {
+                                    "type": "boolean",
+                                    "enum": [
+                                        true,
+                                        false
+                                    ]
+                                },
+                                "INTERFACE": {
+                                    "type": "string",
+                                    "enum": [
+                                        "MTC",
+                                        "LAN",
+                                        "WAN",
+                                        "MOBILE"
+                                    ]
+                                },
+                                "PORT": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 65535
+                                },
+                                "TEXT": {
+                                    "type": "string",
+                                    "pattern": "^[A-Za-z0-9_-]*$",
+                                    "blank": true
+                                },
+                                "DIRECTION": {
+                                    "type": "string",
+                                    "enum": [
+                                        "INCOMING"
+                                    ]
+                                },
+                                "TYPE": {
+                                    "type": "string",
+                                    "enum": [
+                                        "UDP&TCP",
+                                        "UDP",
+                                        "TCP"
+                                    ]
+                                }
+                            }
+                        },
+                        "NR_13": {
+                            "type": "object",
+                            "properties": {
+                                "ENABLE": {
+                                    "type": "boolean",
+                                    "enum": [
+                                        true,
+                                        false
+                                    ]
+                                },
+                                "INTERFACE": {
+                                    "type": "string",
+                                    "enum": [
+                                        "MTC",
+                                        "LAN",
+                                        "WAN",
+                                        "MOBILE"
+                                    ]
+                                },
+                                "PORT": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 65535
+                                },
+                                "TEXT": {
+                                    "type": "string",
+                                    "pattern": "^[A-Za-z0-9_-]*$",
+                                    "blank": true
+                                },
+                                "DIRECTION": {
+                                    "type": "string",
+                                    "enum": [
+                                        "INCOMING"
+                                    ]
+                                },
+                                "TYPE": {
+                                    "type": "string",
+                                    "enum": [
+                                        "UDP&TCP",
+                                        "UDP",
+                                        "TCP"
+                                    ]
+                                }
+                            }
+                        },
+                        "NR_14": {
+                            "type": "object",
+                            "properties": {
+                                "ENABLE": {
+                                    "type": "boolean",
+                                    "enum": [
+                                        true,
+                                        false
+                                    ]
+                                },
+                                "INTERFACE": {
+                                    "type": "string",
+                                    "enum": [
+                                        "MTC",
+                                        "LAN",
+                                        "WAN",
+                                        "MOBILE"
+                                    ]
+                                },
+                                "PORT": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 65535
+                                },
+                                "TEXT": {
+                                    "type": "string",
+                                    "pattern": "^[A-Za-z0-9_-]*$",
+                                    "blank": true
+                                },
+                                "DIRECTION": {
+                                    "type": "string",
+                                    "enum": [
+                                        "INCOMING"
+                                    ]
+                                },
+                                "TYPE": {
+                                    "type": "string",
+                                    "enum": [
+                                        "UDP&TCP",
+                                        "UDP",
+                                        "TCP"
+                                    ]
+                                }
+                            }
+                        },
+                        "NR_15": {
+                            "type": "object",
+                            "properties": {
+                                "ENABLE": {
+                                    "type": "boolean",
+                                    "enum": [
+                                        true,
+                                        false
+                                    ]
+                                },
+                                "INTERFACE": {
+                                    "type": "string",
+                                    "enum": [
+                                        "MTC",
+                                        "LAN",
+                                        "WAN",
+                                        "MOBILE"
+                                    ]
+                                },
+                                "PORT": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 65535
+                                },
+                                "TEXT": {
+                                    "type": "string",
+                                    "pattern": "^[A-Za-z0-9_-]*$",
+                                    "blank": true
+                                },
+                                "DIRECTION": {
+                                    "type": "string",
+                                    "enum": [
+                                        "INCOMING"
+                                    ]
+                                },
+                                "TYPE": {
+                                    "type": "string",
+                                    "enum": [
+                                        "UDP&TCP",
+                                        "UDP",
+                                        "TCP"
+                                    ]
+                                }
+                            }
+                        },
+                        "NR_16": {
+                            "type": "object",
+                            "properties": {
+                                "ENABLE": {
+                                    "type": "boolean",
+                                    "enum": [
+                                        true,
+                                        false
+                                    ]
+                                },
+                                "INTERFACE": {
+                                    "type": "string",
+                                    "enum": [
+                                        "MTC",
+                                        "LAN",
+                                        "WAN",
+                                        "MOBILE"
+                                    ]
+                                },
+                                "PORT": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 65535
+                                },
+                                "TEXT": {
+                                    "type": "string",
+                                    "pattern": "^[A-Za-z0-9_-]*$",
+                                    "blank": true
+                                },
+                                "DIRECTION": {
+                                    "type": "string",
+                                    "enum": [
+                                        "INCOMING"
+                                    ]
+                                },
+                                "TYPE": {
+                                    "type": "string",
+                                    "enum": [
+                                        "UDP&TCP",
+                                        "UDP",
+                                        "TCP"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                "FEATURES": {
+                    "type": "object",
+                    "properties": {
+                        "BRIDGE": {
+                            "type": "object",
+                            "properties": {
+                                "ENABLE": {
+                                    "type": "boolean",
+                                    "enum": [
+                                        true,
+                                        false
+                                    ]
+                                },
+                                "MASTER": {
+                                    "type": "boolean",
+                                    "enum": [
+                                        true,
+                                        false
+                                    ]
+                                }
+                            }
+                        },
+                        "PING": {
+                            "type": "object",
+                            "properties": {
+                                "INCOMING": {
+                                    "type": "boolean",
+                                    "enum": [
+                                        true,
+                                        false
+                                    ]
+                                },
+                                "OUTGOING": {
+                                    "type": "boolean",
+                                    "enum": [
+                                        true,
+                                        false
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "management": {
+            "type": "object",
+            "properties": {
+                "HEADER": {
+                    "type": "object",
+                    "properties": {
+                        "VERSION": {
+                            "type": "object",
+                            "properties": {
+                                "ORIGIN": {
+                                    "type": "string",
+                                    "pattern": "[LOKAL,REMOTE]."
+                                },
+                                "BLOCK": {
+                                    "type": "string",
+                                    "pattern": "^\\d+$"
+                                },
+                                "SCHEMA": {
+                                    "type": "string",
+                                    "pattern": "^\\d+$"
+                                }
+                            }
+                        },
+                        "ACCESS": {
+                            "type": "object",
+                            "properties": {
+                                "ID": {
+                                    "type": "string",
+                                    "pattern": "^[A-Za-z0-9_]*$",
+                                    "blank": true
+                                }
+                            }
+                        }
+                    }
+                },
+                "CONFIG_SERVER": {
+                    "type": "object",
+                    "properties": {
+                        "ALLG": {
+                            "type": "object",
+                            "properties": {
+                                "INTERFACE": {
+                                    "type": "string",
+                                    "enum": [
+                                        "WAN"
+                                    ]
+                                },
+                                "DNS_OR_IP_ADDRESS": {
+                                    "type": "string",
+                                    "pattern": "^[A-Za-z0-9_.]*$"
+                                },
+                                "OUTGOING_PORT": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 65535
+                                },
+                                "OUTGOING_TLS_PORT": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 65535
+                                }
+                            }
+                        }
+                    }
+                },
+                "MANAGEMENT_SERVER": {
+                    "type": "object",
+                    "properties": {
+                        "ALLG": {
+                            "type": "object",
+                            "properties": {
+                                "INTERFACE": {
+                                    "type": "string",
+                                    "enum": [
+                                        "WAN"
+                                    ]
+                                },
+                                "DNS_OR_IP_ADDRESS": {
+                                    "type": "string",
+                                    "pattern": "^[A-Za-z0-9_.]*$"
+                                },
+                                "OUTGOING_PORT": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 65535
+                                },
+                                "INCOMING_PORT": {
+                                    "type": "integer",
+                                    "minimum": 1025,
+                                    "maximum": 65535,
+                                    "exclude": [
+                                        "9001",
+                                        "44000-45000",
+                                        "60000-61500"
+                                    ]
+                                },
+                                "MAINTENANCE_TIO": {
+                                    "type": "integer",
+                                    "minimum": 1,
+                                    "maximum": 744
+                                }
+                            }
+                        }
+                    }
+                },
+                "SECURITY_LOG_SERVER": {
+                    "type": "object",
+                    "properties": {
+                        "ALLG": {
+                            "type": "object",
+                            "properties": {
+                                "INTERFACE": {
+                                    "type": "string",
+                                    "enum": [
+                                        "WAN"
+                                    ]
+                                },
+                                "DNS_OR_IP_ADDRESS": {
+                                    "type": "string",
+                                    "pattern": "^[A-Za-z0-9_.]*$"
+                                },
+                                "OUTGOING_PORT": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 65535
+                                }
+                            }
+                        }
+                    }
+                },
+                "FIRMWARE_UPDATE": {
+                    "type": "object",
+                    "properties": {
+                        "ALLG": {
+                            "type": "object",
+                            "properties": {
+                                "FALLBACK_TIME": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 100
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "timeManager": {
+            "type": "object",
+            "properties": {
+                "HEADER": {
+                    "type": "object",
+                    "properties": {
+                        "VERSION": {
+                            "type": "object",
+                            "properties": {
+                                "ORIGIN": {
+                                    "type": "string",
+                                    "pattern": "[LOKAL,REMOTE]."
+                                },
+                                "BLOCK": {
+                                    "type": "string",
+                                    "pattern": "^\\d+$"
+                                },
+                                "SCHEMA": {
+                                    "type": "string",
+                                    "pattern": "^\\d+$"
+                                }
+                            }
+                        },
+                        "ACCESS": {
+                            "type": "object",
+                            "properties": {
+                                "ID": {
+                                    "type": "string",
+                                    "pattern": "^[A-Za-z0-9_]*$",
+                                    "blank": true
+                                }
+                            }
+                        }
+                    }
+                },
+                "NTP_SERVER": {
+                    "type": "object",
+                    "properties": {
+                        "ALLG": {
+                            "type": "object",
+                            "properties": {
+                                "NTP_SYNC": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 1
+                                },
+                                "INTERFACE": {
+                                    "type": "string",
+                                    "enum": [
+                                        "WAN"
+                                    ]
+                                },
+                                "DNS_OR_IP_ADDRESS": {
+                                    "type": "string",
+                                    "pattern": "^[A-Za-z0-9_.]*$"
+                                },
+                                "MIN_POLL": {
+                                    "type": "integer",
+                                    "minimum": 4,
+                                    "maximum": 17
+                                },
+                                "MAX_STRATUM": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 15
+                                }
+                            }
+                        }
+                    }
+                },
+                "TIME_ALLG": {
+                    "type": "object",
+                    "properties": {
+                        "TIMEZONE": {
+                            "type": "object",
+                            "properties": {
+                                "AKT": {
+                                    "type": "integer",
+                                    "minimum": -720,
+                                    "maximum": 840
+                                }
+                            }
+                        },
+                        "SO_WI_ALLG": {
+                            "type": "object",
+                            "properties": {
+                                "USED": {
+                                    "type": "boolean",
+                                    "enum": [
+                                        true,
+                                        false
+                                    ]
+                                },
+                                "OFFSET": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 60
+                                }
+                            }
+                        },
+                        "SO_WI_BEGIN": {
+                            "type": "object",
+                            "properties": {
+                                "MONTH": {
+                                    "type": "integer",
+                                    "minimum": 1,
+                                    "maximum": 12
+                                },
+                                "WEEK": {
+                                    "type": "integer",
+                                    "minimum": 1,
+                                    "maximum": 5
+                                },
+                                "WEEKDAY": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 6
+                                },
+                                "HOUR": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 23
+                                },
+                                "MINUTE": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 60
+                                }
+                            }
+                        },
+                        "SO_WI_END": {
+                            "type": "object",
+                            "properties": {
+                                "MONTH": {
+                                    "type": "integer",
+                                    "minimum": 1,
+                                    "maximum": 12
+                                },
+                                "WEEK": {
+                                    "type": "integer",
+                                    "minimum": 1,
+                                    "maximum": 5
+                                },
+                                "WEEKDAY": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 6
+                                },
+                                "HOUR": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 23
+                                },
+                                "MINUTE": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 60
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "meterdata": {
+            "type": "object",
+            "properties": {
+                "HEADER": {
+                    "type": "object",
+                    "properties": {
+                        "VERSION": {
+                            "type": "object",
+                            "properties": {
+                                "ORIGIN": {
+                                    "type": "string",
+                                    "pattern": "[LOKAL,REMOTE]."
+                                },
+                                "BLOCK": {
+                                    "type": "string",
+                                    "pattern": "^\\d+$"
+                                },
+                                "SCHEMA": {
+                                    "type": "string",
+                                    "pattern": "^\\d+$"
+                                }
+                            }
+                        },
+                        "ACCESS": {
+                            "type": "object",
+                            "properties": {
+                                "ID": {
+                                    "type": "string",
+                                    "pattern": "^[A-Za-z0-9_]*$",
+                                    "blank": true
+                                }
+                            }
+                        }
+                    }
+                },
+                "SERVER": {
+                    "type": "object",
+                    "properties": {
+                        "PUSH": {
+                            "type": "object",
+                            "properties": {
+                                "INTERFACE": {
+                                    "type": "string",
+                                    "enum": [
+                                        "WAN"
+                                    ]
+                                },
+                                "DNS_OR_IP_ADDRESS": {
+                                    "type": "string",
+                                    "pattern": "^[A-Za-z0-9_.]*$"
+                                },
+                                "OUTGOING_PORT": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 65535
+                                },
+                                "OUTGOING_PORT_PLC_MANAGEMENT": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 65535
+                                }
+                            }
+                        },
+                        "PULL": {
+                            "type": "object",
+                            "properties": {
+                                "INCOMING_PORT": {
+                                    "type": "integer",
+                                    "minimum": 1025,
+                                    "maximum": 65535,
+                                    "exclude": [
+                                        "9001",
+                                        "44000-45000",
+                                        "60000-61500"
+                                    ]
+                                },
+                                "INCOMING_PORT_PLC_MANAGEMENT": {
+                                    "type": "integer",
+                                    "minimum": 1025,
+                                    "maximum": 65535,
+                                    "exclude": [
+                                        "9001",
+                                        "44000-45000",
+                                        "60000-61500"
+                                    ]
+                                },
+                                "CONNECTION_TIMEOUT": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 3600
+                                }
+                            }
+                        }
+                    }
+                },
+                "G3_CONFIG": {
+                    "type": "object",
+                    "properties": {
+                        "ALLG": {
+                            "type": "object",
+                            "properties": {
+                                "G3_MODE": {
+                                    "type": "string",
+                                    "enum": [
+                                        "COORDINATOR",
+                                        "OFF"
+                                    ]
+                                },
+                                "MAN_PAN_ID": {
+                                    "type": "boolean",
+                                    "enum": [
+                                        true,
+                                        false
+                                    ]
+                                },
+                                "PAN_ID": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 65534,
+                                    "bitmask": 64767
+                                },
+                                "OUTGOING_PORT": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 65535
+                                },
+                                "INCOMING_PORT": {
+                                    "type": "integer",
+                                    "minimum": 1025,
+                                    "maximum": 65535,
+                                    "exclude": [
+                                        "9001",
+                                        "44000-45000",
+                                        "60000-61500"
+                                    ]
+                                },
+                                "PLC_PUSH_PORT": {
+                                    "type": "integer",
+                                    "minimum": 1025,
+                                    "maximum": 65535,
+                                    "exclude": [
+                                        "9001",
+                                        "44000-45000",
+                                        "60000-61500"
+                                    ]
+                                },
+                                "FREQUENCY_BAND": {
+                                    "type": "string",
+                                    "enum": [
+                                        "CENELEC_A",
+                                        "FCC"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "lte": {
+            "type": "object",
+            "required": false,
+            "properties": {
+                "HEADER": {
+                    "type": "object",
+                    "properties": {
+                        "VERSION": {
+                            "type": "object",
+                            "properties": {
+                                "ORIGIN": {
+                                    "type": "string",
+                                    "pattern": "[LOKAL,REMOTE]."
+                                },
+                                "BLOCK": {
+                                    "type": "string",
+                                    "pattern": "^\\d+$"
+                                },
+                                "SCHEMA": {
+                                    "type": "string",
+                                    "pattern": "^\\d+$"
+                                }
+                            }
+                        },
+                        "ACCESS": {
+                            "type": "object",
+                            "properties": {
+                                "ID": {
+                                    "type": "string",
+                                    "pattern": "^[A-Za-z0-9_]*$",
+                                    "blank": true
+                                }
+                            }
+                        }
+                    }
+                },
+                "CONFIG": {
+                    "type": "object",
+                    "properties": {
+                        "ALLG": {
+                            "type": "object",
+                            "properties": {
+                                "ACCESS_POINT_NAME": {
+                                    "type": "string",
+                                    "pattern": "^[ !#-\\[\\]-~]*$",
+                                    "blank": true
+                                },
+                                "USERNAME": {
+                                    "type": "string",
+                                    "pattern": "^[ !#-\\[\\]-~]*$",
+                                    "blank": true
+                                },
+                                "PASSWORD": {
+                                    "type": "string",
+                                    "pattern": "^[ !#-\\[\\]-~]*$",
+                                    "blank": true
+                                },
+                                "MODE": {
+                                    "type": "string",
+                                    "enum": [
+                                        "none",
+                                        "PAP",
+                                        "CHAP",
+                                        "auto"
+                                    ]
+                                },
+                                "KEEP_ALIVE_TIMEOUT": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 255
+                                }
+                            }
+                        },
+                        "SIMCARD": {
+                            "type": "object",
+                            "properties": {
+                                "PIN": {
+                                    "type": "string",
+                                    "pattern": "^(\\d{4,8})*$",
+                                    "blank": true
+                                },
+                                "PUK": {
+                                    "type": "string",
+                                    "pattern": "^\\d*$",
+                                    "blank": true
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "snmp": {
+            "type": "object",
+            "required": false,
+            "properties": {
+                "HEADER": {
+                    "type": "object",
+                    "properties": {
+                        "VERSION": {
+                            "type": "object",
+                            "properties": {
+                                "ORIGIN": {
+                                    "type": "string",
+                                    "pattern": "[LOKAL,REMOTE]."
+                                },
+                                "BLOCK": {
+                                    "type": "string",
+                                    "pattern": "^\\d+$"
+                                },
+                                "SCHEMA": {
+                                    "type": "string",
+                                    "pattern": "^\\d+$"
+                                }
+                            }
+                        },
+                        "ACCESS": {
+                            "type": "object",
+                            "properties": {
+                                "ID": {
+                                    "type": "string",
+                                    "pattern": "^[A-Za-z0-9_]*$",
+                                    "blank": true
+                                }
+                            }
+                        }
+                    }
+                },
+                "SNMP_CONFIG": {
+                    "type": "object",
+                    "properties": {
+                        "ALLG": {
+                            "type": "object",
+                            "properties": {
+                                "ACTIVATED": {
+                                    "type": "boolean",
+                                    "enum": [
+                                        true,
+                                        false
+                                    ]
+                                },
+                                "USERNAME": {
+                                    "type": "string",
+                                    "pattern": "^[A-Za-z0-9_]*$",
+                                    "blank": true
+                                },
+                                "AUTHENTICATION_PASSPHRASE": {
+                                    "type": "string",
+                                    "pattern": "^([A-Za-z0-9]{8,})*$",
+                                    "blank": true
+                                },
+                                "ENCRYPTION_PASSPHRASE": {
+                                    "type": "string",
+                                    "pattern": "^([A-Za-z0-9+\\/=]{8,})*$",
+                                    "blank": true
+                                },
+                                "TRAPS_IP_ADDRESS": {
+                                    "type": "string",
+                                    "pattern": "^((?!0\\.0\\.0\\.0)(?!255\\.255\\.255\\.255)\\d+\\.\\d+\\.\\d+\\.\\d+)*$",
+                                    "blank": true
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "exclusivity": [
+        "management.MANAGEMENT_SERVER.ALLG.INCOMING_PORT",
+        "meterdata.SERVER.PULL.INCOMING_PORT",
+        "meterdata.G3_CONFIG.ALLG.INCOMING_PORT",
+        "meterdata.SERVER.PULL.INCOMING_PORT_PLC_MANAGEMENT"
+    ]
+}

@@ -1,0 +1,982 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta content="fr-ch" http-equiv="Content-Language">
+
+<title>_COSEMpdu</title>
+<style type="text/css">
+.style1 {
+	color: #0000FF;
+}
+.style2 {
+	color: #00FFFF;
+}
+</style>
+</head>
+
+<body>
+<p><a name="_COSEMpdu"></a><span class="style1">_COSEMpdu</span> ::= <strong>CHOICE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;InitiateRequest [1] <a href="pdu_syntax-syntax.htm#_InitiateRequest">_InitiateRequest</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ReadRequest [5] <a href="pdu_syntax-syntax.htm#_ReadRequest">_ReadRequest</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;WriteRequest [6] <a href="pdu_syntax-syntax.htm#_WriteRequest">_WriteRequest</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;InitiateResponse [8] <a href="pdu_syntax-syntax.htm#_InitiateResponse">_InitiateResponse</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ReadResponse [12] <a href="pdu_syntax-syntax.htm#_ReadResponse">_ReadResponse</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;WriteResponse [13] <a href="pdu_syntax-syntax.htm#_WriteResponse">_WriteResponse</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ConfirmedServiceError [14] <a href="pdu_syntax-syntax.htm#_ConfirmedServiceError">_ConfirmedServiceError</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;UnconfirmedWriteRequest [22] <a href="pdu_syntax-syntax.htm#_UnconfirmedWriteRequest">_UnconfirmedWriteRequest</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;InformationReportRequest [24] <a href="pdu_syntax-syntax.htm#_InformationReportRequest">_InformationReportRequest</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;AssociationRequest [96] <a href="pdu_syntax-syntax.htm#_AssociationRequest">_AssociationRequest</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;AssociationResponse [97] <a href="pdu_syntax-syntax.htm#_AssociationResponse">_AssociationResponse</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ReleaseRequest [98] <a href="pdu_syntax-syntax.htm#_ReleaseRequest">_ReleaseRequest</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ReleaseResponse [99] <a href="pdu_syntax-syntax.htm#_ReleaseResponse">_ReleaseResponse</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;GetRequest [192] <a href="pdu_syntax-syntax.htm#_GetRequest">_GetRequest</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SetRequest [193] <a href="pdu_syntax-syntax.htm#_SetRequest">_SetRequest</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;EventNotificationRequest [194] <a href="pdu_syntax-syntax.htm#_EventNotificationRequest">_EventNotificationRequest</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ActionRequest [195] <a href="pdu_syntax-syntax.htm#_ActionRequest">_ActionRequest</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;GetResponse [196] <a href="pdu_syntax-syntax.htm#_GetResponse">_GetResponse</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SetResponse [197] <a href="pdu_syntax-syntax.htm#_SetResponse">_SetResponse</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ActionResponse [199] <a href="pdu_syntax-syntax.htm#_ActionResponse">_ActionResponse</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ExceptionResponse [216] <a href="pdu_syntax-syntax.htm#_ExceptionResponse">_ExceptionResponse</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Data [255] <a href="pdu_syntax-syntax.htm#_Data">_Data</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;glo_InitiateRequest [33] <a href="pdu_syntax-syntax.htm#_OctetString">_OctetString</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;glo_ReadRequest [37] <a href="pdu_syntax-syntax.htm#_OctetString">_OctetString</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;glo_WriteRequest [38] <a href="pdu_syntax-syntax.htm#_OctetString">_OctetString</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;glo_InitiateResponse [40] <a href="pdu_syntax-syntax.htm#_OctetString">_OctetString</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;glo_ReadResponse [44] <a href="pdu_syntax-syntax.htm#_OctetString">_OctetString</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;glo_WriteResponse [45] <a href="pdu_syntax-syntax.htm#_OctetString">_OctetString</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;glo_ConfirmedServiceError [46] <a href="pdu_syntax-syntax.htm#_OctetString">_OctetString</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;glo_GetRequest [200] <a href="pdu_syntax-syntax.htm#_OctetString">_OctetString</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;glo_SetRequest [201] <a href="pdu_syntax-syntax.htm#_OctetString">_OctetString</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;glo_ActionRequest [203] <a href="pdu_syntax-syntax.htm#_OctetString">_OctetString</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;glo_GetResponse [204] <a href="pdu_syntax-syntax.htm#_OctetString">_OctetString</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;glo_SetResponse [205] <a href="pdu_syntax-syntax.htm#_OctetString">_OctetString</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;glo_ActionResponse [207] <a href="pdu_syntax-syntax.htm#_OctetString">_OctetString</a><br>   
+}<br>
+</p>
+
+<p><a name="_ACSERequirement"></a><span class="style1">_ACSERequirement</span> ::= <strong>BERBITSTR</strong><br>
+</p>
+
+
+<p><a name="_ACSEServiceProvider"></a><span class="style1">_ACSEServiceProvider</span> ::= <strong>BERUNSIGNED8</strong></p>
+<p></p>
+
+
+<p><a name="_ACSEServiceUser"></a><span class="style1">_ACSEServiceUser</span> ::= <strong>BERUNSIGNED8</strong></p>
+<p></p>
+
+
+<p><a name="_APTitle"></a><span class="style1">_APTitle</span> ::= <strong>BEROCTETSTR</strong></p>
+<p></p>
+
+<p><a name="_Access"></a><span class="style1">_Access</span> ::= <strong>ENUMERATED</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Other (0),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ScopeOfAccessViolated (1),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ObjectAccessInvalid (2),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;HardwareFault (3),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ObjectUnavailable (4)<br> 
+}<br>
+</p>
+
+<p><a name="_ActionRequest"></a><span class="style1">_ActionRequest</span> ::= <strong>CHOICE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ActionRequestNormal [1] <a href="pdu_syntax-syntax.htm#_ActionRequestNormal">_ActionRequestNormal</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ActionRequestForNextPBlock [2] <a href="pdu_syntax-syntax.htm#_ActionRequestForNextPBlock">_ActionRequestForNextPBlock</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ActionRequestWithList [3] <a href="pdu_syntax-syntax.htm#_ActionRequestWithList">_ActionRequestWithList</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ActionRequestWithFirstPBlock [4] <a href="pdu_syntax-syntax.htm#_ActionRequestWithFirstPBlock">_ActionRequestWithFirstPBlock</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ActionRequestWithListAndFirstPBlock [5] <a href="pdu_syntax-syntax.htm#_ActionRequestWithListAndWithFirstPBlock">_ActionRequestWithListAndWithFirstPBlock</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ActionRequestWithPBlock [6] <a href="pdu_syntax-syntax.htm#_ActionRequestWithPBlock">_ActionRequestWithPBlock</a><br>   
+}<br>
+</p>
+
+<p><a name="_ActionRequestForNextPBlock"></a><span class="style1">_ActionRequestForNextPBlock</span> ::= <strong>SEQUENCE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;InvokeIdAndPriority <a href="pdu_syntax-syntax.htm#_InvokeIdAndPriority">_InvokeIdAndPriority</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;BlockNumber <a href="pdu_syntax-syntax.htm#_Unsigned32">_Unsigned32</a> <br> 
+}<br>
+</p>
+
+<p><a name="_ActionRequestNormal"></a><span class="style1">_ActionRequestNormal</span> ::= <strong>SEQUENCE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;InvokeIdAndPriority <a href="pdu_syntax-syntax.htm#_InvokeIdAndPriority">_InvokeIdAndPriority</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;MethodDescriptor <a href="pdu_syntax-syntax.htm#_MethodDescriptor">_MethodDescriptor</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;MethodInvocationParameters <a href="pdu_syntax-syntax.htm#_Data">_Data</a> OPTIONAL<br> 
+}<br>
+</p>
+
+<p><a name="_ActionRequestWithFirstPBlock"></a><span class="style1">_ActionRequestWithFirstPBlock</span> ::= <strong>SEQUENCE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;InvokeIdAndPriority <a href="pdu_syntax-syntax.htm#_InvokeIdAndPriority">_InvokeIdAndPriority</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;MethodDescriptor <a href="pdu_syntax-syntax.htm#_MethodDescriptor">_MethodDescriptor</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;PBlock <a href="pdu_syntax-syntax.htm#_DataBlock_SA">_DataBlock_SA</a> <br> 
+}<br>
+</p>
+
+<p><a name="_ActionRequestWithList"></a><span class="style1">_ActionRequestWithList</span> ::= <strong>SEQUENCE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;InvokeIdAndPriority <a href="pdu_syntax-syntax.htm#_InvokeIdAndPriority">_InvokeIdAndPriority</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;MethodDescriptorList <a href="pdu_syntax-syntax.htm#_ListOfMethodDescriptor">_ListOfMethodDescriptor</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;MethodInvocationParameters <a href="pdu_syntax-syntax.htm#_ListOfData">_ListOfData</a> <br> 
+}<br>
+</p>
+
+<p><a name="_ActionRequestWithListAndWithFirstPBlock"></a><span class="style1">_ActionRequestWithListAndWithFirstPBlock</span> ::= <strong>SEQUENCE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;InvokeIdAndPriority <a href="pdu_syntax-syntax.htm#_InvokeIdAndPriority">_InvokeIdAndPriority</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;MethodDescriptorList <a href="pdu_syntax-syntax.htm#_ListOfMethodDescriptor">_ListOfMethodDescriptor</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;PBlock <a href="pdu_syntax-syntax.htm#_DataBlock_SA">_DataBlock_SA</a> <br> 
+}<br>
+</p>
+
+<p><a name="_ActionRequestWithPBlock"></a><span class="style1">_ActionRequestWithPBlock</span> ::= <strong>SEQUENCE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;InvokeIdAndPriority <a href="pdu_syntax-syntax.htm#_InvokeIdAndPriority">_InvokeIdAndPriority</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;PBlock <a href="pdu_syntax-syntax.htm#_DataBlock_SA">_DataBlock_SA</a> <br> 
+}<br>
+</p>
+
+<p><a name="_ActionResponse"></a><span class="style1">_ActionResponse</span> ::= <strong>CHOICE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ActionResponseNormal [1] <a href="pdu_syntax-syntax.htm#_ActionResponseNormal">_ActionResponseNormal</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ActionResponseWithPBlock [2] <a href="pdu_syntax-syntax.htm#_ActionResponseWithPBlock">_ActionResponseWithPBlock</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ActionResponseWithList [3] <a href="pdu_syntax-syntax.htm#_ActionResponseWithList">_ActionResponseWithList</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ActionResponseForNextPBlock [4] <a href="pdu_syntax-syntax.htm#_ActionResponseForNextPBlock">_ActionResponseForNextPBlock</a><br>   
+}<br>
+</p>
+
+<p><a name="_ActionResponseForNextPBlock"></a><span class="style1">_ActionResponseForNextPBlock</span> ::= <strong>SEQUENCE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;InvokeIdAndPriority <a href="pdu_syntax-syntax.htm#_InvokeIdAndPriority">_InvokeIdAndPriority</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;BlockNumber <a href="pdu_syntax-syntax.htm#_Unsigned32">_Unsigned32</a> <br> 
+}<br>
+</p>
+
+<p><a name="_ActionResponseNormal"></a><span class="style1">_ActionResponseNormal</span> ::= <strong>SEQUENCE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;InvokeIdAndPriority <a href="pdu_syntax-syntax.htm#_InvokeIdAndPriority">_InvokeIdAndPriority</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Result <a href="pdu_syntax-syntax.htm#_ActionResult">_ActionResult</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ReturnParameters <a href="pdu_syntax-syntax.htm#_GetDataResult">_GetDataResult</a> OPTIONAL<br> 
+}<br>
+</p>
+
+<p><a name="_ActionResponseWithList"></a><span class="style1">_ActionResponseWithList</span> ::= <strong>SEQUENCE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;InvokeIdAndPriority <a href="pdu_syntax-syntax.htm#_InvokeIdAndPriority">_InvokeIdAndPriority</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ListOfSingleActionResponse <a href="pdu_syntax-syntax.htm#_ListOfSingleActionResponse">_ListOfSingleActionResponse</a> <br> 
+}<br>
+</p>
+
+<p><a name="_ActionResponseWithPBlock"></a><span class="style1">_ActionResponseWithPBlock</span> ::= <strong>SEQUENCE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;InvokeIdAndPriority <a href="pdu_syntax-syntax.htm#_InvokeIdAndPriority">_InvokeIdAndPriority</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;PBlock <a href="pdu_syntax-syntax.htm#_DataBlock_SA">_DataBlock_SA</a> <br> 
+}<br>
+</p>
+
+<p><a name="_ActionResult"></a><span class="style1">_ActionResult</span> ::= <strong>ENUMERATED</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Success (0),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;HardwareFault (1),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;TemporaryFailure (2),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ReadWriteDenied (3),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ObjectUndefined (4),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ObjectClassInconsistent (9),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ObjectUnavailable (11),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;TypeUnmatched (12),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ScopeOfAccessViolated (13),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;DataBlockUnavailable (14),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;LongActionAborted (15),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;NoLongActionInProgress (16),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;OtherReason (250)<br> 
+}<br>
+</p>
+
+<p><a name="_ApplicationContextName"></a><span class="style1">_ApplicationContextName</span> ::= <strong>BEROBJECTIDENTIFIER</strong></p>
+<p></p>
+
+<p><a name="_ApplicationReference"></a><span class="style1">_ApplicationReference</span> ::= <strong>ENUMERATED</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Other (0),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;TimeElapsed (1),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ApplicationUnreachable (2),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ApplicationReferenceInvalid (3),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ApplicationContextUnsupported (4),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ProviderCommunicationError (5),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;DecipheringError (6)<br> 
+}<br>
+</p>
+
+<p><a name="_Array"></a><span class="style1">_Array</span> ::= <strong>SEQUENCEOFCHOICE</strong>
+   <a href="pdu_syntax-syntax.htm#_Data">_Data</a>
+</p>
+
+<p><a name="_AssociationRequest"></a><span class="style1">_AssociationRequest</span> ::= <strong>BERSEQUENCE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ProtocolVersion [ CONTEXT + 0 ] <a href="pdu_syntax-syntax.htm#_ProtocolVersion">_ProtocolVersion</a> OPTIONAL,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ApplicationContextName [ CONTEXT + CONSTRUCTED + 1 ]  [ 6 ] <a href="pdu_syntax-syntax.htm#_ApplicationContextName">_ApplicationContextName</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;CalledAPTitle [ CONTEXT + CONSTRUCTED + 2 ]  [ 4 ] <a href="pdu_syntax-syntax.htm#_APTitle">_APTitle</a> OPTIONAL,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;CallingAPTitle [ CONTEXT + CONSTRUCTED + 6 ]  [ 4 ] <a href="pdu_syntax-syntax.htm#_APTitle">_APTitle</a> OPTIONAL,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SenderACSERequirements [ CONTEXT + 10 ] <a href="pdu_syntax-syntax.htm#_ACSERequirement">_ACSERequirement</a> OPTIONAL,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;MechanismName [ CONTEXT + 11 ] <a href="pdu_syntax-syntax.htm#_MechanismName">_MechanismName</a> OPTIONAL,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;CallingAuthenticationValue [ CONTEXT + CONSTRUCTED + 12 ]  [ 128 ] <a href="pdu_syntax-syntax.htm#_AuthenticationValue">_AuthenticationValue</a> OPTIONAL,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;UserInformation [ CONTEXT + CONSTRUCTED + 30 ]  [ 4 ] <a href="pdu_syntax-syntax.htm#_BERCOSEMpdu">_BERCOSEMpdu</a> <br> 
+}<br>
+</p>
+
+<p><a name="_AssociationResponse"></a><span class="style1">_AssociationResponse</span> ::= <strong>BERSEQUENCE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ProtocolVersion [ CONTEXT + 0 ] <a href="pdu_syntax-syntax.htm#_ProtocolVersion">_ProtocolVersion</a> OPTIONAL,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ApplicationContextName [ CONTEXT + CONSTRUCTED + 1 ]  [ 6 ] <a href="pdu_syntax-syntax.htm#_ApplicationContextName">_ApplicationContextName</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;AssociationResult [ CONTEXT + CONSTRUCTED + 2 ]  [ 2 ] <a href="pdu_syntax-syntax.htm#_AssociationResult">_AssociationResult</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ResultSourceDiagnostic [ CONTEXT + CONSTRUCTED + 3 ] <a href="pdu_syntax-syntax.htm#_ResultSourceDiagnostic">_ResultSourceDiagnostic</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;RespondingAPTitle [ CONTEXT + CONSTRUCTED + 4 ]  [ 4 ] <a href="pdu_syntax-syntax.htm#_APTitle">_APTitle</a> OPTIONAL,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ResponderACSERequirement [ CONTEXT + 8 ] <a href="pdu_syntax-syntax.htm#_ACSERequirement">_ACSERequirement</a> OPTIONAL,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;MechanismName [ CONTEXT + 9 ] <a href="pdu_syntax-syntax.htm#_MechanismName">_MechanismName</a> OPTIONAL,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;RespondingAuthenticationValue [ CONTEXT + CONSTRUCTED + 10 ]  [ 128 ] <a href="pdu_syntax-syntax.htm#_AuthenticationValue">_AuthenticationValue</a> OPTIONAL,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;UserInformation [ CONTEXT + CONSTRUCTED + 30 ]  [ 4 ] <a href="pdu_syntax-syntax.htm#_BERCOSEMpdu">_BERCOSEMpdu</a> OPTIONAL<br> 
+}<br>
+</p>
+
+<p><a name="_AssociationResult"></a><span class="style1">_AssociationResult</span> ::= <strong>BERUNSIGNED8</strong></p>
+<p></p>
+
+
+<p><a name="_AttributeDescriptor"></a><span class="style1">_AttributeDescriptor</span> ::= <strong>SEQUENCE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ClassId <a href="pdu_syntax-syntax.htm#_ClassId">_ClassId</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;InstanceId <a href="pdu_syntax-syntax.htm#_ObjectInstanceId">_ObjectInstanceId</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;AttributeId <a href="pdu_syntax-syntax.htm#_ObjectAttributeId">_ObjectAttributeId</a> <br> 
+}<br>
+</p>
+
+<p><a name="_AttributeDescriptorWithSelection"></a><span class="style1">_AttributeDescriptorWithSelection</span> ::= <strong>SEQUENCE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;AttributeDescriptor <a href="pdu_syntax-syntax.htm#_AttributeDescriptor">_AttributeDescriptor</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;AccessSelection <a href="pdu_syntax-syntax.htm#_SelectiveAccessDescriptor">_SelectiveAccessDescriptor</a> OPTIONAL<br> 
+}<br>
+</p>
+
+<p><a name="_AuthenticationValue"></a><span class="style1">_AuthenticationValue</span> ::= <strong>BEROCTETSTR</strong></p>
+<p></p>
+
+<p><a name="_BERCOSEMpdu"></a><span class="style1">_BERCOSEMpdu</span> ::= <strong>BERCOSEMPDU</strong></p>
+<p></p>
+
+<p><a name="_Bcd"></a><span class="style1">_Bcd</span> ::= <strong>INTEGER8</strong></p>
+<p></p>
+
+
+<p><a name="_BitString"></a><span class="style1">_BitString</span> ::= <strong>BITSTR</strong><br>
+</p>
+
+
+<p><a name="_BlockNumberAccess"></a><span class="style1">_BlockNumberAccess</span> ::= <strong>SEQUENCE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;BlockNumber <a href="pdu_syntax-syntax.htm#_Unsigned16">_Unsigned16</a> <br> 
+}<br>
+</p>
+
+<p><a name="_Boolean"></a><span class="style1">_Boolean</span> ::= <strong>BOOLEAN</strong></p>
+<p></p>
+
+
+<p><a name="_ClassId"></a><span class="style1">_ClassId</span> ::= <strong>UNSIGNED16</strong></p>
+<p></p>
+
+
+<p><a name="_ConfirmedServiceError"></a><span class="style1">_ConfirmedServiceError</span> ::= <strong>SEQUENCE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Service <a href="pdu_syntax-syntax.htm#_Unsigned8">_Unsigned8</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ServiceError <a href="pdu_syntax-syntax.htm#_ServiceError">_ServiceError</a> <br> 
+}<br>
+</p>
+
+<p><a name="_Conformance"></a><span class="style1">_Conformance</span> ::= <strong>ENUMERATEDBITS</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Reserved0 (0),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Reserved1 (1),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Reserved2 (2),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Read (3),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Write (4),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;UnconfirmedWrite (5),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Reserved5 (6),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Reserved6 (7),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Attribute0SupportedWithSet (8),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;PriorityMgmtSupported (9),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Attribute0SupportedWithGet (10),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Attribute0Supported (10),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;BlockTransferWithGetOrRead (11),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;BlockTransferWithGet (11),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;BlockTransferWithSetOrWrite (12),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;BlockTransferWithSet (12),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;BlockTransferWithAction (13),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;MultipleReferences (14),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;InformationReport (15),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Reserved16 (16),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Reserved17 (17),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ParametrizedAccess (18),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Get (19),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Set (20),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SelectiveAccess (21),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;EventNotification (22),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Action (23)<br> 
+}<br>
+</p>
+
+<p><a name="_Data"></a><span class="style1">_Data</span> ::= <strong>CHOICE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;NullData [0] <a href="pdu_syntax-syntax.htm#_NullData">_NullData</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Array [1] <a href="pdu_syntax-syntax.htm#_Array">_Array</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Structure [2] <a href="pdu_syntax-syntax.htm#_Structure">_Structure</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Boolean [3] <a href="pdu_syntax-syntax.htm#_Boolean">_Boolean</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;BitString [4] <a href="pdu_syntax-syntax.htm#_BitString">_BitString</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;DoubleLong [5] <a href="pdu_syntax-syntax.htm#_Integer32">_Integer32</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;DoubleLongUnsigned [6] <a href="pdu_syntax-syntax.htm#_Unsigned32">_Unsigned32</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;FloatingPoint [7] <a href="pdu_syntax-syntax.htm#_FloatingPoint">_FloatingPoint</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;OctetString [9] <a href="pdu_syntax-syntax.htm#_OctetString">_OctetString</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;VisibleString [10] <a href="pdu_syntax-syntax.htm#_VisibleString">_VisibleString</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Bcd [13] <a href="pdu_syntax-syntax.htm#_Bcd">_Bcd</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Integer [15] <a href="pdu_syntax-syntax.htm#_Integer8">_Integer8</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Long [16] <a href="pdu_syntax-syntax.htm#_Integer16">_Integer16</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Unsigned [17] <a href="pdu_syntax-syntax.htm#_Unsigned8">_Unsigned8</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;LongUnsigned [18] <a href="pdu_syntax-syntax.htm#_Unsigned16">_Unsigned16</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Long64 [20] <a href="pdu_syntax-syntax.htm#_Integer64">_Integer64</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Long64Unsigned [21] <a href="pdu_syntax-syntax.htm#_Unsigned64">_Unsigned64</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Enum [22] <a href="pdu_syntax-syntax.htm#_Enum">_Enum</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Float32 [23] <a href="pdu_syntax-syntax.htm#_Float32">_Float32</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Float64 [24] <a href="pdu_syntax-syntax.htm#_Float64">_Float64</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;DateTime [25] <a href="pdu_syntax-syntax.htm#_DateTime">_DateTime</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Date [26] <a href="pdu_syntax-syntax.htm#_Date">_Date</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Time [27] <a href="pdu_syntax-syntax.htm#_Time">_Time</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;DontCare [255] <a href="pdu_syntax-syntax.htm#_DontCare">_DontCare</a><br>   
+}<br>
+</p>
+
+<p><a name="_DataAccessResult"></a><span class="style1">_DataAccessResult</span> ::= <strong>ENUMERATED</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Success (0),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;HardwareFault (1),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;TemporaryFailure (2),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ReadWriteDenied (3),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ObjectUndefined (4),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ObjectClassInconsistent (9),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ObjectUnavailable (11),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;TypeUnmatched (12),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ScopeOfAccessViolated (13),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;DataBlockUnavailable (14),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;LongGetOrReadAborted (15),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;NoLongGetOrReadInProgress (16),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;LongSetOrWriteAborted (17),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;NoLongSetOrWriteInProgress (18),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;DataBlockNumberInvalid (19),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;OtherReason (250)<br> 
+}<br>
+</p>
+
+<p><a name="_DataBlockGResult"></a><span class="style1">_DataBlockGResult</span> ::= <strong>CHOICE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;RawData [0] <a href="pdu_syntax-syntax.htm#_OctetString">_OctetString</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;DataAccessResult [1] <a href="pdu_syntax-syntax.htm#_DataAccessResult">_DataAccessResult</a><br>   
+}<br>
+</p>
+
+<p><a name="_DataBlockResult"></a><span class="style1">_DataBlockResult</span> ::= <strong>SEQUENCE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;LastBlock <a href="pdu_syntax-syntax.htm#_Boolean">_Boolean</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;BlockNumber <a href="pdu_syntax-syntax.htm#_Unsigned16">_Unsigned16</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;RawData <a href="pdu_syntax-syntax.htm#_OctetString">_OctetString</a> <br> 
+}<br>
+</p>
+
+<p><a name="_DataBlock_G"></a><span class="style1">_DataBlock_G</span> ::= <strong>SEQUENCE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;LastBlock <a href="pdu_syntax-syntax.htm#_Boolean">_Boolean</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;BlockNumber <a href="pdu_syntax-syntax.htm#_Unsigned32">_Unsigned32</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Result <a href="pdu_syntax-syntax.htm#_DataBlockGResult">_DataBlockGResult</a> <br> 
+}<br>
+</p>
+
+<p><a name="_DataBlock_SA"></a><span class="style1">_DataBlock_SA</span> ::= <strong>SEQUENCE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;LastBlock <a href="pdu_syntax-syntax.htm#_Boolean">_Boolean</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;BlockNumber <a href="pdu_syntax-syntax.htm#_Unsigned32">_Unsigned32</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;RawData <a href="pdu_syntax-syntax.htm#_OctetString">_OctetString</a> <br> 
+}<br>
+</p>
+
+<p><a name="_Date"></a><span class="style1">_Date</span> ::= <strong>OCTETSTR(5)</strong></p>
+<p></p>
+
+<p><a name="_DateTime"></a><span class="style1">_DateTime</span> ::= <strong>OCTETSTR(12)</strong></p>
+<p></p>
+
+<p><a name="_Definition"></a><span class="style1">_Definition</span> ::= <strong>ENUMERATED</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Other (0),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ObjectUndefined (1),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ObjectClassInconsistent (2),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ObjectAttributeInconsistent (3)<br> 
+}<br>
+</p>
+
+<p><a name="_DontCare"></a><span class="style1">_DontCare</span> ::= <strong>NULL</strong></p>
+<p></p>
+
+<p><a name="_Enum"></a><span class="style1">_Enum</span> ::= <strong>UNSIGNED8</strong></p>
+<p></p>
+
+
+<p><a name="_EventNotificationRequest"></a><span class="style1">_EventNotificationRequest</span> ::= <strong>SEQUENCE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Time <a href="pdu_syntax-syntax.htm#_OctetString">_OctetString</a> OPTIONAL,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;AttributeDescriptor <a href="pdu_syntax-syntax.htm#_AttributeDescriptor">_AttributeDescriptor</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;AttributeValue <a href="pdu_syntax-syntax.htm#_Data">_Data</a> <br> 
+}<br>
+</p>
+
+<p><a name="_ExceptionResponse"></a><span class="style1">_ExceptionResponse</span> ::= <strong>SEQUENCE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;StateError <a href="pdu_syntax-syntax.htm#_ExceptionStateError">_ExceptionStateError</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ServiceError <a href="pdu_syntax-syntax.htm#_ExceptionServiceError">_ExceptionServiceError</a> <br> 
+}<br>
+</p>
+
+<p><a name="_ExceptionServiceError"></a><span class="style1">_ExceptionServiceError</span> ::= <strong>ENUMERATED</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;OperationNotPossible (1),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ServiceNotSupported (2),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;OtherReason (3)<br> 
+}<br>
+</p>
+
+<p><a name="_ExceptionStateError"></a><span class="style1">_ExceptionStateError</span> ::= <strong>ENUMERATED</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ServiceNotAllowed (1),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ServiceUnknown (2)<br> 
+}<br>
+</p>
+
+<p><a name="_Float32"></a><span class="style1">_Float32</span> ::= <strong>FLOATINGPOINT32</strong></p>
+<p></p>
+
+
+<p><a name="_Float64"></a><span class="style1">_Float64</span> ::= <strong>FLOATINGPOINT64</strong></p>
+<p></p>
+
+
+<p><a name="_FloatingPoint"></a><span class="style1">_FloatingPoint</span> ::= <strong>OCTETSTR(4)</strong></p>
+<p></p>
+
+<p><a name="_GetDataResult"></a><span class="style1">_GetDataResult</span> ::= <strong>CHOICE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Data [0] <a href="pdu_syntax-syntax.htm#_Data">_Data</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;DataAccessError [1] <a href="pdu_syntax-syntax.htm#_DataAccessResult">_DataAccessResult</a><br>   
+}<br>
+</p>
+
+<p><a name="_GetRequest"></a><span class="style1">_GetRequest</span> ::= <strong>CHOICE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;GetRequestNormal [1] <a href="pdu_syntax-syntax.htm#_GetRequestNormal">_GetRequestNormal</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;GetRequestForNextDataBlock [2] <a href="pdu_syntax-syntax.htm#_GetRequestForNextDatablock">_GetRequestForNextDatablock</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;GetRequestWithList [3] <a href="pdu_syntax-syntax.htm#_GetRequestWithList">_GetRequestWithList</a><br>   
+}<br>
+</p>
+
+<p><a name="_GetRequestForNextDatablock"></a><span class="style1">_GetRequestForNextDatablock</span> ::= <strong>SEQUENCE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;InvokeIdAndPriority <a href="pdu_syntax-syntax.htm#_InvokeIdAndPriority">_InvokeIdAndPriority</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;BlockNumber <a href="pdu_syntax-syntax.htm#_Unsigned32">_Unsigned32</a> <br> 
+}<br>
+</p>
+
+<p><a name="_GetRequestNormal"></a><span class="style1">_GetRequestNormal</span> ::= <strong>SEQUENCE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;InvokeIdAndPriority <a href="pdu_syntax-syntax.htm#_InvokeIdAndPriority">_InvokeIdAndPriority</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;AttributeDescriptor <a href="pdu_syntax-syntax.htm#_AttributeDescriptor">_AttributeDescriptor</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;AccessSelection <a href="pdu_syntax-syntax.htm#_SelectiveAccessDescriptor">_SelectiveAccessDescriptor</a> OPTIONAL<br> 
+}<br>
+</p>
+
+<p><a name="_GetRequestWithList"></a><span class="style1">_GetRequestWithList</span> ::= <strong>SEQUENCE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;InvokeIdAndPriority <a href="pdu_syntax-syntax.htm#_InvokeIdAndPriority">_InvokeIdAndPriority</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;AttributeDescriptorList <a href="pdu_syntax-syntax.htm#_ListOfAttributeDescriptorWithSelection">_ListOfAttributeDescriptorWithSelection</a> <br> 
+}<br>
+</p>
+
+<p><a name="_GetResponse"></a><span class="style1">_GetResponse</span> ::= <strong>CHOICE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;GetResponsenormal [1] <a href="pdu_syntax-syntax.htm#_GetResponseNormal">_GetResponseNormal</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;GetResponsewithDataBlock [2] <a href="pdu_syntax-syntax.htm#_GetResponseWithDataBlock">_GetResponseWithDataBlock</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;GetResponseWithList [3] <a href="pdu_syntax-syntax.htm#_GetResponseWithList">_GetResponseWithList</a><br>   
+}<br>
+</p>
+
+<p><a name="_GetResponseNormal"></a><span class="style1">_GetResponseNormal</span> ::= <strong>SEQUENCE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;InvokeIdAndPriority <a href="pdu_syntax-syntax.htm#_InvokeIdAndPriority">_InvokeIdAndPriority</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Result <a href="pdu_syntax-syntax.htm#_GetDataResult">_GetDataResult</a> <br> 
+}<br>
+</p>
+
+<p><a name="_GetResponseWithDataBlock"></a><span class="style1">_GetResponseWithDataBlock</span> ::= <strong>SEQUENCE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;InvokeIdAndPriority <a href="pdu_syntax-syntax.htm#_InvokeIdAndPriority">_InvokeIdAndPriority</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Result <a href="pdu_syntax-syntax.htm#_DataBlock_G">_DataBlock_G</a> <br> 
+}<br>
+</p>
+
+<p><a name="_GetResponseWithList"></a><span class="style1">_GetResponseWithList</span> ::= <strong>SEQUENCE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;InvokeIdAndPriority <a href="pdu_syntax-syntax.htm#_InvokeIdAndPriority">_InvokeIdAndPriority</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Result <a href="pdu_syntax-syntax.htm#_ListOfGetDataResult">_ListOfGetDataResult</a> <br> 
+}<br>
+</p>
+
+<p><a name="_HardwareResource"></a><span class="style1">_HardwareResource</span> ::= <strong>ENUMERATED</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Other (0),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;MemoryUnavailable (1),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ProcessorResourceUnavailable (2),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;MassStorageUnavailable (3),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;OtherResourceUnavailable (4)<br> 
+}<br>
+</p>
+
+<p><a name="_InformationReportRequest"></a><span class="style1">_InformationReportRequest</span> ::= <strong>SEQUENCE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;CurrentTime <a href="pdu_syntax-syntax.htm#_OctetString">_OctetString</a> OPTIONAL,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ListOfVariableAccessSpecification <a href="pdu_syntax-syntax.htm#_ListOfVariableAccessSpecifications">_ListOfVariableAccessSpecifications</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ListOfData <a href="pdu_syntax-syntax.htm#_ListOfData">_ListOfData</a> <br> 
+}<br>
+</p>
+
+<p><a name="_Initiate"></a><span class="style1">_Initiate</span> ::= <strong>ENUMERATED</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Other (0),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;DlmsVersionTooLow (1),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;IncompatibleConformance (2),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;PduSizeTooShort (3),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;RefusedByTheVDEHandler (4)<br> 
+}<br>
+</p>
+
+<p><a name="_InitiateRequest"></a><span class="style1">_InitiateRequest</span> ::= <strong>SEQUENCE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;DedicatedKey <a href="pdu_syntax-syntax.htm#_OctetString">_OctetString</a> OPTIONAL,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ResponseAllowed <a href="pdu_syntax-syntax.htm#_Boolean">_Boolean</a> OPTIONAL,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ProposedQualityOfService <a href="pdu_syntax-syntax.htm#_Integer8">_Integer8</a> OPTIONAL,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ProposedDlmsVersionNumber <a href="pdu_syntax-syntax.htm#_Unsigned8">_Unsigned8</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ProposedConformance <a href="pdu_syntax-syntax.htm#_Conformance">_Conformance</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ProposedMaxPduSize <a href="pdu_syntax-syntax.htm#_Unsigned16">_Unsigned16</a> <br> 
+}<br>
+</p>
+
+<p><a name="_InitiateResponse"></a><span class="style1">_InitiateResponse</span> ::= <strong>SEQUENCE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;NegotiatedQualityOfService <a href="pdu_syntax-syntax.htm#_Integer8">_Integer8</a> OPTIONAL,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;NegotiatedDlmsVersionNumber <a href="pdu_syntax-syntax.htm#_Unsigned8">_Unsigned8</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;NegotiatedConformance <a href="pdu_syntax-syntax.htm#_Conformance">_Conformance</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;NegotiatedMaxPduSize <a href="pdu_syntax-syntax.htm#_Unsigned16">_Unsigned16</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;VaaName <a href="pdu_syntax-syntax.htm#_ObjectName">_ObjectName</a> <br> 
+}<br>
+</p>
+
+<p><a name="_Integer16"></a><span class="style1">_Integer16</span> ::= <strong>INTEGER16</strong></p>
+<p></p>
+
+
+<p><a name="_Integer32"></a><span class="style1">_Integer32</span> ::= <strong>INTEGER32</strong></p>
+<p></p>
+
+
+<p><a name="_Integer64"></a><span class="style1">_Integer64</span> ::= <strong>INTEGER64</strong></p>
+<p></p>
+
+
+<p><a name="_Integer8"></a><span class="style1">_Integer8</span> ::= <strong>INTEGER8</strong></p>
+<p></p>
+
+
+<p><a name="_InvokeIdAndPriority"></a><span class="style1">_InvokeIdAndPriority</span> ::= <strong>UNSIGNED8</strong></p>
+<p></p>
+
+
+<p><a name="_ListOfAttributeDescriptorWithSelection"></a><span class="style1">_ListOfAttributeDescriptorWithSelection</span> ::= <strong>SEQUENCEOF</strong>
+   <a href="pdu_syntax-syntax.htm#_AttributeDescriptorWithSelection">_AttributeDescriptorWithSelection</a>
+</p>
+
+<p><a name="_ListOfData"></a><span class="style1">_ListOfData</span> ::= <strong>SEQUENCEOFCHOICE</strong>
+   <a href="pdu_syntax-syntax.htm#_Data">_Data</a>
+</p>
+
+<p><a name="_ListOfDataAccessResult"></a><span class="style1">_ListOfDataAccessResult</span> ::= <strong>SEQUENCEOF</strong>
+   <a href="pdu_syntax-syntax.htm#_DataAccessResult">_DataAccessResult</a>
+</p>
+
+<p><a name="_ListOfGetDataResult"></a><span class="style1">_ListOfGetDataResult</span> ::= <strong>SEQUENCEOFCHOICE</strong>
+   <a href="pdu_syntax-syntax.htm#_GetDataResult">_GetDataResult</a>
+</p>
+
+<p><a name="_ListOfMethodDescriptor"></a><span class="style1">_ListOfMethodDescriptor</span> ::= <strong>SEQUENCEOF</strong>
+   <a href="pdu_syntax-syntax.htm#_MethodDescriptor">_MethodDescriptor</a>
+</p>
+
+<p><a name="_ListOfSingleActionResponse"></a><span class="style1">_ListOfSingleActionResponse</span> ::= <strong>SEQUENCEOF</strong>
+   <a href="pdu_syntax-syntax.htm#_SingleActionResponse">_SingleActionResponse</a>
+</p>
+
+<p><a name="_ListOfVariableAccessSpecifications"></a><span class="style1">_ListOfVariableAccessSpecifications</span> ::= <strong>SEQUENCEOFCHOICE</strong>
+   <a href="pdu_syntax-syntax.htm#_VariableAccessSpecification">_VariableAccessSpecification</a>
+</p>
+
+<p><a name="_LoadDataSet"></a><span class="style1">_LoadDataSet</span> ::= <strong>ENUMERATED</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Other (0),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;PrimitiveOutOfSequence (1),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;NotLoadable (2),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;DatasetSizeTooLarge (3),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;NotAwaitedSegment (4),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;InterpretationFailure (5),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;StorageFailure (6),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;DataSetNotReady (7)<br> 
+}<br>
+</p>
+
+<p><a name="_MechanismName"></a><span class="style1">_MechanismName</span> ::= <strong>BEROBJECTIDENTIFIER</strong></p>
+<p></p>
+
+<p><a name="_MethodDescriptor"></a><span class="style1">_MethodDescriptor</span> ::= <strong>SEQUENCE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ClassId <a href="pdu_syntax-syntax.htm#_ClassId">_ClassId</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;InstanceId <a href="pdu_syntax-syntax.htm#_ObjectInstanceId">_ObjectInstanceId</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;MethodId <a href="pdu_syntax-syntax.htm#_ObjectMethodId">_ObjectMethodId</a> <br> 
+}<br>
+</p>
+
+<p><a name="_NullData"></a><span class="style1">_NullData</span> ::= <strong>NULL</strong></p>
+<p></p>
+
+<p><a name="_ObjectAttributeId"></a><span class="style1">_ObjectAttributeId</span> ::= <strong>INTEGER8</strong></p>
+<p></p>
+
+
+<p><a name="_ObjectInstanceId"></a><span class="style1">_ObjectInstanceId</span> ::= <strong>OCTETSTR(6)</strong></p>
+<p></p>
+
+<p><a name="_ObjectMethodId"></a><span class="style1">_ObjectMethodId</span> ::= <strong>INTEGER8</strong></p>
+<p></p>
+
+
+<p><a name="_ObjectName"></a><span class="style1">_ObjectName</span> ::= <strong>INTEGER16</strong></p>
+<p></p>
+
+
+<p><a name="_OctetString"></a><span class="style1">_OctetString</span> ::= <strong>OCTETSTR(-1)</strong></p>
+<p></p>
+
+<p><a name="_OtherError"></a><span class="style1">_OtherError</span> ::= <strong>UNSIGNED8</strong></p>
+<p></p>
+
+
+<p><a name="_ParametrisedAccess"></a><span class="style1">_ParametrisedAccess</span> ::= <strong>SEQUENCE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;VariableName <a href="pdu_syntax-syntax.htm#_ObjectName">_ObjectName</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Selector <a href="pdu_syntax-syntax.htm#_Unsigned8">_Unsigned8</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Parameter <a href="pdu_syntax-syntax.htm#_Data">_Data</a> <br> 
+}<br>
+</p>
+
+<p><a name="_ProtocolVersion"></a><span class="style1">_ProtocolVersion</span> ::= <strong>BERBITSTR</strong><br>
+</p>
+
+
+<p><a name="_ReadDataBlockAccess"></a><span class="style1">_ReadDataBlockAccess</span> ::= <strong>SEQUENCE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;LastBlock <a href="pdu_syntax-syntax.htm#_Boolean">_Boolean</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;BlockNumber <a href="pdu_syntax-syntax.htm#_Unsigned16">_Unsigned16</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;RawData <a href="pdu_syntax-syntax.htm#_OctetString">_OctetString</a> <br> 
+}<br>
+</p>
+
+<p><a name="_ReadRequest"></a><span class="style1">_ReadRequest</span> ::= <strong>SEQUENCEOFCHOICE</strong>
+   <a href="pdu_syntax-syntax.htm#_VariableAccessSpecification">_VariableAccessSpecification</a>
+</p>
+
+<p><a name="_ReadResponse"></a><span class="style1">_ReadResponse</span> ::= <strong>SEQUENCEOFCHOICE</strong>
+   <a href="pdu_syntax-syntax.htm#_SingleReadResponse">_SingleReadResponse</a>
+</p>
+
+<p><a name="_ReleaseRequest"></a><span class="style1">_ReleaseRequest</span> ::= <strong>BERSEQUENCE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Reason [ CONTEXT + 0 ] <a href="pdu_syntax-syntax.htm#_ReleaseRequestReason">_ReleaseRequestReason</a> OPTIONAL,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;UserInformation [ CONTEXT + CONSTRUCTED + 30 ]  [ 4 ] <a href="pdu_syntax-syntax.htm#_BERCOSEMpdu">_BERCOSEMpdu</a> OPTIONAL<br> 
+}<br>
+</p>
+
+<p><a name="_ReleaseRequestReason"></a><span class="style1">_ReleaseRequestReason</span> ::= <strong>BERENUMERATED</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Normal (0),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Urgent (1),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;UserDefined (30)<br> 
+}<br>
+</p>
+
+<p><a name="_ReleaseResponse"></a><span class="style1">_ReleaseResponse</span> ::= <strong>BERSEQUENCE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Reason [ CONTEXT + 0 ] <a href="pdu_syntax-syntax.htm#_ReleaseResponseReason">_ReleaseResponseReason</a> OPTIONAL,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;UserInformation [ CONTEXT + CONSTRUCTED + 30 ]  [ 4 ] <a href="pdu_syntax-syntax.htm#_BERCOSEMpdu">_BERCOSEMpdu</a> OPTIONAL<br> 
+}<br>
+</p>
+
+<p><a name="_ReleaseResponseReason"></a><span class="style1">_ReleaseResponseReason</span> ::= <strong>BERENUMERATED</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Normal (0),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;NotFinished (1),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;UserDefined (30)<br> 
+}<br>
+</p>
+
+<p><a name="_ResultSourceDiagnostic"></a><span class="style1">_ResultSourceDiagnostic</span> ::= <strong>BERCHOICE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ACSEServiceUser [ CONTEXT + CONSTRUCTED + 1 ]  [ 2 ] <a href="pdu_syntax-syntax.htm#_ACSEServiceUser">_ACSEServiceUser</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ACSEServiceProvider [ CONTEXT + CONSTRUCTED + 2 ]  [ 2 ] <a href="pdu_syntax-syntax.htm#_ACSEServiceProvider">_ACSEServiceProvider</a> <br>   
+}<br>
+</p>
+
+<p><a name="_SelectiveAccessDescriptor"></a><span class="style1">_SelectiveAccessDescriptor</span> ::= <strong>SEQUENCE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;AccessSelector <a href="pdu_syntax-syntax.htm#_Unsigned8">_Unsigned8</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;AccessParameters <a href="pdu_syntax-syntax.htm#_Data">_Data</a> <br> 
+}<br>
+</p>
+
+<p><a name="_Service"></a><span class="style1">_Service</span> ::= <strong>ENUMERATED</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Other (0),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;PduSize (1),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ServiceUnsupported (2)<br> 
+}<br>
+</p>
+
+<p><a name="_ServiceError"></a><span class="style1">_ServiceError</span> ::= <strong>CHOICE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ApplicationReference [0] <a href="pdu_syntax-syntax.htm#_ApplicationReference">_ApplicationReference</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;HardwareResource [1] <a href="pdu_syntax-syntax.htm#_HardwareResource">_HardwareResource</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;VdeStateError [2] <a href="pdu_syntax-syntax.htm#_VdeStateError">_VdeStateError</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Service [3] <a href="pdu_syntax-syntax.htm#_Service">_Service</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Definition [4] <a href="pdu_syntax-syntax.htm#_Definition">_Definition</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Access [5] <a href="pdu_syntax-syntax.htm#_Access">_Access</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Initiate [6] <a href="pdu_syntax-syntax.htm#_Initiate">_Initiate</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;LoadDataSet [7] <a href="pdu_syntax-syntax.htm#_LoadDataSet">_LoadDataSet</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Task [9] <a href="pdu_syntax-syntax.htm#_Task">_Task</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;OtherError [10] <a href="pdu_syntax-syntax.htm#_OtherError">_OtherError</a><br>   
+}<br>
+</p>
+
+<p><a name="_SetRequest"></a><span class="style1">_SetRequest</span> ::= <strong>CHOICE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SetRequestNormal [1] <a href="pdu_syntax-syntax.htm#_SetRequestNormal">_SetRequestNormal</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SetRequestWithFirstDataBlock [2] <a href="pdu_syntax-syntax.htm#_SetRequestWithFirstDataBlock">_SetRequestWithFirstDataBlock</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SetRequestWithDataBlock [3] <a href="pdu_syntax-syntax.htm#_SetRequestWithDataBlock">_SetRequestWithDataBlock</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SetRequestNormalWithList [4] <a href="pdu_syntax-syntax.htm#_SetRequestNormalWithList">_SetRequestNormalWithList</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SetRequestWithListAndWithFirstDatablock [5] <a href="pdu_syntax-syntax.htm#_SetRequestWithListAndWithFirstDatablock">_SetRequestWithListAndWithFirstDatablock</a><br>   
+}<br>
+</p>
+
+<p><a name="_SetRequestNormal"></a><span class="style1">_SetRequestNormal</span> ::= <strong>SEQUENCE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;InvokeIdAndPriority <a href="pdu_syntax-syntax.htm#_InvokeIdAndPriority">_InvokeIdAndPriority</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;AttributeDescriptor <a href="pdu_syntax-syntax.htm#_AttributeDescriptor">_AttributeDescriptor</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;AccessSelection <a href="pdu_syntax-syntax.htm#_SelectiveAccessDescriptor">_SelectiveAccessDescriptor</a> OPTIONAL,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Value <a href="pdu_syntax-syntax.htm#_Data">_Data</a> <br> 
+}<br>
+</p>
+
+<p><a name="_SetRequestNormalWithList"></a><span class="style1">_SetRequestNormalWithList</span> ::= <strong>SEQUENCE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;InvokeIdAndPriority <a href="pdu_syntax-syntax.htm#_InvokeIdAndPriority">_InvokeIdAndPriority</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;AttributeDescriptorList <a href="pdu_syntax-syntax.htm#_ListOfAttributeDescriptorWithSelection">_ListOfAttributeDescriptorWithSelection</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ValueList <a href="pdu_syntax-syntax.htm#_ListOfData">_ListOfData</a> <br> 
+}<br>
+</p>
+
+<p><a name="_SetRequestWithDataBlock"></a><span class="style1">_SetRequestWithDataBlock</span> ::= <strong>SEQUENCE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;InvokeIdAndPriority <a href="pdu_syntax-syntax.htm#_InvokeIdAndPriority">_InvokeIdAndPriority</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;DataBlock <a href="pdu_syntax-syntax.htm#_DataBlock_SA">_DataBlock_SA</a> <br> 
+}<br>
+</p>
+
+<p><a name="_SetRequestWithFirstDataBlock"></a><span class="style1">_SetRequestWithFirstDataBlock</span> ::= <strong>SEQUENCE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;InvokeIdAndPriority <a href="pdu_syntax-syntax.htm#_InvokeIdAndPriority">_InvokeIdAndPriority</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;AttributeDescriptor <a href="pdu_syntax-syntax.htm#_AttributeDescriptor">_AttributeDescriptor</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;AccessSelection <a href="pdu_syntax-syntax.htm#_SelectiveAccessDescriptor">_SelectiveAccessDescriptor</a> OPTIONAL,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;DataBlock <a href="pdu_syntax-syntax.htm#_DataBlock_SA">_DataBlock_SA</a> <br> 
+}<br>
+</p>
+
+<p><a name="_SetRequestWithListAndWithFirstDatablock"></a><span class="style1">_SetRequestWithListAndWithFirstDatablock</span> ::= <strong>SEQUENCE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;InvokeIdAndPriority <a href="pdu_syntax-syntax.htm#_InvokeIdAndPriority">_InvokeIdAndPriority</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;AttributeDescriptorList <a href="pdu_syntax-syntax.htm#_ListOfAttributeDescriptorWithSelection">_ListOfAttributeDescriptorWithSelection</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;DataBlock <a href="pdu_syntax-syntax.htm#_DataBlock_SA">_DataBlock_SA</a> <br> 
+}<br>
+</p>
+
+<p><a name="_SetResponse"></a><span class="style1">_SetResponse</span> ::= <strong>CHOICE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SetResponseNormal [1] <a href="pdu_syntax-syntax.htm#_SetResponseNormal">_SetResponseNormal</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SetResponseForDataBlock [2] <a href="pdu_syntax-syntax.htm#_SetResponseForDataBlock">_SetResponseForDataBlock</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SetResponseForLastDataBlock [3] <a href="pdu_syntax-syntax.htm#_SetResponseForLastDataBlock">_SetResponseForLastDataBlock</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SetResponseForLastDataBlockWithList [4] <a href="pdu_syntax-syntax.htm#_SetResponseForLastDataBlockWithList">_SetResponseForLastDataBlockWithList</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SetResponseWithList [5] <a href="pdu_syntax-syntax.htm#_SetResponseWithList">_SetResponseWithList</a><br>   
+}<br>
+</p>
+
+<p><a name="_SetResponseForDataBlock"></a><span class="style1">_SetResponseForDataBlock</span> ::= <strong>SEQUENCE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;InvokeIdAndPriority <a href="pdu_syntax-syntax.htm#_InvokeIdAndPriority">_InvokeIdAndPriority</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;BlockNumber <a href="pdu_syntax-syntax.htm#_Unsigned32">_Unsigned32</a> <br> 
+}<br>
+</p>
+
+<p><a name="_SetResponseForLastDataBlock"></a><span class="style1">_SetResponseForLastDataBlock</span> ::= <strong>SEQUENCE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;InvokeIdAndPriority <a href="pdu_syntax-syntax.htm#_InvokeIdAndPriority">_InvokeIdAndPriority</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Result <a href="pdu_syntax-syntax.htm#_DataAccessResult">_DataAccessResult</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;BlockNumber <a href="pdu_syntax-syntax.htm#_Unsigned32">_Unsigned32</a> <br> 
+}<br>
+</p>
+
+<p><a name="_SetResponseForLastDataBlockWithList"></a><span class="style1">_SetResponseForLastDataBlockWithList</span> ::= <strong>SEQUENCE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;InvokeIdAndPriority <a href="pdu_syntax-syntax.htm#_InvokeIdAndPriority">_InvokeIdAndPriority</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Result <a href="pdu_syntax-syntax.htm#_ListOfDataAccessResult">_ListOfDataAccessResult</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;BlockNumber <a href="pdu_syntax-syntax.htm#_Unsigned32">_Unsigned32</a> <br> 
+}<br>
+</p>
+
+<p><a name="_SetResponseNormal"></a><span class="style1">_SetResponseNormal</span> ::= <strong>SEQUENCE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;InvokeIdAndPriority <a href="pdu_syntax-syntax.htm#_InvokeIdAndPriority">_InvokeIdAndPriority</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Result <a href="pdu_syntax-syntax.htm#_DataAccessResult">_DataAccessResult</a> <br> 
+}<br>
+</p>
+
+<p><a name="_SetResponseWithList"></a><span class="style1">_SetResponseWithList</span> ::= <strong>SEQUENCE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;InvokeIdAndPriority <a href="pdu_syntax-syntax.htm#_InvokeIdAndPriority">_InvokeIdAndPriority</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Result <a href="pdu_syntax-syntax.htm#_ListOfDataAccessResult">_ListOfDataAccessResult</a> <br> 
+}<br>
+</p>
+
+<p><a name="_SingleActionResponse"></a><span class="style1">_SingleActionResponse</span> ::= <strong>SEQUENCE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Result <a href="pdu_syntax-syntax.htm#_ActionResult">_ActionResult</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ReturnParameters <a href="pdu_syntax-syntax.htm#_GetDataResult">_GetDataResult</a> OPTIONAL<br> 
+}<br>
+</p>
+
+<p><a name="_SingleReadResponse"></a><span class="style1">_SingleReadResponse</span> ::= <strong>CHOICE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Data [0] <a href="pdu_syntax-syntax.htm#_Data">_Data</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;DataAccessError [1] <a href="pdu_syntax-syntax.htm#_DataAccessResult">_DataAccessResult</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;DataBlockResult [2] <a href="pdu_syntax-syntax.htm#_DataBlockResult">_DataBlockResult</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;BlockNumber [3] <a href="pdu_syntax-syntax.htm#_Unsigned16">_Unsigned16</a><br>   
+}<br>
+</p>
+
+<p><a name="_SingleWriteResponse"></a><span class="style1">_SingleWriteResponse</span> ::= <strong>CHOICE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Success [0] <a href="pdu_syntax-syntax.htm#_NullData">_NullData</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;DataAccessError [1] <a href="pdu_syntax-syntax.htm#_DataAccessResult">_DataAccessResult</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;BlockNumber [2] <a href="pdu_syntax-syntax.htm#_Unsigned16">_Unsigned16</a><br>   
+}<br>
+</p>
+
+<p><a name="_Structure"></a><span class="style1">_Structure</span> ::= <strong>SEQUENCEOFCHOICE</strong>
+   <a href="pdu_syntax-syntax.htm#_Data">_Data</a>
+</p>
+
+<p><a name="_Task"></a><span class="style1">_Task</span> ::= <strong>ENUMERATED</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Other (0),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;NoRemoteControl (1),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;TiStopped (2),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;TiRunning (3),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;TiUnusable (4)<br> 
+}<br>
+</p>
+
+<p><a name="_Time"></a><span class="style1">_Time</span> ::= <strong>OCTETSTR(4)</strong></p>
+<p></p>
+
+<p><a name="_UnconfirmedWriteRequest"></a><span class="style1">_UnconfirmedWriteRequest</span> ::= <strong>SEQUENCE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ListOfVariableAccessSpecification <a href="pdu_syntax-syntax.htm#_ListOfVariableAccessSpecifications">_ListOfVariableAccessSpecifications</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ListOfData <a href="pdu_syntax-syntax.htm#_ListOfData">_ListOfData</a> <br> 
+}<br>
+</p>
+
+<p><a name="_Unsigned16"></a><span class="style1">_Unsigned16</span> ::= <strong>UNSIGNED16</strong></p>
+<p></p>
+
+
+<p><a name="_Unsigned32"></a><span class="style1">_Unsigned32</span> ::= <strong>UNSIGNED32</strong></p>
+<p></p>
+
+
+<p><a name="_Unsigned64"></a><span class="style1">_Unsigned64</span> ::= <strong>UNSIGNED64</strong></p>
+<p></p>
+
+
+<p><a name="_Unsigned8"></a><span class="style1">_Unsigned8</span> ::= <strong>UNSIGNED8</strong></p>
+<p></p>
+
+
+<p><a name="_VariableAccessSpecification"></a><span class="style1">_VariableAccessSpecification</span> ::= <strong>CHOICE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;VariableName [2] <a href="pdu_syntax-syntax.htm#_ObjectName">_ObjectName</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ParameterisedAccess [4] <a href="pdu_syntax-syntax.htm#_ParametrisedAccess">_ParametrisedAccess</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;BlockNumberAccess [5] <a href="pdu_syntax-syntax.htm#_BlockNumberAccess">_BlockNumberAccess</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ReadDataBlockAccess [6] <a href="pdu_syntax-syntax.htm#_ReadDataBlockAccess">_ReadDataBlockAccess</a>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;WriteDataBlockAccess [7] <a href="pdu_syntax-syntax.htm#_WriteDataBlockAccess">_WriteDataBlockAccess</a><br>   
+}<br>
+</p>
+
+<p><a name="_VdeStateError"></a><span class="style1">_VdeStateError</span> ::= <strong>ENUMERATED</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Other (0),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;NoDlmsContext (1),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;LoadingDataSet (2),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;StatusNochange (3),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;StatusInoperable (4)<br> 
+}<br>
+</p>
+
+<p><a name="_VisibleString"></a><span class="style1">_VisibleString</span> ::= <strong>OCTETSTR(-1)</strong></p>
+<p></p>
+
+<p><a name="_WriteDataBlockAccess"></a><span class="style1">_WriteDataBlockAccess</span> ::= <strong>SEQUENCE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;LastBlock <a href="pdu_syntax-syntax.htm#_Boolean">_Boolean</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;BlockNumber <a href="pdu_syntax-syntax.htm#_Unsigned16">_Unsigned16</a> <br> 
+}<br>
+</p>
+
+<p><a name="_WriteRequest"></a><span class="style1">_WriteRequest</span> ::= <strong>SEQUENCE</strong><br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ListOfVariableAccessSpecification <a href="pdu_syntax-syntax.htm#_ListOfVariableAccessSpecifications">_ListOfVariableAccessSpecifications</a> ,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ListOfData <a href="pdu_syntax-syntax.htm#_ListOfData">_ListOfData</a> <br> 
+}<br>
+</p>
+
+<p><a name="_WriteResponse"></a><span class="style1">_WriteResponse</span> ::= <strong>SEQUENCEOFCHOICE</strong>
+   <a href="pdu_syntax-syntax.htm#_SingleWriteResponse">_SingleWriteResponse</a>
+</p>
+
+
+</body></html>

@@ -1,0 +1,14 @@
+<!-- NOTE: http header should contain SOAPAction: "Delete_action" -->
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+   <S:Header>
+      <ResourceURI xmlns="http://www.energiened.nl/Content/Publications/dsmr/P32">http://www.energiened.nl/Content/Publications/dsmr/P32/meterAccess</ResourceURI>
+      <SelectorSet xmlns="http://www.energiened.nl/Content/Publications/dsmr/P32">
+         <Selector Name="ResourceID">MeterAccess-0</Selector>
+      </SelectorSet>
+   </S:Header>
+   <S:Body>
+      <ns5:DeleteRequest xmlns:ns6="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:ns5="http://schemas.xmlsoap.org/ws/2006/08/resourceTransfer" xmlns:ns4="http://www.energiened.nl/Content/Publications/dsmr/P32" xmlns:ns3="http://www.w3.org/2005/08/addressing" xmlns:ns2="http://schemas.xmlsoap.org/ws/2004/09/transfer" xmlns="http://schemas.xmlsoap.org/ws/2004/08/addressing">
+         <ns5:Expression>p32:MeterAccess</ns5:Expression>
+      </ns5:DeleteRequest>
+   </S:Body>
+</S:Envelope>

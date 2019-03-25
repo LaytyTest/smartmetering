@@ -1,0 +1,79 @@
+<!-- NOTE: http header should contain SOAPAction: "Create_action" -->
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+   <S:Header>
+      <ResourceURI xmlns="http://www.energiened.nl/Content/Publications/dsmr/P32">http://www.energiened.nl/Content/Publications/dsmr/P32/meterAccess</ResourceURI>
+   </S:Header>
+   <S:Body>
+      <ns3:Create xmlns:ns5="http://www.energiened.nl/Content/Publications/dsmr/P32" xmlns:ns4="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:ns3="http://schemas.xmlsoap.org/ws/2006/08/resourceTransfer" xmlns:ns2="http://www.w3.org/2005/08/addressing" xmlns="http://schemas.xmlsoap.org/ws/2004/08/addressing">
+         <ns4:Metadata>
+            <ns4:MetadataSection>
+               <ns3:Metadata>
+                  <ns3:Lifetime>
+                     <ns3:TerminateAt>
+                        <ns3:TerminationTime>2014-12-23T17:57:21-02:00</ns3:TerminationTime>
+                     </ns3:TerminateAt>
+                  </ns3:Lifetime>
+               </ns3:Metadata>
+            </ns4:MetadataSection>
+         </ns4:Metadata>
+         <ns3:Fragment>
+            <ns3:Expression>p32:MeterAccess</ns3:Expression>
+            <ns3:Value>
+               <ns5:MeterAccess>
+               
+                  <ns5:MeterReferenceList>
+                     <ns5:MeterReference MeterID="16"/> 
+                   </ns5:MeterReferenceList>
+                   
+                  <ns5:CosemAccessList>
+
+                  
+                       <ns5:CosemAccess>
+                        <ns5:CosemAccessDescriptor>
+                           <ns5:GetAccessDescriptor>
+                              <ns5:CosemAttributeDescriptor>
+                                 <ns5:ClassId>1</ns5:ClassId>
+                                 <ns5:InstanceId>0.0.96.1.0.255</ns5:InstanceId>
+                                 <ns5:AttributeId>2</ns5:AttributeId>
+                              </ns5:CosemAttributeDescriptor>
+                           </ns5:GetAccessDescriptor>
+                        </ns5:CosemAccessDescriptor>
+                     </ns5:CosemAccess>
+                  
+                       <ns5:CosemAccess>
+                        <ns5:CosemAccessDescriptor>                        
+                           <ns5:GetAccessDescriptor>                           
+                              <ns5:CosemAttributeDescriptor>
+                                 <ns5:ClassId>11</ns5:ClassId>
+                                 <ns5:InstanceId>0.0.11.0.0.255</ns5:InstanceId>
+                                 <ns5:AttributeId>2</ns5:AttributeId>
+                              </ns5:CosemAttributeDescriptor>
+                           </ns5:GetAccessDescriptor>
+                        </ns5:CosemAccessDescriptor>
+                     </ns5:CosemAccess>
+
+                  </ns5:CosemAccessList>
+               </ns5:MeterAccess>
+            </ns3:Value>
+         </ns3:Fragment>
+      </ns3:Create>
+   </S:Body>
+</S:Envelope>
+
+
+<!--Expected response:
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+   <S:Body>
+      <ns3:CreateResponse xmlns:ns5="http://www.energiened.nl/Content/Publications/dsmr/P32" xmlns:ns4="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:ns3="http://schemas.xmlsoap.org/ws/2006/08/resourceTransfer" xmlns:ns2="http://www.w3.org/2005/08/addressing" xmlns="http://schemas.xmlsoap.org/ws/2004/08/addressing">
+         <ns3:ResourceCreated>
+            <ns2:ReferenceParameters>
+               <ns5:ResourceURI>http://www.energiened.nl/Content/Publications/dsmr/P32/meterAccess</ns5:ResourceURI>
+               <ns5:SelectorSet>
+                  <ns5:Selector Name="ResourceID">MeterAccess-19</ns5:Selector>
+               </ns5:SelectorSet>
+            </ns2:ReferenceParameters>
+         </ns3:ResourceCreated>
+      </ns3:CreateResponse>
+   </S:Body>
+</S:Envelope>
+-->

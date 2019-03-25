@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{84664FCF-9458-47C2-806F-1DFC8E0EDFF9}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MultiSpeak_V416_Release</RootNamespace>
+    <AssemblyName>MultiSpeak_V416_Release</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <FilesToIncludeForPublish>AllFilesInTheProject</FilesToIncludeForPublish>
+    <DesktopBuildPackageLocation>..\..\..\..\Multispeak\V4 Specification\V4.1\V4.1.5 Release\Web Site\MultiSpeak_V415_Release.zip</DesktopBuildPackageLocation>
+    <DeployIisAppPath>Default Web Site/MultiSpeak_V415_Release</DeployIisAppPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AM_Server.asmx" />
+    <Content Include="AVL_Server.asmx" />
+    <Content Include="CB_Server.asmx" />
+    <Content Include="CD_Server.asmx" />
+    <Content Include="CH_Server.asmx" />
+    <Content Include="CRM_Server.asmx" />
+    <Content Include="DA_Server.asmx" />
+    <Content Include="Default.aspx" />
+    <Content Include="DGN_Server.asmx" />
+    <Content Include="DR_Server.asmx" />
+    <Content Include="EA_Server.asmx" />
+    <Content Include="EDTR_Server.asmx" />
+    <Content Include="FA_Server.asmx" />
+    <Content Include="GIS_Server.asmx" />
+    <Content Include="GV_Server.asmx" />
+    <Content Include="HAN_Server.asmx" />
+    <Content Include="INSP_Server.asmx" />
+    <Content Include="MDM_Server.asmx" />
+    <Content Include="MR_Server.asmx" />
+    <Content Include="NOT_Server.asmx" />
+    <Content Include="OA_Server.asmx" />
+    <Content Include="OD_Server.asmx" />
+    <Content Include="PPM_Server.asmx" />
+    <Content Include="PP_Server.asmx" />
+    <Content Include="Process Model V41b 090809 wo labels 40pct.jpg" />
+    <Content Include="Process Model V41b 090809 wo labels.jpg" />
+    <Content Include="SCADA_Server.asmx" />
+    <Content Include="SCHED_Server.asmx" />
+    <Content Include="SWO_Server.asmx" />
+    <Content Include="WTG_Server.asmx" />
+    <Content Include="WTO_Server.asmx" />
+    <Content Include="WTP_Server.asmx" />
+    <Content Include="WV_Server.asmx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AM_Server.asmx.cs">
+      <DependentUpon>AM_Server.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AVL_Server.asmx.cs">
+      <DependentUpon>AVL_Server.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CB_Server.asmx.cs">
+      <DependentUpon>CB_Server.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CD_Server.asmx.cs">
+      <DependentUpon>CD_Server.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CH_Server.asmx.cs">
+      <DependentUpon>CH_Server.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CRM_Server.asmx.cs">
+      <DependentUpon>CRM_Server.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DA_Server.asmx.cs">
+      <DependentUpon>DA_Server.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DGN_Server.asmx.cs">
+      <DependentUpon>DGN_Server.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DR_Server.asmx.cs">
+      <DependentUpon>DR_Server.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="EA_Server.asmx.cs">
+      <DependentUpon>EA_Server.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="EDTR_Server.asmx.cs">
+      <DependentUpon>EDTR_Server.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FA_Server.asmx.cs">
+      <DependentUpon>FA_Server.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GIS_Server.asmx.cs">
+      <DependentUpon>GIS_Server.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GV_Server.asmx.cs">
+      <DependentUpon>GV_Server.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HAN_Server.asmx.cs">
+      <DependentUpon>HAN_Server.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="INSP_Server.asmx.cs">
+      <DependentUpon>INSP_Server.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MDM_Server.asmx.cs">
+      <DependentUpon>MDM_Server.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MR_Server.asmx.cs">
+      <DependentUpon>MR_Server.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MultiSpeakWebServicesMsgHeader_V41_Release.cs" />
+    <Compile Include="MultiSpeak_V416_Release.cs" />
+    <Compile Include="NOT_Server.asmx.cs">
+      <DependentUpon>NOT_Server.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OA_Server.asmx.cs">
+      <DependentUpon>OA_Server.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OD_Server.asmx.cs">
+      <DependentUpon>OD_Server.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PPM_Server.asmx.cs">
+      <DependentUpon>PPM_Server.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PP_Server.asmx.cs">
+      <DependentUpon>PP_Server.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SCADA_Server.asmx.cs">
+      <DependentUpon>SCADA_Server.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SCHED_Server.asmx.cs">
+      <DependentUpon>SCHED_Server.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SWO_Server.asmx.cs">
+      <DependentUpon>SWO_Server.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WTG_Server.asmx.cs">
+      <DependentUpon>WTG_Server.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WTO_Server.asmx.cs">
+      <DependentUpon>WTO_Server.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WTP_Server.asmx.cs">
+      <DependentUpon>WTP_Server.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WV_Server.asmx.cs">
+      <DependentUpon>WV_Server.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Default.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AM Interface Chart.pdf" />
+    <None Include="AVL Interface Chart.pdf" />
+    <None Include="CB Interface Chart.pdf" />
+    <None Include="CD Interface Chart.pdf" />
+    <None Include="CH Interface Chart.pdf" />
+    <None Include="CRM Interface Chart.pdf" />
+    <None Include="DA Interface Chart.pdf" />
+    <None Include="DGN Interface Chart.pdf" />
+    <None Include="DR Interface Chart.pdf" />
+    <None Include="EA Interface Chart.pdf" />
+    <None Include="EDTR Interface Chart.pdf" />
+    <None Include="FA Interface Chart.pdf" />
+    <None Include="GIS Interface Chart.pdf" />
+    <None Include="GV Interface Chart.pdf" />
+    <None Include="HAN Interface Chart.pdf" />
+    <None Include="INSP Interface Chart.pdf" />
+    <None Include="MDM Interface Chart.pdf" />
+    <None Include="MR Interface Chart.pdf" />
+    <None Include="NOT Interface Chart.pdf" />
+    <None Include="OA Interface Chart.pdf" />
+    <None Include="OD Interface Chart.pdf" />
+    <None Include="PP Interface Chart.pdf" />
+    <None Include="PPM Interface Chart.pdf" />
+    <None Include="Revision History v4.1.5.pdf" />
+    <None Include="SCADA Interface Chart.pdf" />
+    <None Include="SCHED Interface Chart.pdf" />
+    <None Include="SWO Interface Chart.pdf" />
+    <None Include="WTG Interface Chart.pdf" />
+    <None Include="WTO Interface Chart.pdf" />
+    <None Include="WTP Interface Chart.pdf" />
+    <None Include="WV Interface Chart.pdf" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50289</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

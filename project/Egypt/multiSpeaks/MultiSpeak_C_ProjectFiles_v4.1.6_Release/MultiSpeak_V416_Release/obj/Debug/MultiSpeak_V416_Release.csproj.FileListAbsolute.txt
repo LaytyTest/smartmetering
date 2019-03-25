@@ -1,0 +1,26 @@
+C:\MISC\GeoWebServices\COOPFusion\MultispeakRepository\MultiSpeak_V415_Release\MultiSpeak_V415_Release\MultiSpeak_V416_Release\bin\MultiSpeak_V415_Release.dll
+C:\MISC\GeoWebServices\COOPFusion\MultispeakRepository\MultiSpeak_V415_Release\MultiSpeak_V415_Release\MultiSpeak_V416_Release\bin\MultiSpeak_V415_Release.pdb
+C:\MISC\GeoWebServices\COOPFusion\MultispeakRepository\MultiSpeak_V415_Release\MultiSpeak_V415_Release\MultiSpeak_V416_Release\obj\Debug\ResolveAssemblyReference.cache
+C:\MISC\GeoWebServices\COOPFusion\MultispeakRepository\MultiSpeak_V415_Release\MultiSpeak_V415_Release\MultiSpeak_V416_Release\obj\Debug\MultiSpeak_V415_Release.Default.aspx.resources
+C:\MISC\GeoWebServices\COOPFusion\MultispeakRepository\MultiSpeak_V415_Release\MultiSpeak_V415_Release\MultiSpeak_V416_Release\obj\Debug\ResGen.read.1.tlog
+C:\MISC\GeoWebServices\COOPFusion\MultispeakRepository\MultiSpeak_V415_Release\MultiSpeak_V415_Release\MultiSpeak_V416_Release\obj\Debug\ResGen.write.1.tlog
+C:\MISC\GeoWebServices\COOPFusion\MultispeakRepository\MultiSpeak_V415_Release\MultiSpeak_V415_Release\MultiSpeak_V416_Release\obj\Debug\MultiSpeak_V415_Release.dll
+C:\MISC\GeoWebServices\COOPFusion\MultispeakRepository\MultiSpeak_V415_Release\MultiSpeak_V415_Release\MultiSpeak_V416_Release\obj\Debug\MultiSpeak_V415_Release.pdb
+C:\MISC\GeoWebServices\COOPFusion\MultispeakRepository\4_1\branches\VisualStudio\MultiSpeak_V416_Release\MultiSpeak_V416_Release\bin\MultiSpeak_V415_Release.dll
+C:\MISC\GeoWebServices\COOPFusion\MultispeakRepository\4_1\branches\VisualStudio\MultiSpeak_V416_Release\MultiSpeak_V416_Release\bin\MultiSpeak_V415_Release.pdb
+C:\MISC\GeoWebServices\COOPFusion\MultispeakRepository\4_1\branches\VisualStudio\MultiSpeak_V416_Release\MultiSpeak_V416_Release\obj\Debug\ResolveAssemblyReference.cache
+C:\MISC\GeoWebServices\COOPFusion\MultispeakRepository\4_1\branches\VisualStudio\MultiSpeak_V416_Release\MultiSpeak_V416_Release\obj\Debug\MultiSpeak_V415_Release.Default.aspx.resources
+C:\MISC\GeoWebServices\COOPFusion\MultispeakRepository\4_1\branches\VisualStudio\MultiSpeak_V416_Release\MultiSpeak_V416_Release\obj\Debug\ResGen.read.1.tlog
+C:\MISC\GeoWebServices\COOPFusion\MultispeakRepository\4_1\branches\VisualStudio\MultiSpeak_V416_Release\MultiSpeak_V416_Release\obj\Debug\ResGen.write.1.tlog
+C:\MISC\GeoWebServices\COOPFusion\MultispeakRepository\4_1\branches\VisualStudio\MultiSpeak_V416_Release\MultiSpeak_V416_Release\obj\Debug\MultiSpeak_V415_Release.dll
+C:\MISC\GeoWebServices\COOPFusion\MultispeakRepository\4_1\branches\VisualStudio\MultiSpeak_V416_Release\MultiSpeak_V416_Release\obj\Debug\MultiSpeak_V415_Release.pdb
+C:\Users\Gary\Documents\Multispeak\V4 Specification\V4.1\Working\branches\DevelopmentBranch_416\VisualStudio\MultiSpeak_V416_Release\MultiSpeak_V416_Release\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Gary\Documents\Multispeak\V4 Specification\V4.1\Working\branches\DevelopmentBranch_416\VisualStudio\MultiSpeak_V416_Release\MultiSpeak_V416_Release\obj\Debug\MultiSpeak_V416_Release.Default.aspx.resources
+C:\Users\Gary\Documents\Multispeak\V4 Specification\V4.1\Working\branches\DevelopmentBranch_416\VisualStudio\MultiSpeak_V416_Release\MultiSpeak_V416_Release\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\Gary\Documents\Multispeak\V4 Specification\V4.1\Working\branches\DevelopmentBranch_416\VisualStudio\MultiSpeak_V416_Release\MultiSpeak_V416_Release\obj\Debug\ResGen.read.1.tlog
+C:\Users\Gary\Documents\Multispeak\V4 Specification\V4.1\Working\branches\DevelopmentBranch_416\VisualStudio\MultiSpeak_V416_Release\MultiSpeak_V416_Release\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\Gary\Documents\Multispeak\V4 Specification\V4.1\Working\branches\DevelopmentBranch_416\VisualStudio\MultiSpeak_V416_Release\MultiSpeak_V416_Release\obj\Debug\ResGen.write.1.tlog
+C:\Users\Gary\Documents\Multispeak\V4 Specification\V4.1\Working\branches\DevelopmentBranch_416\VisualStudio\MultiSpeak_V416_Release\MultiSpeak_V416_Release\bin\MultiSpeak_V416_Release.dll
+C:\Users\Gary\Documents\Multispeak\V4 Specification\V4.1\Working\branches\DevelopmentBranch_416\VisualStudio\MultiSpeak_V416_Release\MultiSpeak_V416_Release\bin\MultiSpeak_V416_Release.pdb
+C:\Users\Gary\Documents\Multispeak\V4 Specification\V4.1\Working\branches\DevelopmentBranch_416\VisualStudio\MultiSpeak_V416_Release\MultiSpeak_V416_Release\obj\Debug\MultiSpeak_V416_Release.dll
+C:\Users\Gary\Documents\Multispeak\V4 Specification\V4.1\Working\branches\DevelopmentBranch_416\VisualStudio\MultiSpeak_V416_Release\MultiSpeak_V416_Release\obj\Debug\MultiSpeak_V416_Release.pdb

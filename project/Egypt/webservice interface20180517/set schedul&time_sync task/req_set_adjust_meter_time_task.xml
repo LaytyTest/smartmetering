@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+   <S:Header>
+      <ResourceURI xmlns="http://www.energiened.nl/Content/Publications/dsmr/P32">http://www.energiened.nl/Content/Publications/dsmr/P32/ metersDirectory</ResourceURI>
+   </S:Header>
+   <S:Body>
+      <ns3:Create xmlns:ns5="http://www.energiened.nl/Content/Publications/dsmr/P32" xmlns:ns4="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:ns3="http://schemas.xmlsoap.org/ws/2006/08/resourceTransfer" xmlns:ns2="http://www.w3.org/2005/08/addressing" xmlns="http://schemas.xmlsoap.org/ws/2004/08/addressing">
+
+         <ns4:Metadata>
+            <ns4:MetadataSection>
+               <ns3:Metadata>
+                  <ns3:Lifetime>
+                     <ns3:TerminateAt>
+					<ns3:TerminationTime>2016-8-23T17:57:21-02:00</ns3:TerminationTime>
+                     </ns3:TerminateAt>
+                  </ns3:Lifetime>
+               </ns3:Metadata>
+            </ns4:MetadataSection>
+         </ns4:Metadata>
+         <ns3:Fragment>
+            <ns3:Expression>p32:ConcentratorAccess</ns3:Expression>
+            <ns3:Value>
+               <ns5:ConcentratorAccess>
+               	<ns5:ConcentratorService/>
+               	<ns5:EventLog/>
+               	<ns5:Status>
+               		<ns5:Indent Value="SetScheAdjustTimeTask" Password="000000"/>
+               		<!-- Value is explained in adjust_meter_time_task.xml -->   
+               		<ns5:Status>
+<GATHER_TASK>
+ <TASK_INFO>          
+      <PRO_TYPE>0x23</PRO_TYPE>       <!--for all DLMS46 meters-->
+      <METER_TYPE>0xD0</METER_TYPE>   <!--means ameter100-->
+      <METER_INFO />                  <!--for the adjust meter time task, let it be a null node to synchronize all the meters-->
+      <TASK_ITEM>
+          <ITEM_INFO>
+                <PRO_CODE>{8,0000010000FF,2}</PRO_CODE> <!--classid, obis code, attribute id, here identify time reading and adjust -->
+                <TASK_PREREADDAY>0</TASK_PREREADDAY>    <!--need not read previous data-->
+                <TASK_INTVTYPE>1</TASK_INTVTYPE>        <!--interval type = 1, means excute once per day-->
+              	<TASK_INTV>0150</TASK_INTV>             <!--will excute at 1:50 everyday-->
+         </ITEM_INFO>
+      </TASK_ITEM>
+</TASK_INFO>        
+<TASK_INFO>       
+      <PRO_TYPE>0x24</PRO_TYPE>      <!--for all DLMS47 meters-->
+      <METER_TYPE>0xD0</METER_TYPE>  <!--means ameter100-->
+      <METER_INFO/>                  <!--for the adjust meter time task, let it be a null node to synchronize all the meters-->
+      <TASK_ITEM>
+	     <ITEM_INFO>
+	            <PRO_CODE>{8,0000010000FF,2}</PRO_CODE> <!--classid, obis code, attribute id, here identify time reading and adjust -->
+	            <TASK_PREREADDAY>0</TASK_PREREADDAY>    <!--need not read previous data-->
+	            <TASK_INTVTYPE>1</TASK_INTVTYPE>        <!--interval type = 1, means excute once per day-->
+	          	<TASK_INTV>0150</TASK_INTV>             <!--will excute at 1:50 everyday-->
+	     </ITEM_INFO>
+      </TASK_ITEM>
+</TASK_INFO>            
+</GATHER_TASK>
+</ns5:Status>
+                  </ns5:Status>
+                  </ns5:Status>
+               </ns5:ConcentratorAccess>
+            </ns3:Value>
+         </ns3:Fragment>
+      </ns3:Create>
+   </S:Body>
+</S:Envelope>

@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="ab9da750-608b-446c-b1dc-0a9b93cf93a4" activeEnvironment="Default" name="AssetImport1.2" resourceRoot="" soapui-version="5.2.1" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="c71c2b65-0d75-457d-812c-6060361fa9df" wsaVersion="NONE" name="I_HES_ASSET_IMPORTSOAP" type="wsdl" bindingName="{http://www.example.org/I_HES_ASSET_IMPORT/}I_HES_ASSET_IMPORTSOAP" soapVersion="1_1" anonymous="optional" definition="http://139.24.137.223:7070/services/I_HES_ASSET_IMPORT?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://139.24.137.223:7070/services/I_HES_ASSET_IMPORT?wsdl"><con:part><con:url>http://139.24.137.223:7070/services/I_HES_ASSET_IMPORT?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="I_HES_ASSET_IMPORT" targetNamespace="http://www.example.org/I_HES_ASSET_IMPORT/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.example.org/I_HES_ASSET_IMPORT/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.example.org/I_HES_ASSET_IMPORT/">
+      <xsd:complexType name="Parameter">
+        <xsd:sequence>
+          <!--name for this parameter, include node path, e.g. systemManager.HEADER.VERSION.ORIGIN-->
+          <xsd:element maxOccurs="1" minOccurs="1" name="name" type="xsd:string"/>
+          <!--value for this parameter, all in string format-->
+          <xsd:element maxOccurs="1" minOccurs="1" name="value" type="xsd:string"/>
+          <!--actual type for this parameter, e.g. string,integer,boolean...-->
+          <xsd:element maxOccurs="1" minOccurs="1" name="type" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="AddMeterAssetType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" name="MFG_SerialNumber" type="xsd:string"/>
+          <!--Required: Y  Mapping: EIP mfg_Serial = SERIAL_NUMBER from shipmentfile-->
+          <xsd:element maxOccurs="1" minOccurs="1" name="Manufacturer" type="xsd:string"/>
+          <!--Required: N Mapping: Manufacturer Id-->
+          <xsd:element maxOccurs="1" minOccurs="0" name="EquipmentNumber" type="xsd:string"/>
+          <!--Required: N  Mapping: EIP udc_id       = equipmentnumber from SAP-->
+          <xsd:element maxOccurs="1" minOccurs="1" name="ModelType" type="xsd:string"/>
+          <!--Required: N  Mapping: EIP device class = MaterialID from SAP-->
+          <xsd:element maxOccurs="1" minOccurs="0" name="IPAddress" type="xsd:string"/>
+          <!--Required: N Mapping: ...-->
+          <xsd:element maxOccurs="1" minOccurs="0" name="GPRSModuleSerialNumber" type="xsd:string"/>
+          <!--Required: N Mapping:  Serial_number-->
+          <xsd:element maxOccurs="4" minOccurs="0" name="firmwareInfo" type="tns:FirmwareInfo"/>
+          <!--Required: N Mapping: EIP meter parameter 'Firmware Information'-->
+          <xsd:element maxOccurs="1" minOccurs="0" name="LLSSecret" type="xsd:string"/>
+          <!--Required: N Mapping: EIP meter Parameter 'Password'. Is used until KMS is implemented-->
+          <xsd:element maxOccurs="1" minOccurs="0" name="HLSSecret" type="xsd:string"/>
+          <!--Required: N Mapping:-->
+          <xsd:element maxOccurs="1" minOccurs="0" name="AuthenticationKey" type="xsd:string"/>
+          <!--Required: N Mapping:-->
+          <xsd:element maxOccurs="1" minOccurs="0" name="EncryptionKey" type="xsd:string"/>
+          <!--Required: N Mapping:-->
+          <xsd:element maxOccurs="1" minOccurs="0" name="MAC" type="xsd:string"/>
+          <!--Required: N Mapping:-->
+          <xsd:element maxOccurs="1" minOccurs="0" name="BadgeID" type="xsd:string"/>
+          <!--Required: N Mapping:-->
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="AddMeterAssetMessage">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" name="BatchId" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="OrgId" type="xsd:string"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="1" name="in" type="tns:AddMeterAssetType"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="AddMeterAssetResponseMessage">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="tns:Return"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="Return">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" name="OK" type="xsd:boolean"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="ErrorCode" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:simpleType name="FirmwareType">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="Undefined"/>
+          <xsd:enumeration value="Firmware_version_cal_CORE"/>
+          <xsd:enumeration value="Firmware_version_cal_CLR"/>
+          <xsd:enumeration value="Firmware_version_non_cal_APP"/>
+          <xsd:enumeration value="Firmware_version_non_cal_COM"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="FirmwareInfo">
+        <xsd:sequence>
+          <xsd:element name="type" type="tns:FirmwareType"/>
+          <xsd:element name="version" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="GatewayFirmwareInfo">
+        <xsd:sequence>
+          <xsd:element name="type" type="xsd:string"/>
+          <xsd:element name="version" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="AddGatewayAssetType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" name="SerialNumber" type="xsd:string"/>
+          <!--Required: Y  Mapping: EIP mfg_Serial = SERIAL_NUMBER from shipmentfile-->
+          <xsd:element maxOccurs="1" minOccurs="1" name="Manufacturer" type="xsd:string"/>
+          <!--Required: N Mapping: Manufacturer Id-->
+          <xsd:element maxOccurs="1" minOccurs="1" name="ModelType" type="xsd:string"/>
+          <!--Required: N  Mapping: EIP device class = MaterialID from SAP-->
+          <xsd:element maxOccurs="1" minOccurs="1" name="Certificate" type="xsd:string"/>
+          <!--Required: N Mapping:-->
+          <xsd:element maxOccurs="1" minOccurs="1" name="FirmwareInfo" type="tns:GatewayFirmwareInfo"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="ParameterSpecific" type="tns:Parameter"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="AddGatewayAssetMessage">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" name="BatchId" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="OrgId" type="xsd:string"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="1" name="in" type="tns:AddGatewayAssetType"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="AddGatewayAssetResponseMessage">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="tns:Return"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="AddMeterAssetRequest">
+    <wsdl:part element="tns:AddMeterAssetMessage" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="AddGatewayAssetRequest">
+    <wsdl:part element="tns:AddGatewayAssetMessage" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="AddMeterAssetResponse">
+    <wsdl:part element="tns:AddMeterAssetResponseMessage" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="AddGatewayAssetResponse">
+    <wsdl:part element="tns:AddGatewayAssetResponseMessage" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="I_HES_ASSET_IMPORT">
+    <wsdl:operation name="AddMeterAsset">
+      <wsdl:input message="tns:AddMeterAssetRequest"></wsdl:input>
+      <wsdl:output message="tns:AddMeterAssetResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddGatewayAsset">
+      <wsdl:input message="tns:AddGatewayAssetRequest"></wsdl:input>
+      <wsdl:output message="tns:AddGatewayAssetResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="I_HES_ASSET_IMPORTSOAP" type="tns:I_HES_ASSET_IMPORT">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="AddMeterAsset">
+      <soap:operation soapAction="http://www.example.org/I_HES_ASSET_IMPORT/AddMeterAsset"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddGatewayAsset">
+      <soap:operation soapAction="http://www.example.org/I_HES_ASSET_IMPORT/AddGatewayAsset"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="I_HES_ASSET_IMPORT">
+    <wsdl:port binding="tns:I_HES_ASSET_IMPORTSOAP" name="I_HES_ASSET_IMPORTSOAP">
+      <soap:address location="http://139.24.137.223:7070/services/I_HES_ASSET_IMPORT"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://139.24.137.223:7070/services/I_HES_ASSET_IMPORT</con:endpoint><con:endpoint>https://139.24.137.195:7443/services/I_HES_ASSET_IMPORT</con:endpoint></con:endpoints><con:operation id="23eb0a26-6ebd-4336-91c4-49939ddf63c6" isOneWay="false" action="http://www.example.org/I_HES_ASSET_IMPORT/AddGatewayAsset" name="AddGatewayAsset" bindingOperationName="AddGatewayAsset" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="76d53a5a-eb0a-4752-a47b-b752d5ee578a" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://139.24.137.223:7070/services/I_HES_ASSET_IMPORT</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:i="http://www.example.org/I_HES_ASSET_IMPORT/" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<i:AddGatewayAssetMessage>
+			<BatchId>123</BatchId>
+			<OrgId>wcq_org</OrgId>
+			<in>
+				<SerialNumber>DVL170700055</SerialNumber>
+				<Manufacturer>Siemens AG</Manufacturer>
+				<ModelType>SGW1050</ModelType>
+				<Certificate>-----BEGIN CERTIFICATE-----
+MIIEWTCCAkGgAwIBAgIIJdpbwVBG/JwwDQYJKoZIhvcNAQELBQAwSTEcMBoGA1UE
+AwwTU00tMjAxNy1SU0EtUk9PVC1DQTEOMAwGA1UECwwFU01QS0kxDDAKBgNVBAoM
+A0tORzELMAkGA1UEBhMCQVQwIBcNMTcwMzA5MTcyNzAwWhgPMjA2MjAzMDkxNzI3
+MDBaMHIxDzANBgNVBAcMBlZpZW5uYTETMBEGA1UECgwKU2llbWVucyBBRzEPMA0G
+A1UECAwGVmllbm5hMRUwEwYDVQQLDAxEaWdpdGFsIEdyaWQxFTATBgNVBAMMDERW
+TDE3MDcwMDA1NTELMAkGA1UEBhMCQVQwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAw
+ggEKAoIBAQCu8Aq7VqYYZJS6DSy3s03tmvU8s1R/LYpmvZlGUD8elOssMDwYBIX4
+cqtOYlG1r6tTE/Md5q26qPc+h5gX3SboQmOwkohysXmvrm+KTqeSVqwBe8hScCRY
+OIxVluqdexOIuxmPCFCJlzI7jJ7qVxyCdZKUhkcKp7JopASg1YfqCkAmU1AZz9B4
+9wadgZHlgNmbQTCIbDnb258x8xK2O9MXOWkOTMl3ccl0fYuMekPombCOKPB50w/q
+eu5tGTL9YaA93xW9LptyJWtz5KNCsVtRCI3EdmsrO69t3WLyvHSLok91bIaJ567g
+/ijk1CZQ7kx7eINgEJDkVSo/md3WtwC9AgMBAAGjGjAYMAkGA1UdEwQCMAAwCwYD
+VR0PBAQDAgSQMA0GCSqGSIb3DQEBCwUAA4ICAQBIRZDRlmYFoJkY64bTqWg4McZf
+s5WXUnftNPYvty4f/Bdm4kAiiiGdB4sDkFz4hkMxJITaj8YxeZGY49y3RFlCtHSg
+5YKtadYdz6JQLc5syiQcszAJqmgCkwlstnqBKpxIwYY0WwOPiZWP9FWpXHZDbuyU
+qKC9lJ6/kgqeUzTOlZyISXOFe00Z0D80V9urToY1gwSkYWq/KQowgiqdL0y2CxWr
+QSS2vjE4QTkbbmM8oTH6GVTQjXqxwHClxxDjr2hxi0uMR66jIio+220M2BNjODB9
+2/FgB/I7+8B+uf1E7ZiXZXJF7AMuNAKqNHa10vXI4XIBSbmq9PmZdN0P3Ycy2u7a
+20PiSQepFALTJ8Jj6VRHp5JX3oTd0XlKD9NEfHgs/IrnJQPjB3fE0ZOwb9tWebk9
+UeD/7CdKwgMK8UNqKGaS387X5GFzVH1CgTrmbLBrxUql5k5zV1XPTZNC2Qu5E7IX
+/DKWun14xw3szHyANhdi4sc0sDcKn72zacl9rDa5QrP1amubq4gJUiwj0gpHQVFU
+pJTsvvD7XEsbK1JJxmmWdOTsrFv5vzvbb/hc1jLRbjJ5OfrhRtTYf3OBuo80GOQc
+4GSkOfVmWOsYD2MnpZ2JiowV5h+XFeRe5EM0S+bwdj537ePaGCpOhgFWRepuUeGS
+iOA//dJaY0APvYqT7A==
+-----END CERTIFICATE-----</Certificate>
+				<FirmwareInfo>
+					<type>G3DC00</type>
+					<version>03.03</version>
+				</FirmwareInfo>
+				<ParameterSpecific>
+					<name>management.CONFIG_SERVER.ALLG.DNS_OR_IP_ADDRESS</name>
+					<value>139.24.137.195</value>
+					<type>string</type>
+				</ParameterSpecific>
+				<ParameterSpecific>
+					<name>management.CONFIG_SERVER.ALLG.OUTGOING_PORT</name>
+					<value>7171</value>
+					<type>integer</type>
+				</ParameterSpecific>
+				<ParameterSpecific>
+					<name>management.CONFIG_SERVER.ALLG.OUTGOING_TLS_PORT</name>
+					<value>443</value>
+					<type>integer</type>
+				</ParameterSpecific>
+				<ParameterSpecific>
+					<name>systemManager.ETHERNET.WAN.DHCP</name>
+					<value>false</value>
+					<type>boolean</type>
+				</ParameterSpecific>
+				<ParameterSpecific>
+					<name>systemManager.ETHERNET.WAN.IP_ADR</name>
+					<value>139.24.137.198</value>
+					<type>string</type>
+				</ParameterSpecific>
+				<ParameterSpecific>
+					<name>systemManager.ETHERNET.WAN.IP_DEF_GATEWAY</name>
+					<value>139.24.137.193</value>
+					<type>string</type>
+				</ParameterSpecific>
+				<ParameterSpecific>
+					<name>systemManager.ETHERNET.WAN.IP_SUBNET_MSK</name>
+					<value>255.255.255.192</value>
+					<type>string</type>
+				</ParameterSpecific>
+				<ParameterSpecific>
+					<name>timeManager.NTP_SERVER.ALLG.DNS_OR_IP_ADDRESS</name>
+					<value>10.4.3.94</value>
+					<type>string</type>
+				</ParameterSpecific>
+			</in>
+		</i:AddGatewayAssetMessage>
+	</soapenv:Body>
+</soapenv:Envelope>	 ]]></con:request><con:credentials><con:username>wcq</con:username><con:password>Password@1</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:preemptive>true</con:preemptive><con:authType>Preemptive</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/I_HES_ASSET_IMPORT/AddGatewayAsset"/><con:wsrmConfig version="1.2"/></con:call><con:call id="137e957c-8719-4a70-84fa-efb4507f8f0e" name="Request 2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://139.24.137.223:7070/services/I_HES_ASSET_IMPORT</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:i="http://www.example.org/I_HES_ASSET_IMPORT/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <i:AddGatewayAssetMessage>
+         <BatchId>948</BatchId>
+	<OrgId>wcq_org</OrgId>
+	<!--1 or more repetitions:-->
+	<in>
+    <SerialNumber>DVL170800129</SerialNumber>
+    <Manufacturer>Siemens AG</Manufacturer>
+    <ModelType>SGW1050</ModelType>
+   
+    <FirmwareInfo>
+      <type>G3DC00</type>
+      <version>02.03</version>
+    </FirmwareInfo>    
+    <ParameterSpecific>
+      <name>systemManager.ETHERNET.WAN.DHCP</name>
+      <value>false</value>
+      <type>boolean</type>
+    </ParameterSpecific>
+    <ParameterSpecific>
+      <name>systemManager.ETHERNET.WAN.IP_ADR</name>
+      <value>139.24.137.198</value>
+      <type>String</type>
+    </ParameterSpecific>
+    <ParameterSpecific>
+      <name>systemManager.ETHERNET.WAN.IP_SUBNET_MSK</name>
+      <value>255.255.255.0</value>
+      <type>String</type>
+    </ParameterSpecific>
+    <ParameterSpecific>
+      <name>systemManager.ETHERNET.WAN.IP_DEF_GATEWAY</name>
+      <value>139.24.137.192</value>
+      <type>String</type>
+    </ParameterSpecific>
+    <ParameterSpecific>
+      <name>management.CONFIG_SERVER.ALLG.DNS_OR_IP_ADDRESS</name>
+      <value>139.24.137.193</value>
+      <type>String</type>
+    </ParameterSpecific>
+    <ParameterSpecific>
+      <name>management.CONFIG_SERVER.ALLG.OUTGOING_PORT</name>
+      <value>7171</value>
+      <type>Integer</type>
+    </ParameterSpecific>
+    <ParameterSpecific>
+      <name>management.CONFIG_SERVER.ALLG.OUTGOING_TLS_PORT</name>
+      <value>443</value>
+      <type>Integer</type>
+    </ParameterSpecific>
+    <ParameterSpecific>
+      <name>timeManager.NTP_SERVER.ALLG.DNS_OR_IP_ADDRESS</name>
+      <value>139.24.137.195</value>
+      <type>String</type>
+    </ParameterSpecific>
+  </in>
+      </i:AddGatewayAssetMessage>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>wcq</con:username><con:password>Password@1</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:preemptive>true</con:preemptive><con:authType>Preemptive</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/I_HES_ASSET_IMPORT/AddGatewayAsset"/><con:wsrmConfig version="1.2"/></con:call><con:call id="1099364c-39bc-4ef9-b18d-35a884f51612" name="wcq"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://139.24.137.223:7070/services/I_HES_ASSET_IMPORT</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:i="http://www.example.org/I_HES_ASSET_IMPORT/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <i:AddGatewayAssetMessage>\r
+         <BatchId>?</BatchId>\r
+         <OrgId>?</OrgId>\r
+         <!--1 or more repetitions:-->\r
+         <in>\r
+            <SerialNumber>?</SerialNumber>\r
+            <Manufacturer>?</Manufacturer>\r
+            <ModelType>?</ModelType>\r
+            <Certificate>?</Certificate>\r
+            <FirmwareInfo>\r
+               <type>?</type>\r
+               <version>?</version>\r
+            </FirmwareInfo>\r
+            <!--Zero or more repetitions:-->\r
+            <ParameterSpecific>\r
+               <name>?</name>\r
+               <value>?</value>\r
+               <type>?</type>\r
+            </ParameterSpecific>\r
+         </in>\r
+      </i:AddGatewayAssetMessage>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/I_HES_ASSET_IMPORT/AddGatewayAsset"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="4571df52-fe6b-4f39-a132-9464f0a62eec" isOneWay="false" action="http://www.example.org/I_HES_ASSET_IMPORT/AddMeterAsset" name="AddMeterAsset" bindingOperationName="AddMeterAsset" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="2c69e0c4-c90e-438c-a36d-ebefd8787b97" name="GPRS"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://139.24.137.223:7070/services/I_HES_ASSET_IMPORT</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:i="http://www.example.org/I_HES_ASSET_IMPORT/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <i:AddMeterAssetMessage>\r
+         <BatchId>1234</BatchId>\r
+         <OrgId>test</OrgId>\r
+         <!--1 or more repetitions:-->\r
+         <in><COSEM_logical_device_name>73400001</COSEM_logical_device_name>
+         <Customer_serial_number>73400001</Customer_serial_number>
+         <MFG_SerialNumber>73400001</MFG_SerialNumber>
+         <Manufacturer>Iskraemeco</Manufacturer>
+         <EquipmentNumber>73400001</EquipmentNumber>
+         <ModelType>AM550-ED0</ModelType>
+         <GPRSModuleSerialNumber>73400001</GPRSModuleSerialNumber>
+         <IPAddress>139.24.137.195:2080</IPAddress>
+         <LLSSecret>33333333</LLSSecret></in>
+
+      </i:AddMeterAssetMessage>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>kngadmin</con:username><con:password>Password1!</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:preemptive>true</con:preemptive><con:authType>Preemptive</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/I_HES_ASSET_IMPORT/AddMeterAsset"/><con:wsrmConfig version="1.2"/></con:call><con:call id="62d2c37b-4c98-4944-8c79-fc5f66e56b4a" name="PLC"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://139.24.137.223:7070/services/I_HES_ASSET_IMPORT</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:i="http://www.example.org/I_HES_ASSET_IMPORT/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <i:AddMeterAssetMessage>
+         <BatchId>1234</BatchId>
+         <OrgId>test</OrgId>
+         <!--1 or more repetitions:-->
+         <in><COSEM_logical_device_name>73400001</COSEM_logical_device_name>
+         <Customer_serial_number>73400001</Customer_serial_number>
+         <MFG_SerialNumber>73400001</MFG_SerialNumber>
+         <Manufacturer>Iskraemeco</Manufacturer>
+         <EquipmentNumber>73400001</EquipmentNumber>
+         <ModelType>AM550-ED0</ModelType>
+         <LLSSecret>33333333</LLSSecret></in>	
+            
+            <MAC>386E21000494</MAC>
+            <!--Optional:-->
+            <BadgeID>386E21FFFE000494</BadgeID>
+      </i:AddMeterAssetMessage>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/I_HES_ASSET_IMPORT/AddMeterAsset"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

@@ -1,0 +1,41 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:chan="http://schemas.microsoft.com/ws/2005/02/duplex" xmlns:wsa5="http://www.w3.org/2005/08/addressing" xmlns:ns2="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:ns3="http://www.energiened.nl/Content/Publications/dsmr/P32" xmlns:ns1="http://schemas.xmlsoap.org/ws/2006/08/resourceTransfer">
+   <SOAP-ENV:Header/>
+   <SOAP-ENV:Body>
+      <ns1:CreateResponse>
+         <ns1:ResourceCreated>
+            <wsa5:Address/>
+            <wsa5:ReferenceParameters>
+               <ns3:ResourceURI>http://www.energiened.nl/Content/Publications/dsmr/P32/ConcentratorAccess</ns3:ResourceURI>
+               <ns3:Result>
+                  <ns3:ScheTaskInfo>
+                     <ns3:MeterId Value="122">
+                        <ns3:Date Value="2015-11-05">
+                           <ns3:TotalNum>39</ns3:TotalNum>
+                           <ns3:FailNum>1</ns3:FailNum>
+                           <ns3:FailRate>0.025641</ns3:FailRate>
+                        </ns3:Date>
+                        <ns3:Date Value="2015-11-06">
+                           <ns3:TotalNum>20</ns3:TotalNum>
+                           <ns3:FailNum>0</ns3:FailNum>
+                           <ns3:FailRate>0.000000</ns3:FailRate>
+                        </ns3:Date>
+                     </ns3:MeterId>
+                     <ns3:MeterId Value="16">
+                        <ns3:Date Value="2015-11-05">
+                           <ns3:TotalNum>132</ns3:TotalNum>
+                           <ns3:FailNum>132</ns3:FailNum>
+                           <ns3:FailRate>1.000000</ns3:FailRate>
+                        </ns3:Date>
+                        <ns3:Date Value="2015-11-06">
+                           <ns3:TotalNum>108</ns3:TotalNum>
+                           <ns3:FailNum>108</ns3:FailNum>
+                           <ns3:FailRate>1.000000</ns3:FailRate>
+                        </ns3:Date>
+                     </ns3:MeterId>
+                  </ns3:ScheTaskInfo>
+               </ns3:Result>
+            </wsa5:ReferenceParameters>
+         </ns1:ResourceCreated>
+      </ns1:CreateResponse>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

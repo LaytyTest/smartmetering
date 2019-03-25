@@ -1,0 +1,18 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ver="http://www.multispeak.org/Version_4.1_Release">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ver:InitiateMeterReadingsByMeterID>
+         <!--Optional:-->
+         <ver:meterIDs>
+            <!--Zero or more repetitions:-->
+            <ver:meterID meterNo="20180911" serviceType="ELECTIC" objectID="123123" utility="test" />
+         </ver:meterIDs>
+         <!--Optional:-->
+         <ver:responseURL>http://localhost:7070/services/CBServerSoap?wsdl</ver:responseURL>
+         <!--Optional:-->
+         <ver:transactionID>12</ver:transactionID>
+         <!--Optional:-->
+         <ver:expTime units="Minutes">10</ver:expTime>
+      </ver:InitiateMeterReadingsByMeterID>
+   </soapenv:Body>
+</soapenv:Envelope>

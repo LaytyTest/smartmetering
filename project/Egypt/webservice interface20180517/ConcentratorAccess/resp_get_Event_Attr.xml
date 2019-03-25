@@ -1,0 +1,29 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:chan="http://schemas.microsoft.com/ws/2005/02/duplex" xmlns:wsa5="http://www.w3.org/2005/08/addressing" xmlns:ns2="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:ns3="http://www.energiened.nl/Content/Publications/dsmr/P32" xmlns:ns1="http://schemas.xmlsoap.org/ws/2006/08/resourceTransfer">
+   <SOAP-ENV:Header/>
+   <SOAP-ENV:Body>
+      <ns1:CreateResponse>
+         <ns1:ResourceCreated>
+            <wsa5:Address/>
+            <wsa5:ReferenceParameters>
+               <ns3:ResourceURI>http://www.energiened.nl/Content/Publications/dsmr/P32/ConcentratorAccess</ns3:ResourceURI>
+               <ns3:Result>
+                  <ns3:EventAttr> 
+                     <ns3:Attr EventId="01" IsAlarm="0"/> <!-- alarm flag of events, 1 means alarm and 0 means not alarm-->
+                     <ns3:Attr EventId="02" IsAlarm="1"/>
+                     <ns3:Attr EventId="03" IsAlarm="0"/>
+                     <ns3:Attr EventId="04" IsAlarm="0"/>
+                     <ns3:Attr EventId="05" IsAlarm="0"/>
+                     <ns3:Attr EventId="06" IsAlarm="1"/>
+                     <ns3:Attr EventId="28" IsAlarm="1"/>
+                     <ns3:Attr EventId="29" IsAlarm="0"/>
+                     <ns3:Attr EventId="2a" IsAlarm="1"/>
+                     <ns3:Attr EventId="2b" IsAlarm="0"/>
+                     <ns3:Attr EventId="2c" IsAlarm="1"/>
+                     <ns3:Attr EventId="2d" IsAlarm="1"/>
+                  </ns3:EventAttr>
+               </ns3:Result>
+            </wsa5:ReferenceParameters>
+         </ns1:ResourceCreated>
+      </ns1:CreateResponse>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

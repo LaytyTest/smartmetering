@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:chan="http://schemas.microsoft.com/ws/2005/02/duplex" xmlns:wsa5="http://www.w3.org/2005/08/addressing" xmlns:ns2="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:ns3="http://www.energiened.nl/Content/Publications/dsmr/P32" xmlns:ns1="http://schemas.xmlsoap.org/ws/2006/08/resourceTransfer">
+   <SOAP-ENV:Header/>
+   <SOAP-ENV:Body>
+      <ns1:CreateResponse>
+         <ns1:ResourceCreated>
+            <wsa5:Address/>
+            <wsa5:ReferenceParameters>
+               <ns3:ResourceURI>http://www.energiened.nl/Content/Publications/dsmr/P32/ConcentratorAccess</ns3:ResourceURI>
+               <ns3:Result>success,Reboot the system to enable the settings!</ns3:Result>  <!--success to set, but need to send reboot command to effect the setting-->
+            </wsa5:ReferenceParameters>
+         </ns1:ResourceCreated>
+      </ns1:CreateResponse>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

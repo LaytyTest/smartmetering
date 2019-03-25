@@ -1,0 +1,60 @@
+The common procedure of on-demand reading meter is:
+
+HES                                 DCU                                  METER
+             (1)CREATE REQ
+ |---------------------------------> |
+     (2)CREATE RESP(RESOURCE-ID)     |
+ |<----------------------------------|
+                                     |            GET/SET/ACTION
+                                     |------------------------------------>|
+                                     |            RESPONSE
+                                     |<------------------------------------|
+                        DC SAVE RESPONSE TO DB BY RESOURCE-D
+                                     
+                                     
+        (3)GET_REQ(RESOURCE-ID)      |
+ |---------------------------------->|
+                        DC GET RESPONSE FROM DB BY RESOURCE-D 
+        (4)GET_RESP WITH DATA/RESULT |
+ |<----------------------------------|
+ 
+ 
+ 
+        (5)DELETE_REQ(RESOURCE-ID)   |
+ |---------------------------------->|
+            (6)DELETE_RESP           |
+ |<----------------------------------|
+ 
+ the interface between HES and DCU of 6 procedure are list below, the interact between DCU and meter is internal process.
+ 
+     procedure number and class            |    interface file 
+ (1) create req:                           |
+       get:                                |
+            normal get:                    | ./get/normal_get/create_req.xml
+            select get by time range:      | ./get/LOAD_PROFILE1_time_range(param01)/CREATE_GET_REQ.xml
+            select get by entry range:     | ./get/LOAD_PROFILE_entry_range(param02)/create_req.xml
+       set:                                | ./set/set_req.xml
+       action:                             | ./action/action_req.xml
+                                           |
+  (2) create_resp:                         | ./common/create_resp.xml
+                                           |
+  (3) get_req                              | ./common/get_req.xml
+                                           |
+  (4) get_resp:                            |
+       when normal:                        |
+           get:                            |
+                normal get:                | ./get/normal_get/ok_resp.xml
+                select get by time range:  | ./get/LOAD_PROFILE1_time_range(param01)/GET_GET_RESP.xml
+                select get by entry range: | ./get/LOAD_PROFILE_entry_range(param02)/ok_resp.xml
+              complete but with no data    | ./get/get_with_no_data_resp.xml
+           set:                            | ./set/set_resp.xml
+           action:                         | ./action/action_resp.xml     action_resp_with_data.xml(if action with data return such as set token)
+      resource-id not exist                | ./common/get_resp_not_exist.xml
+      reading task not complete            | ./common/get_resp_not_complete.xml
+  (5) delete req:                          | ./common/delete_req.xml
+  (6) delete resp                          | ./common/delete_resp.xml
+                                           |
+               
+only in meterAccess the TerminationTime setting are valuable
+<ns3:TerminationTime>2014-12-23T17:57:21-02:00</ns3:TerminationTime>
+                                       

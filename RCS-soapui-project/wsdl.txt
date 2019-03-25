@@ -1,0 +1,24 @@
+http://139.24.137.223:7070/services/I_HES_ASSET_IMPORT?wsdl
+
+http://139.24.137.223:7070/services/UniversalAMIMeterControlResponseService?wsdl error
+
+http://139.24.137.223:7070/services/UniversalAMIMeterControlService?wsdl
+
+http://139.24.137.223:7070/services/UniversalAMIMeterReadsResponseService?wsdl error
+
+http://139.24.137.223:7070/services/UniversalAMIMeterReadsService?wsdl
+
+http://139.24.137.223:7070/services/UniversalAMIProvisioningResponseService?wsdl error
+
+http://139.24.137.223:7070/services/UniversalAMIProvisioningService?wsdl
+
+udis
+Udis@123!# 
+
+delete from schedule_management;
+delete from schedule_management_detail;
+delete from schedule_management_param;
+delete from schedule_management_sub;
+delete from schedule_management_task; 
+delete from log_uaa_event;
+delete from log_uaa_event_activity;

@@ -1,0 +1,13 @@
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/" xmlns:p32="http://www.energiened.nl/Content/Publications/dsmr/P32" xmlns:ns4="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:ns3="http://schemas.xmlsoap.org/ws/2006/08/resourceTransfer" xmlns:ns2="http://www.w3.org/2005/08/addressing" xmlns="http://schemas.xmlsoap.org/ws/2004/08/addressing">
+   <S:Header>
+      <p32:ResourceURI ns2:IsReferenceParameter="true">http://www.energiened.nl/Content/Publications/dsmr/P32/meterAccess</p32:ResourceURI>
+      <p32:SelectorSet xmlns="http://www.energiened.nl/Content/Publications/dsmr/P32">
+         <p32:Selector Name="ResourceID">MeterAccess-1</p32:Selector>
+      </p32:SelectorSet>      
+   </S:Header>
+   <S:Body>
+      <ns5:Get xmlns:ns6="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:ns5="http://schemas.xmlsoap.org/ws/2006/08/resourceTransfer" xmlns:ns4="http://www.energiened.nl/Content/Publications/dsmr/P32" xmlns:ns3="http://www.w3.org/2005/08/addressing" xmlns:ns2="http://schemas.xmlsoap.org/ws/2004/09/transfer" xmlns="http://schemas.xmlsoap.org/ws/2004/08/addressing">
+         <ns5:Expression>p32:MeterAccess</ns5:Expression>
+      </ns5:Get>
+   </S:Body>
+</S:Envelope>

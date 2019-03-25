@@ -1,0 +1,70 @@
+<!-- NOTE: http header should contain SOAPAction: "Create_action" -->
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+  <S:Header>
+    <ResourceURI xmlns="http://www.energiened.nl/Content/Publications/dsmr/P32">http://www.energiened.nl/Content/Publications/dsmr/P32/meterAccess</ResourceURI>
+  </S:Header>
+  <S:Body>
+    <ns3:Create xmlns:ns5="http://www.energiened.nl/Content/Publications/dsmr/P32" xmlns:ns4="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:ns3="http://schemas.xmlsoap.org/ws/2006/08/resourceTransfer" xmlns:ns2="http://www.w3.org/2005/08/addressing" xmlns="http://schemas.xmlsoap.org/ws/2004/08/addressing">
+      <ns4:Metadata>
+        <ns4:MetadataSection>
+          <ns3:Metadata>
+            <ns3:Lifetime>
+              <ns3:TerminateAt>
+                <ns3:TerminationTime>2017-10-26T17:57:21-02:00</ns3:TerminationTime>
+              </ns3:TerminateAt>
+            </ns3:Lifetime>
+          </ns3:Metadata>
+        </ns4:MetadataSection>
+      </ns4:Metadata>
+      <ns3:Fragment>
+        <ns3:Expression>p32:MeterAccess</ns3:Expression>
+        <ns3:Value>
+          <ns5:MeterAccess>
+          	<!--can select on-demand(force to get data from meter) or auto(no config is default auto)
+          	    auto work mode is: if dataitem in schedule task config, it will read from DB on DC, or read from meter -->
+            <ns5:AccessType>on-demand</ns5:AccessType>   
+            <ns5:MeterReferenceList>
+              <ns5:MeterReference MeterID="501"/>
+            </ns5:MeterReferenceList>
+
+            <ns5:CosemAccessList>
+              <ns5:CosemAccess>
+                <ns5:CosemAccessDescriptor>
+                  <ns5:GetAccessDescriptor>
+			<ns5:CosemAttributeDescriptor>
+                      <ns5:ClassId>7</ns5:ClassId>
+                      <ns5:InstanceId>1.0.99.1.0.255</ns5:InstanceId>
+                      <ns5:AttributeId>2</ns5:AttributeId>
+                      
+					<ns5:AccessSelection >
+						<ns5:AccessSelector Value = "1"/>
+				     	<ns5:AccessParameters>			
+				     					
+							<ns5:range_descriptor Type = "structure">				
+				   				<ns5:restricting_object Type = "structure">
+				   					<ns5:class_id Type = "long-unsigned" Value = "8"/>
+				   					<ns5:logical_name Type = "octet-string" Value = "0000010000FF"/>
+				   					<ns5:attribute_index Type = "integer" Value = "2"/>
+				   					<ns5:data_index Type = "long-unsigned" Value = "0"/>
+				   				</ns5:restricting_object>				
+								<ns3:from_value Type="date_time" Value="07E10A1A040B0100008000FF"/>
+                                       <ns3:to_value Type="date_time" Value="07E10A1A040C0100008000FF"/>
+								<ns5:selected_values Type = "array">
+								</ns5:selected_values>
+							</ns5:range_descriptor>
+							
+						</ns5:AccessParameters>
+					</ns5:AccessSelection>
+
+				</ns5:CosemAttributeDescriptor>
+                  </ns5:GetAccessDescriptor>
+                </ns5:CosemAccessDescriptor>
+              </ns5:CosemAccess>
+
+            </ns5:CosemAccessList>
+          </ns5:MeterAccess>
+        </ns3:Value>
+      </ns3:Fragment>
+    </ns3:Create>
+  </S:Body>
+</S:Envelope>

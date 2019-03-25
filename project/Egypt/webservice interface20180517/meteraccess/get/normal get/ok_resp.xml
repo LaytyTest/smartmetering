@@ -1,0 +1,102 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:chan="http://schemas.microsoft.com/ws/2005/02/duplex" xmlns:wsa5="http://www.w3.org/2005/08/addressing" xmlns:ns2="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:ns3="http://www.energiened.nl/Content/Publications/dsmr/P32" xmlns:ns1="http://schemas.xmlsoap.org/ws/2006/08/resourceTransfer">
+   <SOAP-ENV:Header/>
+   <SOAP-ENV:Body>
+      <ns1:GetResponse>
+         <ns1:Result>
+            <ns3:MeterAccess>
+               <ns3:MeterReferenceList>
+                  <ns3:MeterReference MeterID="16"/>
+               </ns3:MeterReferenceList>
+               <ns3:CosemAccessList>
+                  <ns3:CosemAccess>
+                     <ns3:CosemAccessDescriptor>
+                        <ns3:GetAccessDescriptor>
+                           <ns3:CosemAttributeDescriptor>
+                              <ns3:ClassId>1</ns3:ClassId>
+                              <ns3:InstanceId>0000600100FF</ns3:InstanceId>
+                              <ns3:AttributeId>2</ns3:AttributeId>
+                           </ns3:CosemAttributeDescriptor>
+                        </ns3:GetAccessDescriptor>
+                     </ns3:CosemAccessDescriptor>
+                     <ns3:CosemAccessResult MeterID="16">
+                        <ns3:GetAccessResult/>
+                        <ns3:Data>
+                           <ns3:os>303030303030303030303031</ns3:os>
+                        </ns3:Data>
+                     </ns3:CosemAccessResult>
+                  </ns3:CosemAccess>
+                  <ns3:CosemAccess>
+                     <ns3:CosemAccessDescriptor>
+                        <ns3:GetAccessDescriptor>
+                           <ns3:CosemAttributeDescriptor>
+                              <ns3:ClassId>11</ns3:ClassId>
+                              <ns3:InstanceId>00000B0000FF</ns3:InstanceId>
+                              <ns3:AttributeId>2</ns3:AttributeId>
+                           </ns3:CosemAttributeDescriptor>
+                        </ns3:GetAccessDescriptor>
+                     </ns3:CosemAccessDescriptor>
+                     <ns3:CosemAccessResult MeterID="16">
+                        <ns3:GetAccessResult>
+	                        <ns3:Data>
+	                           <ns3:a>     <!--array-->
+	                              <ns3:s>  <!--array-->
+	                                 <ns3:lu>0</ns3:lu>  <!--long-unsigned-->
+	                                 <ns3:os>FFFF0A0AFF</ns3:os>  <!--oct-string-->
+	                                 <ns3:u>1</ns3:u>    <!--unsigned-->
+	                              </ns3:s>
+	                              <ns3:s>
+	                                 <ns3:lu>1</ns3:lu>
+	                                 <ns3:os>FFFF0101FF</ns3:os>
+	                                 <ns3:u>1</ns3:u>
+	                              </ns3:s>
+	                              <ns3:s>
+	                                 <ns3:lu>2</ns3:lu>
+	                                 <ns3:os>FFFF0202FF</ns3:os>
+	                                 <ns3:u>2</ns3:u>
+	                              </ns3:s>
+	                              <ns3:s>
+	                                 <ns3:lu>3</ns3:lu>
+	                                 <ns3:os>FFFF0303FF</ns3:os>
+	                                 <ns3:u>3</ns3:u>
+	                              </ns3:s>
+	                              <ns3:s>
+	                                 <ns3:lu>4</ns3:lu>
+	                                 <ns3:os>FFFF0404FF</ns3:os>
+	                                 <ns3:u>4</ns3:u>
+	                              </ns3:s>
+	                              <ns3:s>
+	                                 <ns3:lu>5</ns3:lu>
+	                                 <ns3:os>FFFF0505FF</ns3:os>
+	                                 <ns3:u>4</ns3:u>
+	                              </ns3:s>
+	                              <ns3:s>
+	                                 <ns3:lu>6</ns3:lu>
+	                                 <ns3:os>FFFF0606FF</ns3:os>
+	                                 <ns3:u>3</ns3:u>
+	                              </ns3:s>
+	                              <ns3:s>
+	                                 <ns3:lu>7</ns3:lu>
+	                                 <ns3:os>FFFF0707FF</ns3:os>
+	                                 <ns3:u>2</ns3:u>
+	                              </ns3:s>
+	                              <ns3:s>
+	                                 <ns3:lu>8</ns3:lu>
+	                                 <ns3:os>FFFF0808FF</ns3:os>
+	                                 <ns3:u>1</ns3:u>
+	                              </ns3:s>
+	                              <ns3:s>
+	                                 <ns3:lu>9</ns3:lu>
+	                                 <ns3:os>FFFF0909FF</ns3:os>
+	                                 <ns3:u>1</ns3:u>
+	                              </ns3:s>
+	                           </ns3:a>
+	                        </ns3:Data>
+                      	</ns3:GetAccessResult>
+                     </ns3:CosemAccessResult>
+                  </ns3:CosemAccess>
+               </ns3:CosemAccessList>
+            </ns3:MeterAccess>
+         </ns1:Result>
+      </ns1:GetResponse>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

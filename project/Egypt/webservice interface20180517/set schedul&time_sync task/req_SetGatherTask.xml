@@ -1,0 +1,114 @@
+
+<!--
+  The comment should be delete in send packet
+  The interface is used by HES for set schedule reading task config file on DCU.
+  The set command will cover the old config, and restart the schedule reading with new config.
+  So, when set the scheduling reading task, the whole schedule reading scheme should be set.
+
+  Parameter:
+	 Parameter of DCU schedule gather task
+
+  description for config:       
+    CLEAR_DATA: When replace task config by this interface£¬should the gathered data exist on DCU should be cleared. 0-not£¬1-clear(!!default!!)
+    TASK_PREREADDAY£ºwhen schedule task started£¬how manydays' data before need to be remedied
+    TASK_INTVTYPE: preiod type of schedule reading task£¬0:minutes£¬1:per-day£¬2:per-month
+    TASK_INTV:task period, different defination for different TASK_INTVTYPE
+              when TASK_INTVTYPE=0£¬TASK_INTV£ºmean the value of period in unit of minute
+              TASK_INTVTYPE=1£¬TASK_INTV£ºfirst 2 digits are hour in a day, last 2 digit are minute. 0130 means execute at 1:30 everyday
+              TASK_INTVTYPE=2£¬TASK_INTV£ºfirst 2 digits are day in a month, last 2 digit are hour. 0102 means execute at 2:00 in 1st day of every month.
+              
+    PRO_TYPE£ºprotocol type ,identify DCU will communication with meter by what protocol, important
+    			DLMS_46=0x23,
+    			DLMS_47=0x24, 
+    			WATER_188=0x25, 
+    			IEC61107=0x26, 
+    			ANSI=0x27
+    METER_TYPE£ºmeter type !! now the parameter is not usefully, only for display
+    	    AMETER100                               = 0xD0,    // normal ameter100
+			    AMETER100_ZORO                          = 0xD1,    //ameter100 for ZORO 
+			    AMETER300                               = 0xD2,    // normal ameter300
+			    AMETER300_ZORO                          = 0xD3,    //ameter300 for ZORO 
+			    KEYPAD_KT2                              = 0xF0,    //KT3
+			    KEYPAD_5V33                             = 0xF1,    //3 phase keyboard meter 
+
+    METER_INFO£ºmeterlist for schedule reading, null means all the meters of specified protocol type.
+    TASK_ITEM£ºschedule reading items
+    PRO_CODE:the protocol code of data item to read, when protype is DLMS, the format is "classid, obis code, attributeid"
+-->
+
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+   <S:Header>
+      <ResourceURI xmlns="http://www.energiened.nl/Content/Publications/dsmr/P32">http://www.energiened.nl/Content/Publications/dsmr/P32/ metersDirectory</ResourceURI>
+   </S:Header>
+   <S:Body>
+      <ns3:Create xmlns:ns5="http://www.energiened.nl/Content/Publications/dsmr/P32" xmlns:ns4="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:ns3="http://schemas.xmlsoap.org/ws/2006/08/resourceTransfer" xmlns:ns2="http://www.w3.org/2005/08/addressing" xmlns="http://schemas.xmlsoap.org/ws/2004/08/addressing">
+
+         <ns4:Metadata>
+            <ns4:MetadataSection>
+               <ns3:Metadata>
+                  <ns3:Lifetime>
+                     <ns3:TerminateAt>
+<ns3:TerminationTime>2014-4-23T17:57:21-02:00</ns3:TerminationTime>
+                     </ns3:TerminateAt>
+                  </ns3:Lifetime>
+               </ns3:Metadata>
+            </ns4:MetadataSection>
+         </ns4:Metadata>
+         <ns3:Fragment>
+            <ns3:Expression>p32:ConcentratorAccess</ns3:Expression>
+            <ns3:Value>
+               <ns5:ConcentratorAccess>
+               	<ns5:ConcentratorService/>
+               	<ns5:EventLog/>
+               	<ns5:Status>
+               		<ns5:Indent Value="SetGatherTask" Password="000000"/>
+               		<ns5:Status>
+	               		<ns5:GATHER_TASK>
+											 <ns5:CLEAR_DATA>1</ns5:CLEAR_DATA>
+											 <ns5:TASK_INFO>	  	  
+												  <ns5:PRO_TYPE>0x24</ns5:PRO_TYPE>	  
+												  <ns5:METER_TYPE>0xD0</ns5:METER_TYPE>
+												  <ns5:METER_INFO>
+												     <ns5:METER_ADDR>202</ns5:METER_ADDR>	  <!--DECIMAL--> 
+												     <ns5:METER_ADDR>16</ns5:METER_ADDR> 
+												     <ns5:METER_ADDR>33</ns5:METER_ADDR> 
+												  </ns5:METER_INFO>
+												  <ns5:TASK_ITEM>
+												     <ns5:ITEM_INFO>
+												     	    <ns5:PRO_CODE>{7,0100630100FF,2}</ns5:PRO_CODE> <!--format is classid, obis_code, attributeid-->
+												     	    <ns5:TASK_PREREADDAY>2</ns5:TASK_PREREADDAY>
+												     	    <ns5:TASK_INTVTYPE>0</ns5:TASK_INTVTYPE> 
+												     	    <TASK_REF_START_MINUTE>6</TASK_REF_START_MINUTE>   <!--the task will begin at which minute of houre, set this value to sure the data exist on meter when reading, and can be read earlier, set the parameter only when TASK_INTTYPE=0-->
+												          <ns5:TASK_INTV>240</ns5:TASK_INTV>   <!--the schedule reading period, unit is minute, at least 60, suggest  360 or 240,if loadprofile is hourly frozen-->
+												     </ns5:ITEM_INFO>
+												     <ns5:ITEM_INFO>
+												     	    <ns5:PRO_CODE>{7,0100620101FF,2}</ns5:PRO_CODE>
+												     	    <ns5:TASK_PREREADDAY>2</ns5:TASK_PREREADDAY>
+												     	    <ns5:TASK_INTVTYPE>1</ns5:TASK_INTVTYPE> 
+												          <ns5:TASK_INTV>1500</ns5:TASK_INTV>
+												     </ns5:ITEM_INFO>
+												  </ns5:TASK_ITEM>
+											 </ns5:TASK_INFO>	  
+												<ns5:TASK_INFO>
+												  <ns5:PRO_TYPE>0x23</ns5:PRO_TYPE>	     
+												  <ns5:METER_TYPE>0xD0</ns5:METER_TYPE>
+												  <ns5:METER_INFO>
+												  </ns5:METER_INFO>
+												  <ns5:TASK_ITEM>
+												    <ns5:ITEM_INFO>
+												    	<ns5:PRO_CODE>{7,0100620101FF,2}</ns5:PRO_CODE>
+												    	<ns5:TASK_PREREADDAY>2</ns5:TASK_PREREADDAY>
+												     	<ns5:TASK_INTVTYPE>1</ns5:TASK_INTVTYPE> 
+												      <ns5:TASK_INTV>1500</ns5:TASK_INTV>	
+												    </ns5:ITEM_INFO>
+												  </ns5:TASK_ITEM>    
+												</ns5:TASK_INFO>	  	 	  
+											</ns5:GATHER_TASK>
+										</ns5:Status>	
+                  </ns5:Status>
+               </ns5:ConcentratorAccess>
+            </ns3:Value>
+         </ns3:Fragment>
+      </ns3:Create>
+   </S:Body>
+</S:Envelope>

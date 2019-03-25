@@ -1,0 +1,313 @@
+{
+    "systemManager": {
+        "HEADER": {
+            "VERSION": {
+                "ORIGIN": "LOKAL",
+                "BLOCK": "9999",
+                "SCHEMA": "99999"
+            },
+            "ACCESS": {
+                "ID": ""
+            }
+        },
+        "ETHERNET": {
+            "WAN": {
+                "DHCP": false,
+                "IP_ADR": "192.168.0.249",
+                "IP_SUBNET_MSK": "255.255.255.0",
+                "IP_DEF_GATEWAY": "192.168.0.1",
+                "USED": true,
+                "SPEED": 0,
+                "DNS_PRE_IP_ADDRESS": "255.255.255.255",
+                "DNS_ALT_IP_ADDRESS": "255.255.255.255"
+            },
+            "MTC": {
+                "IP_ADR": "172.16.0.3",
+                "IP_SUBNET_MSK": "255.255.255.0",
+                "IP_DEF_GATEWAY": "172.16.0.1",
+                "USED": true,
+                "SPEED": 0
+            },
+            "LAN": {
+                "DHCP_SERVER": false,
+                "IP_ADR": "192.168.1.1",
+                "IP_SUBNET_MSK": "255.255.255.0",
+                "IP_DEF_GATEWAY": "192.168.1.1",
+                "USED": false,
+                "SPEED": 0
+            },
+            "MOBILE": {
+                "USED": false
+            }
+        },
+        "FIREWALL": {
+            "NR_0": {
+                "ENABLE": true,
+                "INTERFACE": "MTC",
+                "PORT": 443,
+                "TEXT": "https-Server",
+                "DIRECTION": "INCOMING",
+                "TYPE": "TCP"
+            },
+            "NR_1": {
+                "ENABLE": true,
+                "INTERFACE": "WAN",
+                "PORT": 8888,
+                "TEXT": "ProductionPort",
+                "DIRECTION": "INCOMING",
+                "TYPE": "UDP&TCP"
+            },
+            "NR_2": {
+                "ENABLE": true,
+                "INTERFACE": "MTC",
+                "PORT": 8888,
+                "TEXT": "ProductionPortMTC",
+                "DIRECTION": "INCOMING",
+                "TYPE": "UDP&TCP"
+            },
+            "NR_3": {
+                "ENABLE": true,
+                "INTERFACE": "WAN",
+                "PORT": 161,
+                "TEXT": "SNMP",
+                "DIRECTION": "INCOMING",
+                "TYPE": "UDP&TCP"
+            },
+            "NR_4": {
+                "ENABLE": false,
+                "INTERFACE": "WAN",
+                "PORT": 65535,
+                "TEXT": "",
+                "DIRECTION": "INCOMING",
+                "TYPE": "UDP&TCP"
+            },
+            "NR_5": {
+                "ENABLE": false,
+                "INTERFACE": "WAN",
+                "PORT": 65535,
+                "TEXT": "",
+                "DIRECTION": "INCOMING",
+                "TYPE": "UDP&TCP"
+            },
+            "NR_6": {
+                "ENABLE": false,
+                "INTERFACE": "WAN",
+                "PORT": 65535,
+                "TEXT": "",
+                "DIRECTION": "INCOMING",
+                "TYPE": "UDP&TCP"
+            },
+            "NR_7": {
+                "ENABLE": false,
+                "INTERFACE": "WAN",
+                "PORT": 65535,
+                "TEXT": "",
+                "DIRECTION": "INCOMING",
+                "TYPE": "UDP&TCP"
+            },
+            "NR_8": {
+                "ENABLE": false,
+                "INTERFACE": "WAN",
+                "PORT": 65535,
+                "TEXT": "",
+                "DIRECTION": "INCOMING",
+                "TYPE": "UDP&TCP"
+            },
+            "NR_9": {
+                "ENABLE": false,
+                "INTERFACE": "WAN",
+                "PORT": 65535,
+                "TEXT": "",
+                "DIRECTION": "INCOMING",
+                "TYPE": "UDP&TCP"
+            },
+            "NR_10": {
+                "ENABLE": false,
+                "INTERFACE": "WAN",
+                "PORT": 65535,
+                "TEXT": "",
+                "DIRECTION": "INCOMING",
+                "TYPE": "UDP&TCP"
+            },
+            "NR_11": {
+                "ENABLE": false,
+                "INTERFACE": "WAN",
+                "PORT": 65535,
+                "TEXT": "",
+                "DIRECTION": "INCOMING",
+                "TYPE": "UDP&TCP"
+            },
+            "NR_12": {
+                "ENABLE": false,
+                "INTERFACE": "WAN",
+                "PORT": 65535,
+                "TEXT": "",
+                "DIRECTION": "INCOMING",
+                "TYPE": "UDP&TCP"
+            },
+            "NR_13": {
+                "ENABLE": false,
+                "INTERFACE": "WAN",
+                "PORT": 65535,
+                "TEXT": "",
+                "DIRECTION": "INCOMING",
+                "TYPE": "UDP&TCP"
+            },
+            "NR_14": {
+                "ENABLE": false,
+                "INTERFACE": "WAN",
+                "PORT": 65535,
+                "TEXT": "",
+                "DIRECTION": "INCOMING",
+                "TYPE": "UDP&TCP"
+            },
+            "NR_15": {
+                "ENABLE": false,
+                "INTERFACE": "WAN",
+                "PORT": 65535,
+                "TEXT": "",
+                "DIRECTION": "INCOMING",
+                "TYPE": "UDP&TCP"
+            },
+            "NR_16": {
+                "ENABLE": false,
+                "INTERFACE": "WAN",
+                "PORT": 65535,
+                "TEXT": "",
+                "DIRECTION": "INCOMING",
+                "TYPE": "UDP&TCP"
+            }
+        },
+        "FEATURES": {
+            "BRIDGE": {
+                "ENABLE": false,
+                "MASTER": false
+            },
+            "PING": {
+                "INCOMING": true,
+                "OUTGOING": true
+            }
+        }
+    },
+    "management": {
+        "HEADER": {
+            "VERSION": {
+                "ORIGIN": "LOKAL",
+                "BLOCK": "9999",
+                "SCHEMA": "99999"
+            },
+            "ACCESS": {
+                "ID": ""
+            }
+        },
+        "CONFIG_SERVER": {
+            "ALLG": {
+                "INTERFACE": "WAN",
+                "DNS_OR_IP_ADDRESS": "0.0.0.0",
+                "OUTGOING_PORT": 9998,
+                "OUTGOING_TLS_PORT": 9999
+            }
+        },
+        "MANAGEMENT_SERVER": {
+            "ALLG": {
+                "INTERFACE": "WAN",
+                "DNS_OR_IP_ADDRESS": "0.0.0.0",
+                "OUTGOING_PORT": 9999,
+                "INCOMING_PORT": 8888,
+                "MAINTENANCE_TIO": 72
+            }
+        },
+        "SECURITY_LOG_SERVER": {
+            "ALLG": {
+                "INTERFACE": "WAN",
+                "DNS_OR_IP_ADDRESS": "255.255.255.255",
+                "OUTGOING_PORT": 65535
+            }
+        },
+        "FIRMWARE_UPDATE": {
+            "ALLG": {
+                "FALLBACK_TIME": 0
+            }
+        }
+    },
+    "timeManager": {
+        "HEADER": {
+            "VERSION": {
+                "ORIGIN": "LOKAL",
+                "BLOCK": "9999",
+                "SCHEMA": "99999"
+            },
+            "ACCESS": {
+                "ID": ""
+            }
+        },
+        "NTP_SERVER": {
+            "ALLG": {
+                "NTP_SYNC": 0,
+                "INTERFACE": "WAN",
+                "DNS_OR_IP_ADDRESS": "172.29.31.10",
+                "MIN_POLL": 5,
+                "MAX_STRATUM": 0
+            }
+        },
+        "TIME_ALLG": {
+            "TIMEZONE": {
+                "AKT": 60
+            },
+            "SO_WI_ALLG": {
+                "USED": true,
+                "OFFSET": 60
+            },
+            "SO_WI_BEGIN": {
+                "MONTH": 3,
+                "WEEK": 5,
+                "WEEKDAY": 0,
+                "HOUR": 2,
+                "MINUTE": 0
+            },
+            "SO_WI_END": {
+                "MONTH": 10,
+                "WEEK": 5,
+                "WEEKDAY": 0,
+                "HOUR": 3,
+                "MINUTE": 0
+            }
+        }
+    },
+    "meterdata": {
+        "HEADER": {
+            "VERSION": {
+                "ORIGIN": "LOKAL",
+                "BLOCK": "9999",
+                "SCHEMA": "99999"
+            },
+            "ACCESS": {
+                "ID": ""
+            }
+        },
+        "SERVER": {
+            "PUSH": {
+                "INTERFACE": "WAN",
+                "DNS_OR_IP_ADDRESS": "255.255.255.255",
+                "OUTGOING_PORT": 5007,
+                "OUTGOING_PORT_PLC_MANAGEMENT": 5008
+            },
+            "PULL": {
+                "INCOMING_PORT": 5005,
+                "INCOMING_PORT_PLC_MANAGEMENT": 5006,
+                "CONNECTION_TIMEOUT": 300
+            }
+        },
+        "G3_CONFIG": {
+            "ALLG": {
+                "G3_MODE": "COORDINATOR",
+                "MAN_PAN_ID": false,
+                "PAN_ID": 0,
+                "OUTGOING_PORT": 61616,
+                "INCOMING_PORT": 61617,
+                "PLC_PUSH_PORT": 50000,
+                "FREQUENCY_BAND": "CENELEC_A"
+            }
+        }
+    }
+}

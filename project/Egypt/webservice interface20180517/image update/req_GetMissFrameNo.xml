@@ -1,0 +1,21 @@
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+   <S:Header>
+      <ResourceURI xmlns="http://www.energiened.nl/Content/Publications/dsmr/P32">http://www.energiened.nl/Content/Publications/dsmr/P32/ metersDirectory</ResourceURI>
+   </S:Header>
+   <S:Body>
+      <ns3:Create xmlns:ns5="http://www.energiened.nl/Content/Publications/dsmr/P32" xmlns:ns4="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:ns3="http://schemas.xmlsoap.org/ws/2006/08/resourceTransfer" xmlns:ns2="http://www.w3.org/2005/08/addressing" xmlns="http://schemas.xmlsoap.org/ws/2004/08/addressing">
+
+         <ns3:Fragment>
+            <ns3:Expression>p32:UpgradeAccess</ns3:Expression>
+            <ns3:Value>
+               <ns5:GetMissFrameNo> 
+               	<ns5:Type>DCU</ns5:Type>  <!--Type value can be DCU, MMod, SMod, Meter-->
+               	<ns5:Password>000000</ns5:Password>
+               	<ns5:FileName>as_L019-16U02.01_2015-02-15.zip</ns5:FileName>
+                <ns5:FileSize>10240</ns5:FileSize>
+               </ns5:GetMissFrameNo>
+            </ns3:Value>
+         </ns3:Fragment>
+      </ns3:Create>
+   </S:Body>
+</S:Envelope>

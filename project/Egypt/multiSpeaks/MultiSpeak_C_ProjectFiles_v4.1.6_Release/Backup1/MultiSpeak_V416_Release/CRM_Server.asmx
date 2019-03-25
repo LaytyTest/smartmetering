@@ -1,0 +1,1 @@
+<%@ WebService Language="c#" Codebehind="CRM_Server.asmx.cs" Class="MultiSpeak4.CRM_Server" %>

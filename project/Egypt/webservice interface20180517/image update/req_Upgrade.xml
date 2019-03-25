@@ -1,0 +1,39 @@
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+   <S:Header>
+      <ResourceURI xmlns="http://www.energiened.nl/Content/Publications/dsmr/P32">http://www.energiened.nl/Content/Publications/dsmr/P32/ metersDirectory</ResourceURI>
+   </S:Header>
+   <S:Body>
+      <ns3:Create xmlns:ns5="http://www.energiened.nl/Content/Publications/dsmr/P32" xmlns:ns4="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:ns3="http://schemas.xmlsoap.org/ws/2006/08/resourceTransfer" xmlns:ns2="http://www.w3.org/2005/08/addressing" xmlns="http://schemas.xmlsoap.org/ws/2004/08/addressing">
+
+         <ns3:Fragment>
+            <ns3:Expression>p32:UpgradeAccess</ns3:Expression>
+            <ns3:Value>
+               <ns5:Upgrade>
+                <ns5:Type>DCU</ns5:Type>  <!--Type value can be DCU, MMod, SMod, Meter-->
+               	<ns5:Password>000000</ns5:Password>
+               	<ns5:FileName>as_L019-16U02.01_2015-02-15.zip</ns5:FileName>
+               	
+               	<ns5:ImageIdentifier>WASION--aM100(M1EG)V1.0-0003</ns5:ImageIdentifier> <!--the parameter just obey meters requirement,reserved, you can fill with simple "aaa"-->
+               	<ns5:ImageSize>62365</ns5:ImageSize> <!--image file size, must be correct-->
+               	<ns5:ImageSignature>ddddda</ns5:ImageSignature>  <!--the parameter just obey meters requirement,reserved, you can fill with simple "bbb"-->
+               	<ns5:ActiveTime>  <!--the parameter is optional, if not set, will upgrade meter Immediately,else will upgrade by the time setting-->
+               		<ns5:Type>1</ns5:Type> <!--activate time type, now support type is 1-->
+               		<ns5:Value>
+               			<ns5:Time>07E10C0F05101112</ns5:Time> <!--2017-12-15 Fri 16:17:18 must be HEX string with length=16-->
+               		</ns5:Value>
+               	</ns5:ActiveTime>
+               	
+               	<!-- Parameters below are optional. Only type=Meter & SMod must include them -->
+               	<ns5:MeterList>
+               		<ns5:MeterId>35</ns5:MeterId>
+               		<ns5:MeterId>16</ns5:MeterId>
+               		<ns5:MeterId>215</ns5:MeterId>
+               		<ns5:MeterId>225</ns5:MeterId>
+               	</ns5:MeterList>
+               	
+               </ns5:Upgrade>
+            </ns3:Value>
+         </ns3:Fragment>
+      </ns3:Create>
+   </S:Body>
+</S:Envelope>

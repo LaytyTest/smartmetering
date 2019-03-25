@@ -1,0 +1,25 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:chan="http://schemas.microsoft.com/ws/2005/02/duplex" xmlns:wsa5="http://www.w3.org/2005/08/addressing" xmlns:ns2="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:ns3="http://www.energiened.nl/Content/Publications/dsmr/P32" xmlns:ns1="http://schemas.xmlsoap.org/ws/2006/08/resourceTransfer">
+   <SOAP-ENV:Header/>
+   <SOAP-ENV:Body>
+      <ns1:CreateResponse>
+         <ns1:ResourceCreated>
+            <wsa5:Address/>
+            <wsa5:ReferenceParameters>
+               <ns3:ResourceURI>http://www.energiened.nl/Content/Publications/dsmr/P32/ConcentratorAccess</ns3:ResourceURI>
+               <ns3:Result>
+                 <ns3:CommParam>
+	         			   <ns3:MainIp>192.168.240.55</ns3:MainIp>  <!--main HES IP address for DCU report alarms-->
+	         			   <ns3:MainPort>6001</ns3:MainPort>        <!--main HES listening port for DCU report alarms-->
+	         			   <ns3:BackIp>192.168.240.56</ns3:SubIp>    <!--backup HES IP address for DCU report alarms-->
+	         			   <ns3:BackPort>6123</ns3:SubPort>          <!--backup HES listening port for DCU report alarms-->
+	         			   <ns3:HeartBeat>5</ns3:HeartBeat>          <!--To keep DCU and HES link alive, DCU send heartbeat packet to HES, config it's interval with unit of minute-->
+	         			   <ns3:APN>cmnet</ns3:APN>                     <!--Access Point Name-->
+	         			   <ns3:APNUser>card</ns3:APNUser>              <!--APN username-->
+	         			   <ns3:APNPassword>card</ns3:APNPassword>      <!--APN password-->
+                 </ns3:CommParam>
+               </ns3:Result>
+            </wsa5:ReferenceParameters>
+         </ns1:ResourceCreated>
+      </ns1:CreateResponse>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
