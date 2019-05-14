@@ -1,0 +1,7 @@
+1、collection模块task_dispatch和event_dispatch为单线程，CPU核心利用不充分
+2、collection模块产生任务可能超时（任务太多，一个周期内无法产生完）
+3、collection模块task_dispatch函数固定等待1秒
+4、logger模块写日志速度文件反复打开关闭
+5、logger模块写日志检索message_id效率低
+6、Fee模块TaskParallelCount参数没有script
+7、Fee最大并发数受线程数限制
