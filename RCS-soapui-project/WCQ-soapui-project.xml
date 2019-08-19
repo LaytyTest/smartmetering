@@ -1516,7 +1516,7 @@
       <xs:element default="-1" minOccurs="0" name="eventRecordNum" type="xs:long"/>
     </xs:sequence>
   </xs:complexType>
-</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://139.24.137.223:7070/services/UniversalAMIProvisioningService</con:endpoint></con:endpoints><con:operation id="f6a85ec3-2a00-4b26-8004-21dadabd3970" isOneWay="false" action="http://www.emeter.com/energyip/amiinterface/ProvisioningRequest/addMeterAsset" name="addMeterAsset" bindingOperationName="addMeterAsset" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="e62f90c5-2a5f-4738-bd59-3260ccff26cf" name="139.24.137.223"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://139.24.137.223:7070/services/UniversalAMIProvisioningService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ami="http://www.emeter.com/energyip/amiinterface">
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://139.24.137.223:7070/services/UniversalAMIProvisioningService</con:endpoint></con:endpoints><con:operation id="f6a85ec3-2a00-4b26-8004-21dadabd3970" isOneWay="false" action="http://www.emeter.com/energyip/amiinterface/ProvisioningRequest/addMeterAsset" name="addMeterAsset" bindingOperationName="addMeterAsset" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="e62f90c5-2a5f-4738-bd59-3260ccff26cf" name="139.24.137.223"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.135.141:7443/services/UniversalAMIProvisioningService?wsdl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ami="http://www.emeter.com/energyip/amiinterface">
    <soapenv:Header/>
    <soapenv:Body>
 	<ami:MeterAssetAddRequestMessage xmlns:ami="http://www.emeter.com/energyip/amiinterface" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
@@ -1846,4 +1846,573 @@
 	  </ami:payload>
 	</ami:MeterAssetAddRequestMessage>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:credentials><con:username>wcq</con:username><con:password>Password@1</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:preemptive>true</con:preemptive><con:authType>Preemptive</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.emeter.com/energyip/amiinterface/ProvisioningRequest/addMeterAsset"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="7be262fc-9eb7-4caf-8f06-e419004b130e" isOneWay="false" action="http://www.emeter.com/energyip/amiinterface/ProvisioningRequest/deleteMeterAsset" name="deleteMeterAsset" bindingOperationName="deleteMeterAsset" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false"><con:settings/></con:operation><con:operation id="e9476435-3c66-45d1-a445-109c63d50fd3" isOneWay="false" action="http://www.emeter.com/energyip/amiinterface/ProvisioningRequest/updateMeterAsset" name="updateMeterAsset" bindingOperationName="updateMeterAsset" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false"><con:settings/></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>wcq</con:username><con:password>Password@1</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:preemptive>true</con:preemptive><con:authType>Preemptive</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.emeter.com/energyip/amiinterface/ProvisioningRequest/addMeterAsset"/><con:wsrmConfig version="1.2"/></con:call><con:call id="d5143597-3f86-43d2-b451-bf40d7e09d79" name="KeyAgreement"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.135.141:7443/services/UniversalAMIProvisioningService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ami="http://www.emeter.com/energyip/amiinterface">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ami:MeterAssetAddRequestMessage>\r
+      
+  <ami:header>
+    <ami:verb>request</ami:verb>
+    <ami:noun>MeterAdd</ami:noun>
+    <ami:revision>1</ami:revision>
+    <ami:dateTime>2014-10-23T11:37:28.837+08:00</ami:dateTime>
+    <ami:source>EIP</ami:source>
+    <ami:messageID>10001</ami:messageID>
+    <ami:asyncReplyTo>http://139.24.137.195:8890</ami:asyncReplyTo>
+  </ami:header>
+         
+        <ami:payload>
+  
+    <ami:meterAsset>
+      <ami:mRID>1KFM0200000003</ami:mRID>
+      <ami:idType>METER_X_UDC_ASSET_ID</ami:idType>
+      <ami:pathName>16486977</ami:pathName>
+      <ami:serviceType>Electric</ami:serviceType>
+      <ami:electricMeter>
+        <ami:numWires>3</ami:numWires>
+      </ami:electricMeter>
+      <ami:numDigits>6</ami:numDigits>
+    
+            <ami:parameter>
+                <ami:name>KeyExchange.AgreementDataPart1</ami:name>
+                <ami:value>0372C44F9C519997BB4B9DCEE84177A7CA76607ABEF02D376FF9FAEE0424BF518A161B5180ABEF69A76279E8774A71A35FA5303957E51232885FD27A1294D49543</ami:value>
+            </ami:parameter>
+            <ami:parameter>
+                <ami:name>KeyExchange.SignaturePart1</ami:name>
+                <ami:value>70053C4A715E29D68E3719EF947E0F179F1CB3D4EE3A276A91241D8519F8C6D679A515342F95D054002CC399B257F395AF7D3A5E45EF46ECBD47362BD7067C84</ami:value>
+            </ami:parameter>
+            <ami:parameter>
+                <ami:name>KeyExchange.keyType</ami:name>
+                <ami:value>KEK</ami:value>
+            </ami:parameter>
+            <ami:parameter>
+                <ami:name>KeyExchange.role</ami:name>
+                <ami:value>DEFAULT</ami:value>
+            </ami:parameter>
+      
+    </ami:meterAsset>
+    
+    <ami:comFunction>
+      <ami:mRID>YMT05001370</ami:mRID>
+      <ami:idType>METER_COMMUNICATION_MODULE_X_NETWORK_ID</ami:idType>
+      <ami:pathName>UAA EIP</ami:pathName>
+    </ami:comFunction>
+    <ami:serviceDeliveryPoint>
+      <ami:mRID>16486998</ami:mRID>
+      <ami:idType>SDP_X_UDC_ASSET_ID</ami:idType>
+      <ami:pathName>16486977</ami:pathName>	  
+      <ami:serviceType>Electric</ami:serviceType>
+      <ami:readRoute>
+        <ami:mRID>Monthly</ami:mRID>
+        <ami:idType>ROUTE_X_UDC_ASSET_ID</ami:idType>
+        <ami:pathName>16486977</ami:pathName>
+      </ami:readRoute>
+      <ami:serviceDeliveryRemarks>YMT05001370</ami:serviceDeliveryRemarks>
+    </ami:serviceDeliveryPoint>
+    <ami:serviceLocation>
+      <ami:mRID>16486977</ami:mRID>
+      <ami:idType>PREMISE_X_CLIENT_PRMSE_ID</ami:idType>
+      <ami:pathName>GPC</ami:pathName>
+      <ami:addressGeneral>SampleAddress</ami:addressGeneral>
+      <ami:city>ShanTou</ami:city>
+      <ami:stateOrProvince>Guang Dong</ami:stateOrProvince>
+      <ami:country>China</ami:country>
+      <ami:postalCode>515000</ami:postalCode>
+    </ami:serviceLocation>
+    <ami:customerAccount>
+      <ami:mRID>16486977</ami:mRID>
+      <ami:idType>ACCOUNT_X_UDC_ACCNT_ID</ami:idType>
+      <ami:pathName>16486977</ami:pathName>
+      <ami:billingCycle>Monthly</ami:billingCycle>
+    </ami:customerAccount>
+    
+<ami:executeStartTime>2019-07-15T14:30:00+08:00</ami:executeStartTime>
+    <ami:executeExpireTime>2019-07-30T16:30:00+08:00</ami:executeExpireTime>
+    <ami:measurementProfile>Data Collection - PH3</ami:measurementProfile>
+    <ami:touProfile name="test" clearValue="false"/>
+    <ami:loadLimitProfile name="test" clearValue="false"/>
+  </ami:payload>
+         
+      </ami:MeterAssetAddRequestMessage>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>wcq</con:username><con:password>Password@1</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:preemptive>true</con:preemptive><con:authType>Preemptive</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.emeter.com/energyip/amiinterface/ProvisioningRequest/addMeterAsset"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="7be262fc-9eb7-4caf-8f06-e419004b130e" isOneWay="false" action="http://www.emeter.com/energyip/amiinterface/ProvisioningRequest/deleteMeterAsset" name="deleteMeterAsset" bindingOperationName="deleteMeterAsset" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false"><con:settings/></con:operation><con:operation id="e9476435-3c66-45d1-a445-109c63d50fd3" isOneWay="false" action="http://www.emeter.com/energyip/amiinterface/ProvisioningRequest/updateMeterAsset" name="updateMeterAsset" bindingOperationName="updateMeterAsset" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="fe63d8f0-ec4c-4892-9573-b16168fe8027" name="KeyArgeement-192.168.135.8:7070"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.135.82:7070/services/UniversalAMIProvisioningService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ami="http://www.emeter.com/energyip/amiinterface">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ami:MeterAssetUpdateRequestMessage>\r
+         <ami:header>
+    <ami:verb>request</ami:verb>
+    <ami:noun>MeterUpdate</ami:noun>
+    <ami:revision>1</ami:revision>
+    <ami:dateTime>2014-10-23T11:37:28.837+08:00</ami:dateTime>
+    <ami:source>EIP</ami:source>
+    <ami:messageID>10001</ami:messageID>
+    <ami:asyncReplyTo>http://139.24.137.195:8890</ami:asyncReplyTo>
+  </ami:header>
+  
+         <ami:payload>
+  
+    <ami:meterAsset>
+      <ami:mRID>1KFM0200000002</ami:mRID>
+      <ami:idType>METER_X_UDC_ASSET_ID</ami:idType>
+      <ami:pathName>16486977</ami:pathName>
+      <ami:serviceType>Electric</ami:serviceType>
+      <ami:electricMeter>
+        <ami:numWires>3</ami:numWires>
+      </ami:electricMeter>
+      <ami:numDigits>6</ami:numDigits>
+    
+            <ami:parameter>
+                <ami:name>KeyExchange.AgreementDataPart1</ami:name>
+                <ami:value>f3f659a2057a2cdabf296b25ad5f84da379a2cda9abc54b4d2dc54b74315b47214ff238bf8e8b37d374991697dd60607b40fd07fb3e7c4e359dca21e7c00dde1</ami:value>
+            </ami:parameter>
+             <ami:parameter>
+                <ami:name>KeyExchange.AgreementDataPart2</ami:name>
+                <ami:value></ami:value>
+            </ami:parameter>
+            <ami:parameter>
+                <ami:name>KeyExchange.SignaturePart1</ami:name>
+                <ami:value>14ccce2bfb73433a8437c8902c1b4a49890065adac605bc150c5a353c195c80fb5262aef95ce22fde2dfa8e2a253b4b8a4f118030d1a665886273175c8e796e7</ami:value>
+            </ami:parameter>
+             <ami:parameter>
+                <ami:name>KeyExchange.SignaturePart2</ami:name>
+                <ami:value></ami:value>
+            </ami:parameter>
+            <ami:parameter>
+                <ami:name>KeyExchange.keytype</ami:name>
+                <ami:value>KEK</ami:value>
+            </ami:parameter>
+            <ami:parameter>
+                <ami:name>KeyExchange.role</ami:name>
+                <ami:value>CIP</ami:value>
+            </ami:parameter>
+      
+    </ami:meterAsset>
+    
+    <ami:comFunction>
+      <ami:mRID>YMT05001370</ami:mRID>
+      <ami:idType>METER_COMMUNICATION_MODULE_X_NETWORK_ID</ami:idType>
+      <ami:pathName>UAA EIP</ami:pathName>
+    </ami:comFunction>
+    <ami:serviceDeliveryPoint>
+      <ami:mRID>16486998</ami:mRID>
+      <ami:idType>SDP_X_UDC_ASSET_ID</ami:idType>
+      <ami:pathName>16486977</ami:pathName>	  
+      <ami:serviceType>Electric</ami:serviceType>
+      <ami:readRoute>
+        <ami:mRID>Monthly</ami:mRID>
+        <ami:idType>ROUTE_X_UDC_ASSET_ID</ami:idType>
+        <ami:pathName>16486977</ami:pathName>
+      </ami:readRoute>
+      <ami:serviceDeliveryRemarks>YMT05001370</ami:serviceDeliveryRemarks>
+    </ami:serviceDeliveryPoint>
+    <ami:serviceLocation>
+      <ami:mRID>16486977</ami:mRID>
+      <ami:idType>PREMISE_X_CLIENT_PRMSE_ID</ami:idType>
+      <ami:pathName>GPC</ami:pathName>
+      <ami:addressGeneral>SampleAddress</ami:addressGeneral>
+      <ami:city>ShanTou</ami:city>
+      <ami:stateOrProvince>Guang Dong</ami:stateOrProvince>
+      <ami:country>China</ami:country>
+      <ami:postalCode>515000</ami:postalCode>
+    </ami:serviceLocation>
+    <ami:customerAccount>
+      <ami:mRID>16486977</ami:mRID>
+      <ami:idType>ACCOUNT_X_UDC_ACCNT_ID</ami:idType>
+      <ami:pathName>16486977</ami:pathName>
+      <ami:billingCycle>Monthly</ami:billingCycle>
+    </ami:customerAccount>
+    
+<ami:executeStartTime>2019-07-15T14:30:00+08:00</ami:executeStartTime>
+    <ami:executeExpireTime>2019-07-30T16:30:00+08:00</ami:executeExpireTime>
+    <ami:measurementProfile>Data Collection - PH3</ami:measurementProfile>
+    <ami:touProfile name="test" clearValue="false"/>
+    <ami:loadLimitProfile name="test" clearValue="false"/>
+  </ami:payload>
+  
+      </ami:MeterAssetUpdateRequestMessage>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>wcq</con:username><con:password>Password@1</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:preemptive>true</con:preemptive><con:authType>Preemptive</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.emeter.com/energyip/amiinterface/ProvisioningRequest/updateMeterAsset"/><con:wsrmConfig version="1.2"/></con:call><con:call id="0b3c8244-e71d-48ab-94e9-4ae0da243b19" name="GUEK-00 KA-192.168.135.141:7443"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.135.183:7443/services/UniversalAMIProvisioningService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ami="http://www.emeter.com/energyip/amiinterface">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ami:MeterAssetUpdateRequestMessage>\r
+         <ami:header>
+    <ami:verb>request</ami:verb>
+    <ami:noun>MeterUpdate</ami:noun>
+    <ami:revision>1</ami:revision>
+    <ami:dateTime>2014-10-23T11:37:28.837+08:00</ami:dateTime>
+    <ami:source>EIP</ami:source>
+    <ami:messageID>10001</ami:messageID>
+    <ami:asyncReplyTo>http://139.24.137.195:8890</ami:asyncReplyTo>
+  </ami:header>
+  
+         <ami:payload>
+  
+    <ami:meterAsset>
+      <ami:mRID>1KFM0200000002</ami:mRID>
+      <ami:idType>METER_X_UDC_ASSET_ID</ami:idType>
+      <ami:pathName>16486977</ami:pathName>
+      <ami:serviceType>Electric</ami:serviceType>
+      <ami:electricMeter>
+        <ami:numWires>3</ami:numWires>
+      </ami:electricMeter>
+      <ami:numDigits>6</ami:numDigits>
+    
+            <ami:parameter>
+                <ami:name>KeyExchange.AgreementDataPart1</ami:name>
+                <ami:value>13c78d371950f561a2108adc80fe32d44ab9900bdecd4ff0d6082085667afd21</ami:value>
+            </ami:parameter>
+             <ami:parameter>
+                <ami:name>KeyExchange.AgreementDataPart2</ami:name>
+                <ami:value>b07cbfd0eccab4761f64af09bf6ab02a5edf49e6f5cfdad281fd6116a25d6f4a</ami:value>
+            </ami:parameter>
+            <ami:parameter>
+                <ami:name>KeyExchange.SignaturePart1</ami:name>
+                <ami:value>bd391a1475680bcc43e5bbf1cb0f8cc1ca9237294808f9ed00fb87adddc407b7</ami:value>
+            </ami:parameter>
+             <ami:parameter>
+                <ami:name>KeyExchange.SignaturePart2</ami:name>
+                <ami:value>d81ea175056a40de97c0bb16b43e0a45f5bc8f2639a5298310e554f63f89057f</ami:value>
+            </ami:parameter>
+            <ami:parameter>
+                <ami:name>KeyExchange.keytype</ami:name>
+                <ami:value>GUEK</ami:value>
+            </ami:parameter>
+            <ami:parameter>
+                <ami:name>KeyExchange.role</ami:name>
+                <ami:value>CIP</ami:value>
+            </ami:parameter>
+      
+    </ami:meterAsset>
+    
+    <ami:comFunction>
+      <ami:mRID>YMT05001370</ami:mRID>
+      <ami:idType>METER_COMMUNICATION_MODULE_X_NETWORK_ID</ami:idType>
+      <ami:pathName>UAA EIP</ami:pathName>
+    </ami:comFunction>
+    <ami:serviceDeliveryPoint>
+      <ami:mRID>16486998</ami:mRID>
+      <ami:idType>SDP_X_UDC_ASSET_ID</ami:idType>
+      <ami:pathName>16486977</ami:pathName>	  
+      <ami:serviceType>Electric</ami:serviceType>
+      <ami:readRoute>
+        <ami:mRID>Monthly</ami:mRID>
+        <ami:idType>ROUTE_X_UDC_ASSET_ID</ami:idType>
+        <ami:pathName>16486977</ami:pathName>
+      </ami:readRoute>
+      <ami:serviceDeliveryRemarks>YMT05001370</ami:serviceDeliveryRemarks>
+    </ami:serviceDeliveryPoint>
+    <ami:serviceLocation>
+      <ami:mRID>16486977</ami:mRID>
+      <ami:idType>PREMISE_X_CLIENT_PRMSE_ID</ami:idType>
+      <ami:pathName>GPC</ami:pathName>
+      <ami:addressGeneral>SampleAddress</ami:addressGeneral>
+      <ami:city>ShanTou</ami:city>
+      <ami:stateOrProvince>Guang Dong</ami:stateOrProvince>
+      <ami:country>China</ami:country>
+      <ami:postalCode>515000</ami:postalCode>
+    </ami:serviceLocation>
+    <ami:customerAccount>
+      <ami:mRID>16486977</ami:mRID>
+      <ami:idType>ACCOUNT_X_UDC_ACCNT_ID</ami:idType>
+      <ami:pathName>16486977</ami:pathName>
+      <ami:billingCycle>Monthly</ami:billingCycle>
+    </ami:customerAccount>
+    
+<ami:executeStartTime>2019-08-08T14:30:00+08:00</ami:executeStartTime>
+    <ami:executeExpireTime>2019-08-30T16:30:00+08:00</ami:executeExpireTime>
+    <ami:measurementProfile>Data Collection - PH3</ami:measurementProfile>
+    <ami:touProfile name="test" clearValue="false"/>
+    <ami:loadLimitProfile name="test" clearValue="false"/>
+  </ami:payload>
+  
+      </ami:MeterAssetUpdateRequestMessage>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>wcq</con:username><con:password>Password@1</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:preemptive>true</con:preemptive><con:authType>Preemptive</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.emeter.com/energyip/amiinterface/ProvisioningRequest/updateMeterAsset"/><con:wsrmConfig version="1.2"/></con:call><con:call id="efc9114a-ee32-42ec-9e1f-4d91fa93a3ff" name="KEK-03 KA-192.168.135.141:7443"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.135.183:7443/services/UniversalAMIProvisioningService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ami="http://www.emeter.com/energyip/amiinterface">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ami:MeterAssetUpdateRequestMessage>\r
+         <ami:header>
+    <ami:verb>request</ami:verb>
+    <ami:noun>MeterUpdate</ami:noun>
+    <ami:revision>1</ami:revision>
+    <ami:dateTime>2014-10-23T11:37:28.837+08:00</ami:dateTime>
+    <ami:source>EIP</ami:source>
+    <ami:messageID>10001</ami:messageID>
+    <ami:asyncReplyTo>http://139.24.137.195:8890</ami:asyncReplyTo>
+  </ami:header>
+  
+         <ami:payload>
+  
+    <ami:meterAsset>
+      <ami:mRID>1KFM0200000002</ami:mRID>
+      <ami:idType>METER_X_UDC_ASSET_ID</ami:idType>
+      <ami:pathName>16486977</ami:pathName>
+      <ami:serviceType>Electric</ami:serviceType>
+      <ami:electricMeter>
+        <ami:numWires>3</ami:numWires>
+      </ami:electricMeter>
+      <ami:numDigits>6</ami:numDigits>
+    
+            <ami:parameter>
+                <ami:name>KeyExchange.AgreementDataPart1</ami:name>
+                <ami:value>F3F659A2057A2CDABF296B25AD5F84DA379A2CDA9ABC54B4D2DC54B74315B47214FF238BF8E8B37D374991697DD60607B40FD07FB3E7C4E359DCA21E7C00DDE1</ami:value>
+            </ami:parameter>
+             <ami:parameter>
+                <ami:name>KeyExchange.AgreementDataPart2</ami:name>
+                <ami:value></ami:value>
+            </ami:parameter>
+            <ami:parameter>
+                <ami:name>KeyExchange.SignaturePart1</ami:name>
+                <ami:value>14CCCE2BFB73433A8437C8902C1B4A49890065ADAC605BC150C5A353C195C80FB5262AEF95CE22FDE2DFA8E2A253B4B8A4F118030D1A665886273175C8E796E7</ami:value>
+            </ami:parameter>
+             <ami:parameter>
+                <ami:name>KeyExchange.SignaturePart2</ami:name>
+                <ami:value></ami:value>
+            </ami:parameter>
+            <ami:parameter>
+                <ami:name>KeyExchange.keytype</ami:name>
+                <ami:value>KEK</ami:value>
+            </ami:parameter>
+            <ami:parameter>
+                <ami:name>KeyExchange.role</ami:name>
+                <ami:value>CIP</ami:value>
+            </ami:parameter>
+      
+    </ami:meterAsset>
+    
+    <ami:comFunction>
+      <ami:mRID>YMT05001370</ami:mRID>
+      <ami:idType>METER_COMMUNICATION_MODULE_X_NETWORK_ID</ami:idType>
+      <ami:pathName>UAA EIP</ami:pathName>
+    </ami:comFunction>
+    <ami:serviceDeliveryPoint>
+      <ami:mRID>16486998</ami:mRID>
+      <ami:idType>SDP_X_UDC_ASSET_ID</ami:idType>
+      <ami:pathName>16486977</ami:pathName>	  
+      <ami:serviceType>Electric</ami:serviceType>
+      <ami:readRoute>
+        <ami:mRID>Monthly</ami:mRID>
+        <ami:idType>ROUTE_X_UDC_ASSET_ID</ami:idType>
+        <ami:pathName>16486977</ami:pathName>
+      </ami:readRoute>
+      <ami:serviceDeliveryRemarks>YMT05001370</ami:serviceDeliveryRemarks>
+    </ami:serviceDeliveryPoint>
+    <ami:serviceLocation>
+      <ami:mRID>16486977</ami:mRID>
+      <ami:idType>PREMISE_X_CLIENT_PRMSE_ID</ami:idType>
+      <ami:pathName>GPC</ami:pathName>
+      <ami:addressGeneral>SampleAddress</ami:addressGeneral>
+      <ami:city>ShanTou</ami:city>
+      <ami:stateOrProvince>Guang Dong</ami:stateOrProvince>
+      <ami:country>China</ami:country>
+      <ami:postalCode>515000</ami:postalCode>
+    </ami:serviceLocation>
+    <ami:customerAccount>
+      <ami:mRID>16486977</ami:mRID>
+      <ami:idType>ACCOUNT_X_UDC_ACCNT_ID</ami:idType>
+      <ami:pathName>16486977</ami:pathName>
+      <ami:billingCycle>Monthly</ami:billingCycle>
+    </ami:customerAccount>
+    
+<ami:executeStartTime>2019-08-08T14:30:00+08:00</ami:executeStartTime>
+    <ami:executeExpireTime>2019-08-30T16:30:00+08:00</ami:executeExpireTime>
+    <ami:measurementProfile>Data Collection - PH3</ami:measurementProfile>
+    <ami:touProfile name="test" clearValue="false"/>
+    <ami:loadLimitProfile name="test" clearValue="false"/>
+  </ami:payload>
+  
+      </ami:MeterAssetUpdateRequestMessage>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>wcq</con:username><con:password>Password@1</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:preemptive>true</con:preemptive><con:authType>Preemptive</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.emeter.com/energyip/amiinterface/ProvisioningRequest/updateMeterAsset"/><con:wsrmConfig version="1.2"/></con:call><con:call id="0f2174f0-b940-41c5-adb1-7f6ac628d7c2" name="GBEK-01 KA-192.168.135.141:7443"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.135.183:7443/services/UniversalAMIProvisioningService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ami="http://www.emeter.com/energyip/amiinterface">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ami:MeterAssetUpdateRequestMessage>\r
+         <ami:header>
+    <ami:verb>request</ami:verb>
+    <ami:noun>MeterUpdate</ami:noun>
+    <ami:revision>1</ami:revision>
+    <ami:dateTime>2014-10-23T11:37:28.837+08:00</ami:dateTime>
+    <ami:source>EIP</ami:source>
+    <ami:messageID>10001</ami:messageID>
+    <ami:asyncReplyTo>http://139.24.137.195:8890</ami:asyncReplyTo>
+  </ami:header>
+  
+         <ami:payload>
+  
+    <ami:meterAsset>
+      <ami:mRID>1KFM0200000002</ami:mRID>
+      <ami:idType>METER_X_UDC_ASSET_ID</ami:idType>
+      <ami:pathName>16486977</ami:pathName>
+      <ami:serviceType>Electric</ami:serviceType>
+      <ami:electricMeter>
+        <ami:numWires>3</ami:numWires>
+      </ami:electricMeter>
+      <ami:numDigits>6</ami:numDigits>
+    
+            <ami:parameter>
+                <ami:name>KeyExchange.AgreementDataPart1</ami:name>
+                <ami:value>F3F659A2057A2CDABF296B25AD5F84DA379A2CDA9ABC54B4D2DC54B74315B47214FF238BF8E8B37D374991697DD60607B40FD07FB3E7C4E359DCA21E7C00DDE1</ami:value>
+            </ami:parameter>
+             <ami:parameter>
+                <ami:name>KeyExchange.AgreementDataPart2</ami:name>
+                <ami:value></ami:value>
+            </ami:parameter>
+            <ami:parameter>
+                <ami:name>KeyExchange.SignaturePart1</ami:name>
+                <ami:value>14CCCE2BFB73433A8437C8902C1B4A49890065ADAC605BC150C5A353C195C80FB5262AEF95CE22FDE2DFA8E2A253B4B8A4F118030D1A665886273175C8E796E7</ami:value>
+            </ami:parameter>
+             <ami:parameter>
+                <ami:name>KeyExchange.SignaturePart2</ami:name>
+                <ami:value></ami:value>
+            </ami:parameter>
+            <ami:parameter>
+                <ami:name>KeyExchange.keytype</ami:name>
+                <ami:value>GBEK</ami:value>
+            </ami:parameter>
+            <ami:parameter>
+                <ami:name>KeyExchange.role</ami:name>
+                <ami:value>CIP</ami:value>
+            </ami:parameter>
+      
+    </ami:meterAsset>
+    
+    <ami:comFunction>
+      <ami:mRID>YMT05001370</ami:mRID>
+      <ami:idType>METER_COMMUNICATION_MODULE_X_NETWORK_ID</ami:idType>
+      <ami:pathName>UAA EIP</ami:pathName>
+    </ami:comFunction>
+    <ami:serviceDeliveryPoint>
+      <ami:mRID>16486998</ami:mRID>
+      <ami:idType>SDP_X_UDC_ASSET_ID</ami:idType>
+      <ami:pathName>16486977</ami:pathName>	  
+      <ami:serviceType>Electric</ami:serviceType>
+      <ami:readRoute>
+        <ami:mRID>Monthly</ami:mRID>
+        <ami:idType>ROUTE_X_UDC_ASSET_ID</ami:idType>
+        <ami:pathName>16486977</ami:pathName>
+      </ami:readRoute>
+      <ami:serviceDeliveryRemarks>YMT05001370</ami:serviceDeliveryRemarks>
+    </ami:serviceDeliveryPoint>
+    <ami:serviceLocation>
+      <ami:mRID>16486977</ami:mRID>
+      <ami:idType>PREMISE_X_CLIENT_PRMSE_ID</ami:idType>
+      <ami:pathName>GPC</ami:pathName>
+      <ami:addressGeneral>SampleAddress</ami:addressGeneral>
+      <ami:city>ShanTou</ami:city>
+      <ami:stateOrProvince>Guang Dong</ami:stateOrProvince>
+      <ami:country>China</ami:country>
+      <ami:postalCode>515000</ami:postalCode>
+    </ami:serviceLocation>
+    <ami:customerAccount>
+      <ami:mRID>16486977</ami:mRID>
+      <ami:idType>ACCOUNT_X_UDC_ACCNT_ID</ami:idType>
+      <ami:pathName>16486977</ami:pathName>
+      <ami:billingCycle>Monthly</ami:billingCycle>
+    </ami:customerAccount>
+    
+<ami:executeStartTime>2019-08-08T14:30:00+08:00</ami:executeStartTime>
+    <ami:executeExpireTime>2019-08-30T16:30:00+08:00</ami:executeExpireTime>
+    <ami:measurementProfile>Data Collection - PH3</ami:measurementProfile>
+    <ami:touProfile name="test" clearValue="false"/>
+    <ami:loadLimitProfile name="test" clearValue="false"/>
+  </ami:payload>
+  
+      </ami:MeterAssetUpdateRequestMessage>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>wcq</con:username><con:password>Password@1</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:preemptive>true</con:preemptive><con:authType>Preemptive</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.emeter.com/energyip/amiinterface/ProvisioningRequest/updateMeterAsset"/><con:wsrmConfig version="1.2"/></con:call><con:call id="1d956007-9311-4ef8-a579-f29298145a1f" name="GAK-02 KA-192.168.135.141:7443"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.135.183:7443/services/UniversalAMIProvisioningService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ami="http://www.emeter.com/energyip/amiinterface">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ami:MeterAssetUpdateRequestMessage>\r
+         <ami:header>
+    <ami:verb>request</ami:verb>
+    <ami:noun>MeterUpdate</ami:noun>
+    <ami:revision>1</ami:revision>
+    <ami:dateTime>2014-10-23T11:37:28.837+08:00</ami:dateTime>
+    <ami:source>EIP</ami:source>
+    <ami:messageID>10001</ami:messageID>
+    <ami:asyncReplyTo>http://139.24.137.195:8890</ami:asyncReplyTo>
+  </ami:header>
+  
+         <ami:payload>
+  
+    <ami:meterAsset>
+      <ami:mRID>1KFM0200000002</ami:mRID>
+      <ami:idType>METER_X_UDC_ASSET_ID</ami:idType>
+      <ami:pathName>16486977</ami:pathName>
+      <ami:serviceType>Electric</ami:serviceType>
+      <ami:electricMeter>
+        <ami:numWires>3</ami:numWires>
+      </ami:electricMeter>
+      <ami:numDigits>6</ami:numDigits>
+    
+            <ami:parameter>
+                <ami:name>KeyExchange.AgreementDataPart1</ami:name>
+                <ami:value>F3F659A2057A2CDABF296B25AD5F84DA379A2CDA9ABC54B4D2DC54B74315B47214FF238BF8E8B37D374991697DD60607B40FD07FB3E7C4E359DCA21E7C00DDE1</ami:value>
+            </ami:parameter>
+             <ami:parameter>
+                <ami:name>KeyExchange.AgreementDataPart2</ami:name>
+                <ami:value></ami:value>
+            </ami:parameter>
+            <ami:parameter>
+                <ami:name>KeyExchange.SignaturePart1</ami:name>
+                <ami:value>14CCCE2BFB73433A8437C8902C1B4A49890065ADAC605BC150C5A353C195C80FB5262AEF95CE22FDE2DFA8E2A253B4B8A4F118030D1A665886273175C8E796E7</ami:value>
+            </ami:parameter>
+             <ami:parameter>
+                <ami:name>KeyExchange.SignaturePart2</ami:name>
+                <ami:value></ami:value>
+            </ami:parameter>
+            <ami:parameter>
+                <ami:name>KeyExchange.keytype</ami:name>
+                <ami:value>GAK</ami:value>
+            </ami:parameter>
+            <ami:parameter>
+                <ami:name>KeyExchange.role</ami:name>
+                <ami:value>CIP</ami:value>
+            </ami:parameter>
+      
+    </ami:meterAsset>
+    
+    <ami:comFunction>
+      <ami:mRID>YMT05001370</ami:mRID>
+      <ami:idType>METER_COMMUNICATION_MODULE_X_NETWORK_ID</ami:idType>
+      <ami:pathName>UAA EIP</ami:pathName>
+    </ami:comFunction>
+    <ami:serviceDeliveryPoint>
+      <ami:mRID>16486998</ami:mRID>
+      <ami:idType>SDP_X_UDC_ASSET_ID</ami:idType>
+      <ami:pathName>16486977</ami:pathName>	  
+      <ami:serviceType>Electric</ami:serviceType>
+      <ami:readRoute>
+        <ami:mRID>Monthly</ami:mRID>
+        <ami:idType>ROUTE_X_UDC_ASSET_ID</ami:idType>
+        <ami:pathName>16486977</ami:pathName>
+      </ami:readRoute>
+      <ami:serviceDeliveryRemarks>YMT05001370</ami:serviceDeliveryRemarks>
+    </ami:serviceDeliveryPoint>
+    <ami:serviceLocation>
+      <ami:mRID>16486977</ami:mRID>
+      <ami:idType>PREMISE_X_CLIENT_PRMSE_ID</ami:idType>
+      <ami:pathName>GPC</ami:pathName>
+      <ami:addressGeneral>SampleAddress</ami:addressGeneral>
+      <ami:city>ShanTou</ami:city>
+      <ami:stateOrProvince>Guang Dong</ami:stateOrProvince>
+      <ami:country>China</ami:country>
+      <ami:postalCode>515000</ami:postalCode>
+    </ami:serviceLocation>
+    <ami:customerAccount>
+      <ami:mRID>16486977</ami:mRID>
+      <ami:idType>ACCOUNT_X_UDC_ACCNT_ID</ami:idType>
+      <ami:pathName>16486977</ami:pathName>
+      <ami:billingCycle>Monthly</ami:billingCycle>
+    </ami:customerAccount>
+    
+<ami:executeStartTime>2019-08-08T14:30:00+08:00</ami:executeStartTime>
+    <ami:executeExpireTime>2019-08-30T16:30:00+08:00</ami:executeExpireTime>
+    <ami:measurementProfile>Data Collection - PH3</ami:measurementProfile>
+    <ami:touProfile name="test" clearValue="false"/>
+    <ami:loadLimitProfile name="test" clearValue="false"/>
+  </ami:payload>
+  
+      </ami:MeterAssetUpdateRequestMessage>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>wcq</con:username><con:password>Password@1</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:preemptive>true</con:preemptive><con:authType>Preemptive</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.emeter.com/energyip/amiinterface/ProvisioningRequest/updateMeterAsset"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
