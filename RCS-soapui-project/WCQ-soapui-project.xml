@@ -2031,7 +2031,7 @@
   
       </ami:MeterAssetUpdateRequestMessage>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:credentials><con:username>wcq</con:username><con:password>Password@1</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:preemptive>true</con:preemptive><con:authType>Preemptive</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.emeter.com/energyip/amiinterface/ProvisioningRequest/updateMeterAsset"/><con:wsrmConfig version="1.2"/></con:call><con:call id="0b3c8244-e71d-48ab-94e9-4ae0da243b19" name="GUEK-00 KA-192.168.135.141:7443"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.135.183:7443/services/UniversalAMIProvisioningService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ami="http://www.emeter.com/energyip/amiinterface">\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>wcq</con:username><con:password>Password@1</con:password><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:preemptive>true</con:preemptive><con:authType>Preemptive</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.emeter.com/energyip/amiinterface/ProvisioningRequest/updateMeterAsset"/><con:wsrmConfig version="1.2"/></con:call><con:call id="0b3c8244-e71d-48ab-94e9-4ae0da243b19" name="GUEK-00 KA-192.168.135.141:7443"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.135.27:7443/services/UniversalAMIProvisioningService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ami="http://www.emeter.com/energyip/amiinterface">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <ami:MeterAssetUpdateRequestMessage>\r
@@ -2059,19 +2059,19 @@
     
             <ami:parameter>
                 <ami:name>KeyExchange.AgreementDataPart1</ami:name>
-                <ami:value>13c78d371950f561a2108adc80fe32d44ab9900bdecd4ff0d6082085667afd21</ami:value>
+                <ami:value>F8DAE7EB0389AE85B70F6D5E282D5B19E251DF86A514BF1BB0B3F2362F495E67</ami:value>
             </ami:parameter>
              <ami:parameter>
                 <ami:name>KeyExchange.AgreementDataPart2</ami:name>
-                <ami:value>b07cbfd0eccab4761f64af09bf6ab02a5edf49e6f5cfdad281fd6116a25d6f4a</ami:value>
+                <ami:value>949DE36FE1D530CE8702A876FE41162BF74BFD9AC71FBF5FCD46FA477549DD54</ami:value>
             </ami:parameter>
             <ami:parameter>
                 <ami:name>KeyExchange.SignaturePart1</ami:name>
-                <ami:value>bd391a1475680bcc43e5bbf1cb0f8cc1ca9237294808f9ed00fb87adddc407b7</ami:value>
+                <ami:value>AEECE6DEA492E1713920D202D204E3D2E1331F7213449F8840990E5C6AFAE3CCDDE7FC04DD6B9CC2E226D5B9C49A0EFD50A426B0A48902335AB9BB471DB6F8E3</ami:value>
             </ami:parameter>
              <ami:parameter>
                 <ami:name>KeyExchange.SignaturePart2</ami:name>
-                <ami:value>d81ea175056a40de97c0bb16b43e0a45f5bc8f2639a5298310e554f63f89057f</ami:value>
+                <ami:value></ami:value>
             </ami:parameter>
             <ami:parameter>
                 <ami:name>KeyExchange.keytype</ami:name>
